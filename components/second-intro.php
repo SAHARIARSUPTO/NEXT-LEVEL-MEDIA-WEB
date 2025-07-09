@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
   <title>Next Level Media</title>
 
   <style>
@@ -122,8 +123,8 @@
   <section class="px-4 bg-black relative w-full overflow-hidden pb-5">
     <!-- Responsive Glow Effects -->
     <div class="absolute inset-0 pointer-events-none z-0">
-      <div class="glow-effect w-[60vw] h-[60vw] max-w-[400px] max-h-[400px] absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 rounded-full"></div>
-      <div class="glow-effect w-[50vw] h-[50vw] max-w-[300px] max-h-[300px] absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 rounded-full"></div>
+      <div class="glow-effect w-[60vw] h-[60vw] max-w-[400px] max-h-[400px] absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 rounded-xl"></div>
+      <div class="glow-effect w-[50vw] h-[50vw] max-w-[300px] max-h-[300px] absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 rounded-xl"></div>
     </div>
 
     <div class="max-w-7xl mx-auto relative z-10">
@@ -136,20 +137,20 @@
         <!-- Floating tags -->
         <div class="floating-tags-container mt-8 md:mt-12">
           <div class="floating-tags-group animate-floatLeft">
-            <div class="floating-tag bg-blue-700 bg-opacity-70 backdrop-blur-sm text-sm px-4 py-2 rounded-full shadow-lg flex items-center -rotate-12 animate-fadeInSlideUp delay-200">
+            <div class="floating-tag bg-blue-700 bg-opacity-70 backdrop-blur-sm text-sm px-4 py-2 rounded-xl shadow-lg flex items-center -rotate-12 animate-fadeInSlideUp delay-200">
               <span>Podcast Editing</span> <span class="ml-2">🎙️</span>
             </div>
-            <div class="floating-tag bg-purple-700 bg-opacity-70 backdrop-blur-sm text-sm px-4 py-2 rounded-full shadow-lg flex items-center rotate-6 animate-fadeInSlideUp delay-300">
-              <span>Ad Creatives & VSL</span> <span class="ml-2">📈</span>
+            <div class="floating-tag bg-purple-700 bg-opacity-70 backdrop-blur-sm text-sm px-4 py-2 rounded-xl shadow-lg flex items-center rotate-6 animate-fadeInSlideUp delay-300">
+              
             </div>
           </div>
 
           <div class="floating-tags-group animate-floatRight ml-8">
-            <div class="floating-tag bg-purple-700 bg-opacity-70 backdrop-blur-sm text-sm px-4 py-2 rounded-full shadow-lg flex items-center rotate-12 animate-fadeInSlideUp delay-400">
-              <span>Short Form Content</span> <span class="ml-2">📱</span>
+            <div class="floating-tag bg-purple-700 bg-opacity-70 backdrop-blur-sm text-sm px-4 py-2 rounded-xl shadow-lg flex items-center rotate-12 animate-fadeInSlideUp delay-400">
+             
             </div>
-            <div class="floating-tag bg-blue-700 bg-opacity-70 backdrop-blur-sm text-sm px-4 py-2 rounded-full shadow-lg flex items-center -rotate-6 animate-fadeInSlideUp delay-500">
-              <span>Youtube Videos</span> <span class="ml-2">▶️</span>
+            <div class="floating-tag bg-blue-700 bg-opacity-70 backdrop-blur-sm text-sm px-4 py-2 rounded-xl shadow-lg flex items-center -rotate-6 animate-fadeInSlideUp delay-500">
+              
             </div>
           </div>
         </div>

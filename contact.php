@@ -12,7 +12,7 @@
     body {
       background-color: #000;
       color: white;
-      font-family: 'Inter', sans-serif;
+       font-family: 'Space Grotesk', sans-serif; /* Changed to Space Grotesk */
     }
     .glass {
       background: rgba(255, 255, 255, 0.05);
@@ -46,26 +46,22 @@
 
       <div class="space-y-6">
 
-        <!-- Instagram Button -->
-        <div class="bg-pink-600 contact-link text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-between text-xs sm:text-sm md:text-base">
-          <span><i class="fab fa-instagram mr-2"></i>Follow & DM us on Instagram</span>
-          <a href="https://instagram.com/nextlevelmedia" target="_blank" class="underline">Visit Profile</a>
+        <div class="bg-purple-600 contact-link text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-between text-xs sm:text-sm md:text-base">
+          <span><i class="fas fa-calendar-alt mr-2"></i>Schedule a Meeting</span>
+          <a href="https://calendly.com/siamahmedshanto3954/30min" target="_blank" class="underline">Book Now</a>
         </div>
 
-        <!-- Email -->
         <div class="bg-blue-600 contact-link text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-between text-xs sm:text-sm md:text-base">
           <span><i class="fas fa-envelope mr-2"></i>Send us an Email</span>
           <a href="mailto:workforsiambruh@gmail.com?subject=Let's%20Work%20Together" class="underline">workforsiambruh@gmail.com</a>
         </div>
 
-        <!-- Business Hours -->
         <div class="bg-gray-800 p-6 rounded-lg text-xs sm:text-sm md:text-base">
           <h3 class="text-lg sm:text-xl font-bold mb-2">Business Hours</h3>
           <p class="text-gray-400">We’re available 24/7 — yes, even at 3AM 🚀</p>
           <p class="text-gray-400">Based in Sylhet, Bangladesh</p>
         </div>
 
-        <!-- Services -->
         <div class="bg-gray-900 p-6 rounded-lg text-xs sm:text-sm md:text-base">
           <h3 class="text-lg sm:text-xl font-bold mb-2">What We Do</h3>
           <ul class="list-disc list-inside text-gray-300 space-y-1">

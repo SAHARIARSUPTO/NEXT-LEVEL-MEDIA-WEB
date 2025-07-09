@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Why US?</title>
 </head>
 <style>
+     body {
+            
+            font-family: 'Space Grotesk', sans-serif; /* Changed to Space Grotesk */
+         
+            
+        }
     .why-card {
   transition: transform 0.4s ease, background-color 0.3s ease, box-shadow 0.4s ease;
   transform: translateY(0);

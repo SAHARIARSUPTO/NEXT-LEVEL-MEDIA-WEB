@@ -8,12 +8,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         /* Pure black background for the body, ensuring consistency */
         body {
             background-color: #000000; /* Pure Black */
-            font-family: 'Inter', sans-serif;
+            font-family: 'Space Grotesk', sans-serif; /* Changed to Space Grotesk */
             color: #F3F4F6; /* Light text color */
+            
         }
 
         /* Custom styles for subtle hover effects on links and icons */

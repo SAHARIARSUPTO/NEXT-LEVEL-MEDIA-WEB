@@ -1,31 +1,35 @@
 <?php
 $videos = [
-    ["id" => 1, "category" => "shorts", "videoUrl" => "https://nextlevelmedia.digital/components/videos/motion-grapics.mp4", "title" => "Motion Graphic Reel"],
-    ["id" => 2, "category" => "shorts", "videoUrl" => "https://nextlevelmedia.digital/components/videos/short.mp4", "title" => "YouTube Promo"],
-    ["id" => 4, "category" => "3d", "videoUrl" => "https://nextlevelmedia.digital/components/videos/3d.mp4", "title" => "YouTube Promo"],
-    ["id" => 3, "category" => "shorts", "videoUrl" => "https://nextlevelmedia.digital/components/videos/shorts2.mp4", "title" => "Quick Edit Sample"],
-    ["id" => 5, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=_VZpzlfgMog&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=1", "title" => "Quick Edit Sample"],
-    ["id" => 6, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=vVjQcWh7pVI&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=24", "title" => "Quick Edit Sample"],
-    ["id" => 7, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=ZdaiBOEJhTY&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=3", "title" => "Quick Edit Sample"],
-    ["id" => 8, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=mF2so1ihSQ4&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=4", "title" => "Quick Edit Sample"],
-    ["id" => 35, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=WyWPeGKKVIE&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=5", "title" => "Quick Edit Sample"],
-    ["id" => 36, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=m7VVOVvncjA&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=6", "title" => "Quick Edit Sample"],
+    // Shorts Section (Updated)
+    ["id" => 1, "category" => "shorts", "videoUrl" => "https://www.youtube.com/embed/3gDusm-pYr4", "title" => "Shorts Clip 1"],
+    ["id" => 2, "category" => "shorts", "videoUrl" => "https://www.youtube.com/embed/LPXvOwKmgF0", "title" => "Shorts Clip 2"],
+    ["id" => 3, "category" => "shorts", "videoUrl" => "https://www.youtube.com/embed/BSDP0qphx8o", "title" => "Shorts Clip 3"],
+    ["id" => 4, "category" => "shorts", "videoUrl" => "https://www.youtube.com/embed/kRtHRAsHKk8", "title" => "Shorts Clip 4"],
+    ["id" => 5, "category" => "shorts", "videoUrl" => "https://www.youtube.com/embed/A0K4cyrD48U", "title" => "Shorts Clip 5"],
+    ["id" => 6, "category" => "shorts", "videoUrl" => "https://www.youtube.com/embed/v03bJY39b6U", "title" => "Shorts Clip 6"],
+
+    // Other Categories
+    ["id" => 7, "category" => "3d", "videoUrl" => "https://www.youtube.com/embed/BSDP0qphx8o", "title" => "YouTube Promo"],
     
-    ["id" => 9, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail1.png", "title" => "Quick Edit Sample"],
-    ["id" => 10, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail2.png", "title" => "Quick Edit Sample"],
-    ["id" => 11, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail3.png", "title" => "Quick Edit Sample"],
-    ["id" => 12, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail4.png", "title" => ""],
-    ["id" => 13, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail5.png", "title" => ""],
-    ["id" => 14, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail6.png", "title" => ""],
-    // newmore
-    ["id" => 15, "category" => "ad", "videoUrl" => "https://www.youtube.com/watch?v=s7p6OLwV_50", "title" => ""],
-    // ["id" => 16, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=hNMDd8bjcx4", "title" => ""],
-    ["id" => 17, "category" => "ad", "videoUrl" => "https://youtu.be/WMxo_4q0MNg?si=7qJCztvC7rDcDyks ", "title" => ""],
-    // ["id" => 18, "category" => "youtube", "videoUrl" => "https://youtu.be/hNMDd8bjcx4?si=yzbt8X6khzDWzZG6", "title" => ""],
-    ["id" => 19, "category" => "ad", "videoUrl" => "https://youtu.be/AlsXNhTm4AA?si=WPcfwXd_c308ScLN", "title" => ""],
-    ["id" => 19, "category" => "ad", "videoUrl" => "https://www.youtube.com/watch?v=VrAAguJPBjc&list=PLqJTtIbzjXQ94aO2wPZnliKi_rfz8DdJX&index=2", "title" => ""]
-    // business videos
-  
+    ["id" => 8, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=_VZpzlfgMog&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=1", "title" => "Quick Edit Sample"],
+    ["id" => 9, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=vVjQcWh7pVI&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=24", "title" => "Quick Edit Sample"],
+    ["id" => 10, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=ZdaiBOEJhTY&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=3", "title" => "Quick Edit Sample"],
+    ["id" => 11, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=mF2so1ihSQ4&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=4", "title" => "Quick Edit Sample"],
+    ["id" => 12, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=WyWPeGKKVIE&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=5", "title" => "Quick Edit Sample"],
+    ["id" => 13, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=m7VVOVvncjA&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=6", "title" => "Quick Edit Sample"],
+    
+    ["id" => 14, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail1.png", "title" => "Quick Edit Sample"],
+    ["id" => 15, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail2.png", "title" => "Quick Edit Sample"],
+    ["id" => 16, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail3.png", "title" => "Quick Edit Sample"],
+    ["id" => 17, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail4.png", "title" => ""],
+    ["id" => 18, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail5.png", "title" => ""],
+    ["id" => 19, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail6.png", "title" => ""],
+
+    // Ads
+    ["id" => 20, "category" => "ad", "videoUrl" => "https://www.youtube.com/watch?v=s7p6OLwV_50", "title" => ""],
+    ["id" => 21, "category" => "ad", "videoUrl" => "https://youtu.be/WMxo_4q0MNg?si=7qJCztvC7rDcDyks", "title" => ""],
+    ["id" => 22, "category" => "ad", "videoUrl" => "https://youtu.be/AlsXNhTm4AA?si=WPcfwXd_c308ScLN", "title" => ""],
+    ["id" => 23, "category" => "ad", "videoUrl" => "https://www.youtube.com/watchv=VrAAguJPBjclist=PLqJTtIbzjXQ94aO2wPZnliKi_rfz8DdJX&index=2", "title" => ""]
 ];
 ?>
 
@@ -34,6 +38,7 @@ $videos = [
 <head>
   <meta charset="UTF-8" />
   <title>Projects</title>
+   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -42,6 +47,9 @@ $videos = [
           colors: {
             'primary-purple': '#8A2BE2',
             'deep-black': '#0A0A0A'
+          },
+          fontFamily: {
+            grotesk: ['Space Grotesk', 'sans-serif']
           }
         }
       }
@@ -61,7 +69,8 @@ $videos = [
     }
 
 .video-card video,
-.video-card img {
+.video-card img,
+.video-card .youtube-thumbnail {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -135,19 +144,16 @@ $videos = [
     }
   </style>
 </head>
-<body class="bg-deep-black text-white p-6 min-h-screen">
-  <section id="projects">
+<body class="bg-deep-black text-white p-6 min-h-screen text-center font-grotesk justify-center">
+  <section id="projects" class="pt-10">
     <div class="max-w-4xl mx-auto pb-24">
-      <h2 class="text-xl sm:text-4xl font-bold text-center mb-10">🎬 Featured Projects</h2>
-      <div class="flex flex-wrap justify-center gap-3 mb-8">
-
-        <button class="filter-btn bg-gray-700 px-4 py-2 rounded-full text-white font-medium" data-category="youtube">Youtube Videos</button>
-        <button class="filter-btn bg-gray-700 px-4 py-2 rounded-full text-white font-medium" data-category="ad">Ad Creative & VSL</button>
-        <button class="filter-btn bg-gray-700 px-4 py-2 rounded-full text-white font-medium" data-category="thumbnails">Thumbnails</button>
-
-        <button class="filter-btn bg-gray-700 px-4 py-2 rounded-full text-white font-medium" data-category="shorts">Short From Content</button>
-        <button class="filter-btn bg-gray-700 px-4 py-2 rounded-full text-white font-medium" data-category="podcast">Podcast Editing</button>
-        
+      <h2 class="text-xl sm:text-4xl font-bold text-center mb-4">What We’ve Created</h2>
+      <span class="text-sm md:text-xl text-center font-normal text-gray-600 mb-8 block">Take a Look at Some of Our Standout Work</span>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8 justify-items-center">
+        <button class="filter-btn bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="youtube">Youtube Videos</button>
+        <button class="filter-btn bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="ad">Ad Creative & VSL</button>
+        <button class="filter-btn bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="thumbnails">Thumbnails</button>
+        <button class="filter-btn bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="shorts">Short Form Content</button>
       </div>
       <div id="project-grid" class="grid grid-cols-1 px-5 sm:grid-cols-2 gap-6"></div>
     </div>
@@ -162,12 +168,22 @@ $videos = [
         return category === "shorts" ? "aspect-9-16" : "aspect-16-9";
       }
 
-      function getYouTubeEmbedUrl(url) {
-        // Handles both youtu.be and youtube.com links
-        const ytMatch = url.match(
-          /(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_\-]+)/
-        );
-        return ytMatch ? `https://www.youtube.com/embed/${ytMatch[1]}` : null;
+      function getYouTubeVideoId(url) {
+        // Extracts video ID from standard YouTube URLs
+        const ytMatch = url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+        // For the specific http://googleusercontent.com/youtube.com/ format, extract the last part as a pseudo-ID
+        if (!ytMatch && url.includes("http://googleusercontent.com/youtube.com/")) {
+            const parts = url.split('/');
+            return parts[parts.length - 1]; // Returns "0", "1", etc.
+        }
+        return ytMatch ? ytMatch[1] : null;
+      }
+
+      function getYouTubeThumbnail(videoId) {
+        // Uses standard YouTube thumbnail URL structure.
+        // For the placeholder URLs (e.g., youtube.com/0), this will point to a non-existent image,
+        // but it maintains the structure for real YouTube videos.
+        return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
       }
 
       function render(category) {
@@ -175,9 +191,10 @@ $videos = [
         const filtered = category === "all" ? videos : videos.filter(v => v.category === category);
 
         filtered.forEach((v, index) => {
-          const id = `video-${index}`;
+          const id = `video-${v.id}`; // Use video id for unique DOM element ID
           const isMp4 = v.videoUrl.endsWith(".mp4");
-          const isYouTube = v.videoUrl.includes("youtube.com") || v.videoUrl.includes("youtu.be");
+          const isYouTubeLike = v.videoUrl.includes("youtube.com/"); // Checks for any youtube.com mention
+          const isImage = v.videoUrl.endsWith(".png") || v.videoUrl.endsWith(".jpg") || v.videoUrl.endsWith(".jpeg") || v.videoUrl.endsWith(".gif");
           const aspectClass = getAspectClass(v.category);
 
           let mediaHTML = "";
@@ -185,7 +202,6 @@ $videos = [
           if (isMp4) {
             mediaHTML = `
               <div class="relative ${aspectClass}">
-                <span class="category-label">${v.category.replace(/^\w/, c => c.toUpperCase())}</span>
                 <video id="${id}" class="w-full h-full object-cover rounded-xl" preload="metadata"></video>
                 <div class="absolute inset-0 flex items-center justify-center play-button-overlay" onclick="playVideo('${id}', this)">
                   <div class="play-button">
@@ -212,21 +228,39 @@ $videos = [
                   </button>
                 </div>
               </div>
-            `
-          } else if (isYouTube) {
-            const embedUrl = getYouTubeEmbedUrl(v.videoUrl);
+            `;
+          } else if (isYouTubeLike) {
+            const videoId = getYouTubeVideoId(v.videoUrl);
+            const thumbnailUrl = getYouTubeThumbnail(videoId);
+            // Use the original v.videoUrl for the embed source, as the googleusercontent.com URLs are directly used by the player.
+            const embedUrl = `${v.videoUrl}?autoplay=1&rel=0`; 
+
             mediaHTML = `
-              <div class="relative ${aspectClass}">
-                <span class="category-label">${v.category.replace(/^\w/, c => c.toUpperCase())}</span>
-                <iframe src="${embedUrl}" class="w-full h-full rounded-xl" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <div class="relative ${aspectClass} youtube-container">
+                <img src="${thumbnailUrl}" alt="Video Thumbnail" class="youtube-thumbnail w-full h-full object-cover rounded-xl" onerror="this.onerror=null; this.src='https://via.placeholder.com/480x360.png?text=Video+Thumbnail';" />
+                <div class="absolute inset-0 flex items-center justify-center play-button-overlay" onclick="loadYouTubeVideo('${id}', '${embedUrl}', this)">
+                  <div class="play-button">
+                    <svg class="play-icon" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div id="youtube-iframe-${id}" class="absolute inset-0 hidden"></div>
               </div>
             `;
-          } else {
+          } else if (isImage) {
             // Assume image
             mediaHTML = `
               <div class="relative aspect-16-9">
                 <span class="category-label">${v.category.replace(/^\w/, c => c.toUpperCase())}</span>
-                <img src="${v.videoUrl}" alt="" class="w-full h-full object-contain rounded-xl" />
+                <img src="${v.videoUrl}" alt="${v.title || 'Image'}" class="w-full h-full object-contain rounded-xl" />
+              </div>
+            `;
+          } else {
+            // Fallback for unknown types, display a generic placeholder
+            mediaHTML = `
+              <div class="relative aspect-16-9 bg-gray-800 flex items-center justify-center rounded-xl">
+                <p class="text-gray-400">Unsupported Media Type</p>
               </div>
             `;
           }
@@ -237,7 +271,7 @@ $videos = [
             </div>
           `;
 
-          // Dynamically set video source after element is in DOM
+          // Dynamically set video source after element is in DOM for MP4s
           setTimeout(() => {
             if (isMp4) {
               const videoEl = document.getElementById(id);
@@ -251,7 +285,7 @@ $videos = [
         // Animate cards on scroll
         animateOnScroll();
 
-        // Attach custom controls
+        // Attach custom controls for MP4s
         attachCustomControls();
       }
 
@@ -259,6 +293,7 @@ $videos = [
         const video = document.getElementById(id);
         const card = btn.closest('.video-card');
 
+        // Pause all other videos
         document.querySelectorAll("video").forEach(v => {
           v.pause();
           v.closest('.video-card')?.classList.remove("video-playing");
@@ -267,6 +302,22 @@ $videos = [
         video.play();
         card.classList.add("video-playing");
       }
+
+      function loadYouTubeVideo(id, embedUrl, overlayElement) {
+        // Hide overlay and thumbnail
+        overlayElement.style.display = 'none';
+        const container = overlayElement.closest('.youtube-container');
+        const thumbnail = container.querySelector('.youtube-thumbnail');
+        if (thumbnail) {
+            thumbnail.style.display = 'none';
+        }
+
+        // Create and append iframe
+        const iframeContainer = document.getElementById(`youtube-iframe-${id}`);
+        iframeContainer.innerHTML = `<iframe src="${embedUrl}" class="w-full h-full rounded-xl" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        iframeContainer.classList.remove('hidden');
+      }
+
 
       function attachCustomControls() {
         // Play/Pause
@@ -338,7 +389,12 @@ $videos = [
       }
 
       // Initial render
-      render("youtube");
+      render("youtube"); // Render YouTube videos by default
+
+      // Set initial active button style
+      document.querySelector('.filter-btn[data-category="youtube"]').classList.remove("bg-gray-700");
+      document.querySelector('.filter-btn[data-category="youtube"]').classList.add("bg-primary-purple", "active");
+
 
       buttons.forEach(btn => {
         btn.addEventListener("click", () => {

@@ -2,7 +2,15 @@
 $currentPage = basename($_SERVER['PHP_SELF']);
 $isContactPage = $currentPage === 'contact.php';
 ?>
-
+ <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+     body {
+            
+            font-family: 'Space Grotesk', sans-serif; /* Changed to Space Grotesk */
+         
+            
+        }
+</style>
 <header class="fixed top-0 left-0 w-full z-50 bg-transparent py-4">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-[#1C1C24] rounded-full shadow-lg flex justify-between items-center h-16 px-6">
@@ -10,7 +18,7 @@ $isContactPage = $currentPage === 'contact.php';
             <div class="flex-shrink-0 flex items-center">
                 <a href="index.php" class="flex items-center space-x-2 text-white text-xl font-bold">
                     <img src="main-logo.png" alt="Logo" class="w-12 h-12 object-contain">
-                    <span class="ms-2 hidden sm:inline text-white text-sm sm:text-xl">NEXT LEVEL MEDIA</span>
+                    <span class="ms-2  sm:inline text-white text-sm sm:text-xl">NEXT LEVEL MEDIA</span>
                 </a>
             </div>
 

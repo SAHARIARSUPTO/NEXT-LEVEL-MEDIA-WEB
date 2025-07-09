@@ -183,7 +183,7 @@
       </div>
 
       <div class="mt-10 animate-on-scroll">
-        <a href="contact.php" class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 transition text-white font-semibold text-sm rounded-full shadow-lg">
+        <a href="https://calendly.com/siamahmedshanto3954/30min" target=_blank class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 transition text-white font-semibold text-sm rounded-full shadow-lg">
           Book A Call
           
         </a>
