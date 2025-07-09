@@ -138,19 +138,19 @@
         <div class="floating-tags-container mt-8 md:mt-12">
           <div class="floating-tags-group animate-floatLeft">
             <div class="floating-tag bg-blue-700 bg-opacity-70 backdrop-blur-sm text-sm px-4 py-2 rounded-xl shadow-lg flex items-center -rotate-12 animate-fadeInSlideUp delay-200">
-              <span>Podcast Editing</span> <span class="ml-2">🎙️</span>
+              <span>Podcast Editing</span> 
             </div>
             <div class="floating-tag bg-purple-700 bg-opacity-70 backdrop-blur-sm text-sm px-4 py-2 rounded-xl shadow-lg flex items-center rotate-6 animate-fadeInSlideUp delay-300">
-              
+              <span>Ad Creatives & VSL</span> 
             </div>
           </div>
 
           <div class="floating-tags-group animate-floatRight ml-8">
             <div class="floating-tag bg-purple-700 bg-opacity-70 backdrop-blur-sm text-sm px-4 py-2 rounded-xl shadow-lg flex items-center rotate-12 animate-fadeInSlideUp delay-400">
-             
+              <span>Short Form Content</span> 
             </div>
             <div class="floating-tag bg-blue-700 bg-opacity-70 backdrop-blur-sm text-sm px-4 py-2 rounded-xl shadow-lg flex items-center -rotate-6 animate-fadeInSlideUp delay-500">
-              
+              <span>Youtube Videos</span> 
             </div>
           </div>
         </div>

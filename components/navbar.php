@@ -72,7 +72,7 @@ $isContactPage = $currentPage === 'contact.php';
                 <a href="#projects" class="block hover:text-blue-400 transition">Works</a>
                 <a href="#core-services" class="block hover:text-blue-400 transition">Services</a>
                 <a href="contact.php" class="block hover:text-blue-400 transition">Contact</a>
-                <a href="contact.php" class="block mt-2 px-4 py-2 bg-[#4252CC] rounded-full text-center text-sm hover:bg-[#3543A6] transition">Book A Call</a>
+                <a href="https://calendly.com/siamahmedshanto3954/30min" class="block mt-2 px-4 py-2 bg-[#4252CC] rounded-full text-center text-sm hover:bg-[#3543A6] transition">Book A Call</a>
             <?php else: ?>
                 <span class="block opacity-40 cursor-not-allowed">Reviews</span>
                 <span class="block opacity-40 cursor-not-allowed">Works</span>
