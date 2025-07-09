@@ -119,7 +119,7 @@
   </style>
 </head>
 <body>
-  <section class="px-4 bg-black relative w-full overflow-hidden pt-16 pb-8">
+  <section class="px-4 bg-black relative w-full overflow-hidden pb-5">
     <!-- Responsive Glow Effects -->
     <div class="absolute inset-0 pointer-events-none z-0">
       <div class="glow-effect w-[60vw] h-[60vw] max-w-[400px] max-h-[400px] absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 rounded-full"></div>
