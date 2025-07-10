@@ -5,11 +5,9 @@
   <title>Video Display - MZ Media</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Tailwind & AOS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  <!-- ✅ Space Grotesk font -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -70,6 +68,32 @@
       border-radius: 1.5rem;
     }
 
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      padding: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2; /* Ensures it's above the video */
+      transition: background-color 0.3s ease;
+    }
+
+    .play-button:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .play-button svg {
+      width: 3rem;
+      height: 3rem;
+      fill: white;
+    }
+
     @media (max-width: 640px) {
       .video-container {
         max-width: 90%;
@@ -79,7 +103,8 @@
   </style>
 </head>
 
-<body class="text-white font-sans" >
+<section id="clients-testimonials">
+  <body class="text-white font-sans">
 
   <div class="dynamic-purple-glow"></div>
 
@@ -92,15 +117,20 @@
     </h1>
 
     <div class="video-container" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">
-      <video controls playsinline preload="metadata" poster="https://nextlevelmedia.digital/review-thumb.png">
+      <video id="clientVideo" playsinline preload="metadata" poster="https://nextlevelmedia.digital/review-thumb.png">
         <source src="http://nextlevelmedia.digital/components/videos/review.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
+      <div id="playButton" class="play-button">
+        <svg viewBox="0 0 24 24">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </div>
     </div>
     <div class="mt-4 text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-  <h3 class="text-lg md:text-xl font-semibold text-white">Mike Over</h3>
-  <p class="text-sm text-gray-400">Fitness Coach</p>
-</div>
+      <h3 class="text-lg md:text-xl font-semibold text-white">Mike Over</h3>
+      <p class="text-sm text-gray-400">Fitness Coach</p>
+    </div>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -110,7 +140,40 @@
       offset: 120,
       easing: 'ease-in-out',
     });
+
+    const video = document.getElementById('clientVideo');
+    const playButton = document.getElementById('playButton');
+
+    playButton.addEventListener('click', () => {
+      video.play();
+      playButton.style.display = 'none'; // Hide the play button
+      video.controls = true; // Show video controls after playing
+    });
+
+    // Optionally, if the video ends, you might want to show the play button again
+    video.addEventListener('ended', () => {
+      playButton.style.display = 'flex';
+      video.controls = false; // Hide controls when video ends
+    });
+
+    // When the video is paused by the user, show the play button
+    video.addEventListener('pause', () => {
+        if (video.currentTime > 0 && !video.ended) {
+            playButton.style.display = 'flex';
+        }
+    });
+
+    // When the video starts playing again (e.g., after a pause), hide the play button
+    video.addEventListener('play', () => {
+        playButton.style.display = 'none';
+    });
+
+    // Hide controls initially and when video is loaded (before play)
+    video.addEventListener('loadedmetadata', () => {
+        video.controls = false;
+    });
   </script>
 
 </body>
+</section>
 </html>

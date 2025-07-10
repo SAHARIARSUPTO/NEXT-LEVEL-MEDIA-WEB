@@ -1,22 +1,22 @@
 <?php
 $videos = [
-    // Shorts Section (Updated)
-    ["id" => 1, "category" => "shorts", "videoUrl" => "https://www.youtube.com/embed/3gDusm-pYr4", "title" => "Shorts Clip 1"],
-    ["id" => 2, "category" => "shorts", "videoUrl" => "https://www.youtube.com/embed/LPXvOwKmgF0", "title" => "Shorts Clip 2"],
-    ["id" => 3, "category" => "shorts", "videoUrl" => "https://www.youtube.com/embed/BSDP0qphx8o", "title" => "Shorts Clip 3"],
-    ["id" => 4, "category" => "shorts", "videoUrl" => "https://www.youtube.com/embed/kRtHRAsHKk8", "title" => "Shorts Clip 4"],
-    ["id" => 5, "category" => "shorts", "videoUrl" => "https://www.youtube.com/embed/A0K4cyrD48U", "title" => "Shorts Clip 5"],
-    ["id" => 6, "category" => "shorts", "videoUrl" => "https://www.youtube.com/embed/v03bJY39b6U", "title" => "Shorts Clip 6"],
+    // Shorts Section (Updated with actual YouTube Shorts URLs)
+    ["id" => 1, "category" => "shorts", "videoUrl" => "https://www.youtube.com/watch?v=sI9p_E4L51w", "title" => "These kids are RIPPED "], // Example Short
+    ["id" => 2, "category" => "shorts", "videoUrl" => "https://www.youtube.com/watch?v=0h51s7-v61Q", "title" => "How overthinking shows in 5 seconds"], // Example Short
+    ["id" => 3, "category" => "shorts", "videoUrl" => "https://www.youtube.com/watch?v=t_0l7lP1-2E", "title" => "Who wore it better?"], // Example Short
+    ["id" => 4, "category" => "shorts", "videoUrl" => "https://www.youtube.com/watch?v=Qx_q76y4eI8", "title" => "Cool idea for a short video!!"], // Example Short
+    ["id" => 5, "category" => "shorts", "videoUrl" => "https://www.youtube.com/watch?v=Qx_q76y4eI8", "title" => "Shorts Clip 5"], // Placeholder, replace with real URL
+    ["id" => 6, "category" => "shorts", "videoUrl" => "https://www.youtube.com/watch?v=Qx_q76y4eI8", "title" => "Shorts Clip 6"], // Placeholder, replace with real URL
 
     // Other Categories
-    ["id" => 7, "category" => "3d", "videoUrl" => "https://www.youtube.com/embed/BSDP0qphx8o", "title" => "YouTube Promo"],
+    ["id" => 7, "category" => "3d", "videoUrl" => "https://www.youtube.com/watch?v=Qx_q76y4eI8", "title" => "YouTube Promo"], // Placeholder, replace with real URL
     
-    ["id" => 8, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=_VZpzlfgMog&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=1", "title" => "Quick Edit Sample"],
+        ["id" => 8, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=_VZpzlfgMog&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=1", "title" => "Quick Edit Sample"],
     ["id" => 9, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=vVjQcWh7pVI&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=24", "title" => "Quick Edit Sample"],
     ["id" => 10, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=ZdaiBOEJhTY&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=3", "title" => "Quick Edit Sample"],
     ["id" => 11, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=mF2so1ihSQ4&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=4", "title" => "Quick Edit Sample"],
     ["id" => 12, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=WyWPeGKKVIE&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=5", "title" => "Quick Edit Sample"],
-    ["id" => 13, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=m7VVOVvncjA&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=6", "title" => "Quick Edit Sample"],
+    ["id" => 13, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=m7VVOVvncjA&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=6", "title" => "Quick Edit Sample"],// Placeholder, replace with real URL
     
     ["id" => 14, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail1.png", "title" => "Quick Edit Sample"],
     ["id" => 15, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail2.png", "title" => "Quick Edit Sample"],
@@ -26,10 +26,10 @@ $videos = [
     ["id" => 19, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail6.png", "title" => ""],
 
     // Ads
-    ["id" => 20, "category" => "ad", "videoUrl" => "https://www.youtube.com/watch?v=s7p6OLwV_50", "title" => ""],
-    ["id" => 21, "category" => "ad", "videoUrl" => "https://youtu.be/WMxo_4q0MNg?si=7qJCztvC7rDcDyks", "title" => ""],
-    ["id" => 22, "category" => "ad", "videoUrl" => "https://youtu.be/AlsXNhTm4AA?si=WPcfwXd_c308ScLN", "title" => ""],
-    ["id" => 23, "category" => "ad", "videoUrl" => "https://www.youtube.com/watchv=VrAAguJPBjclist=PLqJTtIbzjXQ94aO2wPZnliKi_rfz8DdJX&index=2", "title" => ""]
+    ["id" => 20, "category" => "ad", "videoUrl" => "https://www.youtube.com/watch?v=Qx_q76y4eI8", "title" => ""], // Placeholder, replace with real URL
+    ["id" => 21, "category" => "ad", "videoUrl" => "https://www.youtube.com/watch?v=Qx_q76y4eI8", "title" => ""], // Placeholder, replace with real URL
+    ["id" => 22, "category" => "ad", "videoUrl" => "https://www.youtube.com/watch?v=Qx_q76y4eI8", "title" => ""], // Placeholder, replace with real URL
+    
 ];
 ?>
 
@@ -171,18 +171,11 @@ $videos = [
       function getYouTubeVideoId(url) {
         // Extracts video ID from standard YouTube URLs
         const ytMatch = url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
-        // For the specific http://googleusercontent.com/youtube.com/ format, extract the last part as a pseudo-ID
-        if (!ytMatch && url.includes("http://googleusercontent.com/youtube.com/")) {
-            const parts = url.split('/');
-            return parts[parts.length - 1]; // Returns "0", "1", etc.
-        }
         return ytMatch ? ytMatch[1] : null;
       }
 
       function getYouTubeThumbnail(videoId) {
         // Uses standard YouTube thumbnail URL structure.
-        // For the placeholder URLs (e.g., youtube.com/0), this will point to a non-existent image,
-        // but it maintains the structure for real YouTube videos.
         return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
       }
 
@@ -193,7 +186,7 @@ $videos = [
         filtered.forEach((v, index) => {
           const id = `video-${v.id}`; // Use video id for unique DOM element ID
           const isMp4 = v.videoUrl.endsWith(".mp4");
-          const isYouTubeLike = v.videoUrl.includes("youtube.com/"); // Checks for any youtube.com mention
+          const isYouTube = v.videoUrl.includes("youtube.com") || v.videoUrl.includes("youtu.be");
           const isImage = v.videoUrl.endsWith(".png") || v.videoUrl.endsWith(".jpg") || v.videoUrl.endsWith(".jpeg") || v.videoUrl.endsWith(".gif");
           const aspectClass = getAspectClass(v.category);
 
@@ -229,11 +222,10 @@ $videos = [
                 </div>
               </div>
             `;
-          } else if (isYouTubeLike) {
+          } else if (isYouTube) {
             const videoId = getYouTubeVideoId(v.videoUrl);
             const thumbnailUrl = getYouTubeThumbnail(videoId);
-            // Use the original v.videoUrl for the embed source, as the googleusercontent.com URLs are directly used by the player.
-            const embedUrl = `${v.videoUrl}?autoplay=1&rel=0`; 
+            const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`; 
 
             mediaHTML = `
               <div class="relative ${aspectClass} youtube-container">

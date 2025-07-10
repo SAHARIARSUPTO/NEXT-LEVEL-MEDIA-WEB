@@ -96,7 +96,7 @@
               <p class="text-gray-400 text-sm mb-4">${client.niche}</p>
               <div class="flex items-center justify-between text-gray-400 text-sm">
                 ${client.views ? `<span>${client.views}</span>` : ''}
-                ${client.subs ? `<span>${client.subs}</span>` : ''}
+                <p ><span classname="font-bold">Generated</span> ${client.subs ? `${client.subs}` : ''}</p>
               </div>
             </div>
           </div>`;

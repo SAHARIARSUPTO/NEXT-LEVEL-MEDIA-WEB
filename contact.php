@@ -50,6 +50,11 @@
           <span><i class="fas fa-calendar-alt mr-2"></i>Schedule a Meeting</span>
           <a href="https://calendly.com/siamahmedshanto3954/30min" target="_blank" class="underline">Book Now</a>
         </div>
+        
+        <div class="bg-pink-600 contact-link text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-between text-xs sm:text-sm md:text-base">
+          <span><i class="fas fa-calendar-alt mr-2"></i>Visit Us</span>
+          <a href="https://www.instagram.com/nextlevelmedia_production/" target="_blank" class="underline">Instagram</a>
+        </div>
 
         <div class="bg-blue-600 contact-link text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-between text-xs sm:text-sm md:text-base">
           <span><i class="fas fa-envelope mr-2"></i>Send us an Email</span>

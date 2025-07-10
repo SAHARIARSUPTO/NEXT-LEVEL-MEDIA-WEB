@@ -128,13 +128,11 @@
 
                 <!-- Social Media Icons -->
                 <div class="flex space-x-6 text-xl">
-                    <a href="#" class="social-icon hover:text-white" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
+                    <a href="https://www.instagram.com/nextlevelmedia_production/" target=_blank  class="social-icon hover:text-white" aria-label="LinkedIn">
+                        <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="#" class="social-icon hover:text-white" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://www.facebook.com/nextzenedit" class="social-icon hover:text-white" aria-label="Facebook">
+                    
+                    <a href="https://www.facebook.com/nextzenedit" target=_blank class="social-icon hover:text-white" aria-label="Facebook">
                         <i class="fab fa-facebook-f"></i>
                     </a>
                 </div>
