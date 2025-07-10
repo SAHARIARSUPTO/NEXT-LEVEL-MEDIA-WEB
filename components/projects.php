@@ -151,9 +151,10 @@ $videos = [
       <span class="text-sm md:text-xl text-center font-normal text-gray-600 mb-8 block">Take a Look at Some of Our Standout Work</span>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8 justify-items-center">
         <button class="filter-btn bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="youtube">Youtube Videos</button>
+        <button class="filter-btn bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="shorts">Shorts</button>
         <button class="filter-btn bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="ad">Ad Creative & VSL</button>
         <button class="filter-btn bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="thumbnails">Thumbnails</button>
-        <button class="filter-btn bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="shorts">Short Form Content</button>
+        
       </div>
       <div id="project-grid" class="grid grid-cols-1 px-5 sm:grid-cols-2 gap-6"></div>
     </div>
