@@ -1,12 +1,12 @@
 <?php
 $videos = [
     // Shorts Section (Updated with actual YouTube Shorts URLs)
-    ["id" => 1, "category" => "shorts", "videoUrl" => "https://www.youtube.com/watch?v=sI9p_E4L51w", "title" => "These kids are RIPPED "], // Example Short
-    ["id" => 2, "category" => "shorts", "videoUrl" => "https://www.youtube.com/watch?v=0h51s7-v61Q", "title" => "How overthinking shows in 5 seconds"], // Example Short
-    ["id" => 3, "category" => "shorts", "videoUrl" => "https://www.youtube.com/watch?v=t_0l7lP1-2E", "title" => "Who wore it better?"], // Example Short
-    ["id" => 4, "category" => "shorts", "videoUrl" => "https://www.youtube.com/watch?v=Qx_q76y4eI8", "title" => "Cool idea for a short video!!"], // Example Short
-    ["id" => 5, "category" => "shorts", "videoUrl" => "https://www.youtube.com/watch?v=Qx_q76y4eI8", "title" => "Shorts Clip 5"], // Placeholder, replace with real URL
-    ["id" => 6, "category" => "shorts", "videoUrl" => "https://www.youtube.com/watch?v=Qx_q76y4eI8", "title" => "Shorts Clip 6"], // Placeholder, replace with real URL
+    ["id" => 1, "category" => "shorts", "videoUrl" => "https://youtube.com/shorts/LPXvOwKmgF0?feature=share", "title" => "Shorts Clip 1"],
+    ["id" => 2, "category" => "shorts", "videoUrl" => "https://youtube.com/shorts/A0K4cyrD48U?feature=share", "title" => "Shorts Clip 2"],
+    ["id" => 3, "category" => "shorts", "videoUrl" => "https://youtube.com/shorts/BSDP0qphx8o?feature=share", "title" => "Shorts Clip 3"],
+    ["id" => 4, "category" => "shorts", "videoUrl" => "https://youtube.com/shorts/v03bJY39b6U?feature=share", "title" => "Shorts Clip 4"],
+    ["id" => 5, "category" => "shorts", "videoUrl" => "https://youtube.com/shorts/kRtHRAsHKk8?feature=share", "title" => "Shorts Clip 5"],
+    ["id" => 6, "category" => "shorts", "videoUrl" => "https://youtube.com/shorts/3gDusm-pYr4?feature=share", "title" => "Shorts Clip 6"],// Placeholder, replace with real URL
 
     // Other Categories
     ["id" => 7, "category" => "3d", "videoUrl" => "https://www.youtube.com/watch?v=Qx_q76y4eI8", "title" => "YouTube Promo"], // Placeholder, replace with real URL
@@ -169,11 +169,11 @@ $videos = [
         return category === "shorts" ? "aspect-9-16" : "aspect-16-9";
       }
 
-      function getYouTubeVideoId(url) {
-        // Extracts video ID from standard YouTube URLs
-        const ytMatch = url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
-        return ytMatch ? ytMatch[1] : null;
-      }
+    function getYouTubeVideoId(url) {
+  // Handles watch?v=ID, youtu.be/ID, and shorts/ID
+  const ytMatch = url.match(/(?:v=|\/shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+  return ytMatch ? ytMatch[1] : null;
+}
 
       function getYouTubeThumbnail(videoId) {
         // Uses standard YouTube thumbnail URL structure.
