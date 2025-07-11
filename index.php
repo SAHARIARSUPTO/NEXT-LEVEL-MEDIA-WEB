@@ -161,7 +161,7 @@
       </div>
 
       <div class="mt-10 animate-on-scroll">
-        <a href="https://calendly.com/siamahmedshanto3954/30min" target="_blank" class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 transition text-white font-semibold text-sm rounded-full shadow-lg">Book A Call</a>
+        <a href="https://calendly.com/nextlevelmediacall/30min?month=2025-07" target="_blank" class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 transition text-white font-semibold text-sm rounded-full shadow-lg">Book A Call</a>
         <a href="#projects" class="ml-4 inline-flex items-center px-6 py-3 bg-white hover:bg-blue-700 transition text-black font-semibold text-sm rounded-full shadow-lg">View Portfolio</a>
       </div>
 

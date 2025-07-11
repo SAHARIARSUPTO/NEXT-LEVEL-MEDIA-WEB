@@ -48,7 +48,7 @@
 
         <div class="bg-purple-600 contact-link text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-between text-xs sm:text-sm md:text-base">
           <span><i class="fas fa-calendar-alt mr-2"></i>Schedule a Meeting</span>
-          <a href="https://calendly.com/siamahmedshanto3954/30min" target="_blank" class="underline">Book Now</a>
+          <a href="https://calendly.com/nextlevelmediacall/30min?month=2025-07" target="_blank" class="underline">Book Now</a>
         </div>
         
         <div class="bg-pink-600 contact-link text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-between text-xs sm:text-sm md:text-base">
