@@ -1,22 +1,22 @@
 <?php
 $videos = [
-    // Shorts Section (Updated with actual YouTube Shorts URLs)
+    // Shorts Section (Updated)
     ["id" => 1, "category" => "shorts", "videoUrl" => "https://youtube.com/shorts/LPXvOwKmgF0?feature=share", "title" => "Shorts Clip 1"],
     ["id" => 2, "category" => "shorts", "videoUrl" => "https://youtube.com/shorts/A0K4cyrD48U?feature=share", "title" => "Shorts Clip 2"],
     ["id" => 3, "category" => "shorts", "videoUrl" => "https://youtube.com/shorts/BSDP0qphx8o?feature=share", "title" => "Shorts Clip 3"],
     ["id" => 4, "category" => "shorts", "videoUrl" => "https://youtube.com/shorts/v03bJY39b6U?feature=share", "title" => "Shorts Clip 4"],
     ["id" => 5, "category" => "shorts", "videoUrl" => "https://youtube.com/shorts/kRtHRAsHKk8?feature=share", "title" => "Shorts Clip 5"],
-    ["id" => 6, "category" => "shorts", "videoUrl" => "https://youtube.com/shorts/3gDusm-pYr4?feature=share", "title" => "Shorts Clip 6"],// Placeholder, replace with real URL
+    ["id" => 6, "category" => "shorts", "videoUrl" => "https://youtube.com/shorts/3gDusm-pYr4?feature=share", "title" => "Shorts Clip 6"],
 
     // Other Categories
-    ["id" => 7, "category" => "3d", "videoUrl" => "https://www.youtube.com/watch?v=Qx_q76y4eI8", "title" => "YouTube Promo"], // Placeholder, replace with real URL
+    ["id" => 7, "category" => "3d", "videoUrl" => "https://nextlevelmedia.digital/components/videos/3d.mp4", "title" => "YouTube Promo"],
     
-        ["id" => 8, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=_VZpzlfgMog&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=1", "title" => "Quick Edit Sample"],
+    ["id" => 8, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=_VZpzlfgMog&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=1", "title" => "Quick Edit Sample"],
     ["id" => 9, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=vVjQcWh7pVI&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=24", "title" => "Quick Edit Sample"],
     ["id" => 10, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=ZdaiBOEJhTY&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=3", "title" => "Quick Edit Sample"],
     ["id" => 11, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=mF2so1ihSQ4&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=4", "title" => "Quick Edit Sample"],
     ["id" => 12, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=WyWPeGKKVIE&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=5", "title" => "Quick Edit Sample"],
-    ["id" => 13, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=m7VVOVvncjA&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=6", "title" => "Quick Edit Sample"],// Placeholder, replace with real URL
+    ["id" => 13, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=m7VVOVvncjA&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=6", "title" => "Quick Edit Sample"],
     
     ["id" => 14, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail1.png", "title" => "Quick Edit Sample"],
     ["id" => 15, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail2.png", "title" => "Quick Edit Sample"],
@@ -26,10 +26,10 @@ $videos = [
     ["id" => 19, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail6.png", "title" => ""],
 
     // Ads
-    ["id" => 20, "category" => "ad", "videoUrl" => "https://www.youtube.com/watch?v=Qx_q76y4eI8", "title" => ""], // Placeholder, replace with real URL
-    ["id" => 21, "category" => "ad", "videoUrl" => "https://www.youtube.com/watch?v=Qx_q76y4eI8", "title" => ""], // Placeholder, replace with real URL
-    ["id" => 22, "category" => "ad", "videoUrl" => "https://www.youtube.com/watch?v=Qx_q76y4eI8", "title" => ""], // Placeholder, replace with real URL
-    
+    ["id" => 20, "category" => "ad", "videoUrl" => "https://www.youtube.com/watch?v=s7p6OLwV_50", "title" => ""],
+    ["id" => 21, "category" => "ad", "videoUrl" => "https://youtu.be/WMxo_4q0MNg?si=7qJCztvC7rDcDyks", "title" => ""],
+    ["id" => 22, "category" => "ad", "videoUrl" => "https://youtu.be/AlsXNhTm4AA?si=WPcfwXd_c308ScLN", "title" => ""],
+    ["id" => 23, "category" => "ad", "videoUrl" => "https://www.youtube.com/watch?v=VrAAguJPBjc&list=PLqJTtIbzjXQ94aO2wPZnliKi_rfz8DdJX&index=2", "title" => ""]
 ];
 ?>
 
@@ -169,14 +169,40 @@ $videos = [
         return category === "shorts" ? "aspect-9-16" : "aspect-16-9";
       }
 
-    function getYouTubeVideoId(url) {
-  // Handles watch?v=ID, youtu.be/ID, and shorts/ID
-  const ytMatch = url.match(/(?:v=|\/shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
-  return ytMatch ? ytMatch[1] : null;
-}
+      function getYouTubeVideoId(url) {
+        // First, try to extract from your custom googleusercontent.com/youtube.com/ID format
+        const customUrlMatch = url.match(/http:\/\/googleusercontent\.com\/youtube\.com\/(\d+)/);
+        if (customUrlMatch && customUrlMatch[1]) {
+          const customId = customUrlMatch[1];
+          // *** IMPORTANT: You need to map these custom numerical IDs to actual YouTube Video IDs. ***
+          // Replace the placeholder YouTube video IDs (like 'dQw4w9WgXcQ') with your real YouTube video IDs.
+          const idMap = {
+            '0': 'dQw4w9WgXcQ', // Example: Rick Astley - Never Gonna Give You Up (for Shorts Clip 1)
+            '1': 'M7lc1UVf-VE', // Example: Another ID for Shorts Clip 2
+            '2': 'LXb3EKWsInQ', // Example for Shorts Clip 3 (replace with your actual ID)
+            '3': 'J3gW4-B_4jM', // Example for Shorts Clip 4
+            '4': 'P-mR7P8_J_k', // Example for Shorts Clip 5
+            '5': 'p13n_yK_Ie4', // Example for Shorts Clip 6
+            '7': 'GgLp-F1M48E', // Example for Quick Edit Sample (YouTube)
+            '8': 'dFk5QoYfF8Y',
+            '9': 'X_2j3yv5_fE',
+            '10': 'Z_j-4u6X_aA',
+            '11': 'Y_i-2u3X_aB',
+            '12': 'V_c-8u9X_cD',
+            '20': 'A_a-1b2C_3D', // Example for Ad 1
+            '21': 'B_b-3c4D_5E', // Example for Ad 2
+            '22': 'C_c-5d6E_7F', // Example for Ad 3
+            '23': 'D_d-7e8F_9G'  // Example for Ad 4
+          };
+          return idMap[customId] || 'dQw4w9WgXcQ'; // Fallback to Rick Astley if ID not found
+        }
+        // Then, try to extract from standard YouTube URLs (watch?v=ID, /shorts/ID, youtu.be/ID)
+        const ytMatch = url.match(/(?:v=|\/shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+        return ytMatch ? ytMatch[1] : null;
+      }
 
       function getYouTubeThumbnail(videoId) {
-        // Uses standard YouTube thumbnail URL structure.
+        // CORRECTED: Use the standard YouTube thumbnail domain
         return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
       }
 
@@ -187,16 +213,26 @@ $videos = [
         filtered.forEach((v, index) => {
           const id = `video-${v.id}`; // Use video id for unique DOM element ID
           const isMp4 = v.videoUrl.endsWith(".mp4");
-          const isYouTube = v.videoUrl.includes("youtube.com") || v.videoUrl.includes("youtu.be");
+          // Check if the URL *contains* your specific custom YouTube domain
+          const isYouTubeCustom = v.videoUrl.includes("http://googleusercontent.com/youtube.com/");
+          // Also check for standard YouTube domains if you ever include them directly
+          const isYouTubeStandard = v.videoUrl.includes("youtube.com") || v.videoUrl.includes("youtu.be");
+          const isYouTube = isYouTubeCustom || isYouTubeStandard; // Combine checks
+
           const isImage = v.videoUrl.endsWith(".png") || v.videoUrl.endsWith(".jpg") || v.videoUrl.endsWith(".jpeg") || v.videoUrl.endsWith(".gif");
           const aspectClass = getAspectClass(v.category);
 
           let mediaHTML = "";
+          let objectFitClass = "object-cover"; // Default for videos
+
+          if (isImage) {
+            objectFitClass = "object-contain"; // For images, use object-contain
+          }
 
           if (isMp4) {
             mediaHTML = `
               <div class="relative ${aspectClass}">
-                <video id="${id}" class="w-full h-full object-cover rounded-xl" preload="metadata"></video>
+                <video id="${id}" class="w-full h-full ${objectFitClass} rounded-xl" preload="metadata"></video>
                 <div class="absolute inset-0 flex items-center justify-center play-button-overlay" onclick="playVideo('${id}', this)">
                   <div class="play-button">
                     <svg class="play-icon" viewBox="0 0 24 24">
@@ -226,11 +262,12 @@ $videos = [
           } else if (isYouTube) {
             const videoId = getYouTubeVideoId(v.videoUrl);
             const thumbnailUrl = getYouTubeThumbnail(videoId);
+            // CORRECTED: Use the standard YouTube embed domain
             const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`; 
-
+            
             mediaHTML = `
               <div class="relative ${aspectClass} youtube-container">
-                <img src="${thumbnailUrl}" alt="Video Thumbnail" class="youtube-thumbnail w-full h-full object-cover rounded-xl" onerror="this.onerror=null; this.src='https://via.placeholder.com/480x360.png?text=Video+Thumbnail';" />
+                <img src="${thumbnailUrl}" alt="Video Thumbnail" class="youtube-thumbnail w-full h-full ${objectFitClass} rounded-xl" onerror="this.onerror=null; this.src='https://via.placeholder.com/480x360.png?text=Video+Thumbnail';" />
                 <div class="absolute inset-0 flex items-center justify-center play-button-overlay" onclick="loadYouTubeVideo('${id}', '${embedUrl}', this)">
                   <div class="play-button">
                     <svg class="play-icon" viewBox="0 0 24 24">
@@ -246,7 +283,7 @@ $videos = [
             mediaHTML = `
               <div class="relative aspect-16-9">
                 <span class="category-label">${v.category.replace(/^\w/, c => c.toUpperCase())}</span>
-                <img src="${v.videoUrl}" alt="${v.title || 'Image'}" class="w-full h-full object-contain rounded-xl" />
+                <img src="${v.videoUrl}" alt="${v.title || 'Image'}" class="w-full h-full ${objectFitClass} rounded-xl" />
               </div>
             `;
           } else {
