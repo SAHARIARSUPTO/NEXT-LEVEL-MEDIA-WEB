@@ -55,7 +55,7 @@ $videos = [
       }
     }
   </script>
-  <style>
+ <style>
     .play-button-overlay {
       position: absolute;
       inset: 0;
@@ -68,15 +68,15 @@ $videos = [
       z-index: 10;
     }
 
-.video-card video,
-.video-card img,
-.video-card .youtube-thumbnail {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0.75rem;
-  display: block;
-}
+    .video-card video,
+    .video-card img,
+    .video-card .youtube-thumbnail {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0.75rem;
+      display: block;
+    }
 
     .video-playing .play-button-overlay {
       opacity: 0;
@@ -91,41 +91,44 @@ $videos = [
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.2s ease;
+      transition: box-shadow 0.3s ease;
     }
 
     .play-button:hover {
-      transform: scale(1.1);
+      box-shadow: 0 0 0 4px rgba(138, 43, 226, 0.4);
     }
 
     .play-icon {
       fill: white;
-      width: 20px;
-      height: 20px;
-      transform: translateX(2px);
+      width: 24px;
+      height: 24px;
     }
 
     .video-card {
       opacity: 0;
       transform: translateY(40px) scale(0.98);
-      transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+      transition: opacity 0.7s cubic-bezier(.4, 0, .2, 1), transform 0.7s cubic-bezier(.4, 0, .2, 1);
     }
+
     .video-card.visible {
       opacity: 1;
       transform: none;
     }
+
     .aspect-16-9 {
       aspect-ratio: 16/9;
       width: 100%;
-      max-width: 1200px; /* Increased from 900px */
+      max-width: 1200px;
       margin: 0 auto;
     }
+
     .aspect-9-16 {
       aspect-ratio: 9/16;
       width: 100%;
-      max-width: 600px; /* Increased from 400px */
+      max-width: 600px;
       margin: 0 auto;
     }
+
     .category-label {
       position: absolute;
       top: 0.75rem;
@@ -149,13 +152,13 @@ $videos = [
     <div class="max-w-4xl mx-auto pb-24">
       <h2 class="text-xl sm:text-4xl font-bold text-center mb-4">What We’ve Created</h2>
       <span class="text-sm md:text-xl text-center font-normal text-gray-600 mb-8 block">Take a Look at Some of Our Standout Work</span>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8 justify-items-center">
-        <button class="filter-btn bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="youtube">Youtube Videos</button>
-        <button class="filter-btn bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="shorts">Shorts</button>
-        <button class="filter-btn bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="ad">Ad Creative & VSL</button>
-        <button class="filter-btn bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="thumbnails">Thumbnails</button>
-        
-      </div>
+     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 ">
+  <button class="filter-btn min-w-[140px] text-center bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="youtube">Youtube Videos</button>
+  <button class="filter-btn min-w-[140px] text-center bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="shorts">Shorts</button>
+  <button class="filter-btn min-w-[140px] text-center bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="ad">Ad Creative & VSL</button>
+  <button class="filter-btn min-w-[140px] text-center bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="thumbnails">Thumbnails</button>
+</div>
+
       <div id="project-grid" class="grid grid-cols-1 px-5 sm:grid-cols-2 gap-6"></div>
     </div>
 

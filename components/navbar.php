@@ -24,7 +24,7 @@ $isContactPage = $currentPage === 'contact.php';
 
             <!-- Desktop Nav -->
             <nav class="hidden md:flex space-x-4 lg:space-x-8 text-xs font-medium text-white lg:text-sm">
-                <a href="index.php" class="hover:text-blue-400 transition">Home</a>
+                <a href="/" class="hover:text-blue-400 transition">Home</a>
                 <?php if (!$isContactPage): ?>
                     <a href="#clients-testimonials" class="hover:text-blue-400 transition">Reviews</a>
                     <a href="#projects" class="hover:text-blue-400 transition">Works</a>
@@ -66,7 +66,7 @@ $isContactPage = $currentPage === 'contact.php';
 
         <!-- Mobile Nav -->
         <div id="mobileMenu" class="md:hidden mt-2 hidden bg-[#1C1C24] rounded-lg shadow-lg p-4 space-y-3 text-white">
-            <a href="index.php" class="block hover:text-blue-400 transition">Home</a>
+            <a href="/" class="block hover:text-blue-400 transition">Home</a>
             <?php if (!$isContactPage): ?>
                 <a href="#clients-testimonials" class="block hover:text-blue-400 transition">Reviews</a>
                 <a href="#projects" class="block hover:text-blue-400 transition">Works</a>
