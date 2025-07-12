@@ -17,6 +17,16 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://nextlevelmedia.digital/" />
   <meta name="twitter:title" content="Next Level Media - Creative Agency in Sylhet, Bangladesh" />
+  <meta name="description" content="<?= $desc ?? 'Next Level Media offers best-in-class video editing & digital agency services. Boost your content, go next level.'; ?>">
+<meta name="keywords" content="video editing, digital agency, Next Level Media, video marketing, SEO">
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://nextlevelmedia.digital<?= $_SERVER['REQUEST_URI']; ?>" />
+
+<meta property="og:title" content="<?= $title ?? 'Next Level Media'; ?>" />
+<meta property="og:description" content="<?= $desc ?? 'Expert video editing & digital marketing agency.'; ?>" />
+<meta property="og:image" content="https://nextlevelmedia.digital/assets/preview.jpg" />
+<meta property="og:url" content="https://nextlevelmedia.digital<?= $_SERVER['REQUEST_URI']; ?>" />
+<meta name="twitter:card" content="main-logo.png" />
   <meta name="twitter:description" content="We help brands and businesses grow with content, paid ads, and automation systems that scale." />
   <meta name="twitter:image" content="main-logo.png" />
   <link rel="icon" href="main-logo.png" type="image/x-icon" />
