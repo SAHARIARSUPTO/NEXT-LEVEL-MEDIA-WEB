@@ -1,231 +1,142 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <title>FAQ Accordion</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background-color: #000000;
-      font-family: 'Space Grotesk', sans-serif; /* Changed to Space Grotesk */
-      color: #F3F4F6;
-    }
-
-    .accordion-item-header {
-      background-color: rgba(255, 255, 255, 0.05);
-      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.15));
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 6px 12px rgba(0, 0, 0, 0.2);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    }
-
-    .accordion-item-header:hover {
-      background-color: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.2);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5), 0 8px 14px rgba(0, 0, 0, 0.3);
-    }
-
-    .accordion-item-body {
-      background-color: rgba(255, 255, 255, 0.03);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(6px);
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease-out, padding 0.5s ease-out;
-    }
-
-    .accordion-item-body.open {
-      max-height: 500px;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-    }
-
-    .accordion-arrow {
-      transition: transform 0.3s ease;
-    }
-
-    .accordion-item-header.active .accordion-arrow {
-      transform: rotate(180deg);
-    }
-
-    .text-responsive {
-      font-size: 1rem;
-    }
-
-    @media (min-width: 640px) {
-      .text-responsive {
-        font-size: 1.125rem;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .text-responsive {
-        font-size: 1.25rem;
-      }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .animated-heading {
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .animated-heading.visible {
-      animation: fadeInUp 0.8s cubic-bezier(.77,0,.18,1) forwards;
-      opacity: 1;
-    }
+<!-- FAQ Accordion Section (Immersive MZ Media Style) -->
+<section class="relative w-full py-24 px-4 sm:px-6 lg:px-8 bg-transparent" id="faq">
+  
+  <div class="max-w-4xl mx-auto relative z-10">
     
-  </style>
-</head>
-<body class="min-h-screen text-gray-100  ">
-
-  <section class="w-full max-w-6xl mx-auto pb-24 ">
-    <div class="text-center mb-12">
-      <p class="text-gray-400 uppercase text-sm tracking-widest mb-2 animated-heading" id="faqSub">Any <span class="text-[#5D3FD3]">Queries You Have</span></p>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight animated-heading" id="faqHeading">Questions You May Ask</h2>
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#09090d]/90 border border-white/15 backdrop-blur-xl mb-6 shadow-[0_0_20px_rgba(99,102,241,0.2)]">
+        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        <span class="text-xs font-bold uppercase tracking-widest text-cyan-300">Frequently Asked Questions</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight font-display">
+        Got questions? <br class="hidden sm:inline" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-violet-400">We've got answers.</span>
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-gray-300">
+        Everything you need to know about our production workflows, turnaround times, and delivery guarantees.
+      </p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <!-- Item 1 -->
-      <div class="accordion-item rounded-xl overflow-hidden">
-        <button class="accordion-item-header w-full flex justify-between items-center p-5 rounded-xl cursor-pointer focus:outline-none">
-          <span class="text-responsive font-semibold text-white">Tell me about your agency?</span>
-          <svg class="accordion-arrow w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
+    <!-- FAQ List (Immersive Accordion Items) -->
+    <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+      
+      <!-- FAQ 1 -->
+      <div class="faq-item rounded-3xl bg-[#09090d]/90 border border-white/10 backdrop-blur-xl overflow-hidden transition-all duration-300 hover:border-violet-500/40 hover:shadow-[0_0_25px_rgba(139,92,246,0.15)]">
+        <button class="faq-trigger w-full px-7 py-6 text-left flex items-center justify-between text-base sm:text-lg font-bold text-white focus:outline-none">
+          <span>How fast can you deliver videos?</span>
+          <div class="faq-icon w-9 h-9 rounded-full bg-white/5 border border-white/15 flex items-center justify-center text-gray-300 transition-transform duration-300 flex-shrink-0">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/>
+            </svg>
+          </div>
         </button>
-        <div class="accordion-item-body px-5 text-gray-300">
-          <p class="text-responsive">
-            Our agency specializes in digital marketing solutions.
-          </p>
+        <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+          <div class="px-7 pb-7 pt-2 text-sm sm:text-base text-gray-400 leading-relaxed border-t border-white/10">
+            Turnaround for individual shorts and reels is typically 24 to 48 hours. Comprehensive production packages and long-form video campaigns are delivered in under 1–2 weeks. We have a dedicated in-house team of 20+ experts, so you never have to wait on unpredictable freelancers.
+          </div>
         </div>
       </div>
 
-      <!-- Item 2 -->
-      <div class="accordion-item rounded-xl overflow-hidden">
-        <button class="accordion-item-header w-full flex justify-between items-center p-5 rounded-xl cursor-pointer focus:outline-none">
-          <span class="text-responsive font-semibold text-white">What if I don't get the results?</span>
-          <svg class="accordion-arrow w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
+      <!-- FAQ 2 -->
+      <div class="faq-item rounded-3xl bg-[#09090d]/90 border border-white/10 backdrop-blur-xl overflow-hidden transition-all duration-300 hover:border-violet-500/40 hover:shadow-[0_0_25px_rgba(139,92,246,0.15)]">
+        <button class="faq-trigger w-full px-7 py-6 text-left flex items-center justify-between text-base sm:text-lg font-bold text-white focus:outline-none">
+          <span>How many revisions do I get?</span>
+          <div class="faq-icon w-9 h-9 rounded-full bg-white/5 border border-white/15 flex items-center justify-center text-gray-300 transition-transform duration-300 flex-shrink-0">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/>
+            </svg>
+          </div>
         </button>
-        <div class="accordion-item-body px-5 text-gray-300">
-          <p class="text-responsive">
-            We are committed to client success. Our contracts often include performance-based clauses or guarantees.
-          </p>
+        <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+          <div class="px-7 pb-7 pt-2 text-sm sm:text-base text-gray-400 leading-relaxed border-t border-white/10">
+            We offer unlimited revisions until you are 100% thrilled with the outcome. Most of our projects wrap up in just one or two quick review rounds via Frame.io, but we never cap revisions or charge hidden fees for tweaks.
+          </div>
         </div>
       </div>
 
-      <!-- Item 3 -->
-      <div class="accordion-item rounded-xl overflow-hidden">
-        <button class="accordion-item-header w-full flex justify-between items-center p-5 rounded-xl cursor-pointer focus:outline-none">
-          <span class="text-responsive font-semibold text-white">Tell me about your content plan?</span>
-          <svg class="accordion-arrow w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
+      <!-- FAQ 3 -->
+      <div class="faq-item rounded-3xl bg-[#09090d]/90 border border-white/10 backdrop-blur-xl overflow-hidden transition-all duration-300 hover:border-violet-500/40 hover:shadow-[0_0_25px_rgba(139,92,246,0.15)]">
+        <button class="faq-trigger w-full px-7 py-6 text-left flex items-center justify-between text-base sm:text-lg font-bold text-white focus:outline-none">
+          <span>Who owns the final files and source assets?</span>
+          <div class="faq-icon w-9 h-9 rounded-full bg-white/5 border border-white/15 flex items-center justify-center text-gray-300 transition-transform duration-300 flex-shrink-0">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/>
+            </svg>
+          </div>
         </button>
-        <div class="accordion-item-body px-5 text-gray-300">
-          <p class="text-responsive">
-            Our content plans are tailored to your specific business goals and target audience.
-          </p>
+        <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+          <div class="px-7 pb-7 pt-2 text-sm sm:text-base text-gray-400 leading-relaxed border-t border-white/10">
+            You own 100% of everything the moment we deliver — from raw export files and 4K masters to Premiere / After Effects project files, custom graphics, and sound mixes. No license fees or restrictions.
+          </div>
         </div>
       </div>
 
-      <!-- Item 4 -->
-      <div class="accordion-item rounded-xl overflow-hidden">
-        <button class="accordion-item-header w-full flex justify-between items-center p-5 rounded-xl cursor-pointer focus:outline-none">
-          <span class="text-responsive font-semibold text-white">Why wouldn't I hire a freelancer?</span>
-          <svg class="accordion-arrow w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
+      <!-- FAQ 4 -->
+      <div class="faq-item rounded-3xl bg-[#09090d]/90 border border-white/10 backdrop-blur-xl overflow-hidden transition-all duration-300 hover:border-violet-500/40 hover:shadow-[0_0_25px_rgba(139,92,246,0.15)]">
+        <button class="faq-trigger w-full px-7 py-6 text-left flex items-center justify-between text-base sm:text-lg font-bold text-white focus:outline-none">
+          <span>Do you work with startups, creators, or established companies?</span>
+          <div class="faq-icon w-9 h-9 rounded-full bg-white/5 border border-white/15 flex items-center justify-center text-gray-300 transition-transform duration-300 flex-shrink-0">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/>
+            </svg>
+          </div>
         </button>
-        <div class="accordion-item-body px-5 text-gray-300">
-          <p class="text-responsive">
-            While freelancers are great for single tasks, an agency provides a full-team solution...
-          </p>
+        <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+          <div class="px-7 pb-7 pt-2 text-sm sm:text-base text-gray-400 leading-relaxed border-t border-white/10">
+            All of the above! We work with individual creators looking to scale their channels, early-stage SaaS and VC-funded startups launching products, as well as established global brands requiring high-volume performance creative pipelines.
+          </div>
         </div>
       </div>
 
-      <!-- Item 5 -->
-      <div class="accordion-item rounded-xl overflow-hidden">
-        <button class="accordion-item-header w-full flex justify-between items-center p-5 rounded-xl cursor-pointer focus:outline-none">
-          <span class="text-responsive font-semibold text-white">What services will you provide?</span>
-          <svg class="accordion-arrow w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
+      <!-- FAQ 5 -->
+      <div class="faq-item rounded-3xl bg-[#09090d]/90 border border-white/10 backdrop-blur-xl overflow-hidden transition-all duration-300 hover:border-violet-500/40 hover:shadow-[0_0_25px_rgba(139,92,246,0.15)]">
+        <button class="faq-trigger w-full px-7 py-6 text-left flex items-center justify-between text-base sm:text-lg font-bold text-white focus:outline-none">
+          <span>How do we communicate and collaborate?</span>
+          <div class="faq-icon w-9 h-9 rounded-full bg-white/5 border border-white/15 flex items-center justify-center text-gray-300 transition-transform duration-300 flex-shrink-0">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/>
+            </svg>
+          </div>
         </button>
-        <div class="accordion-item-body px-5 text-gray-300">
-          <p class="text-responsive">
-            SEO, content marketing, web development, ads, branding — full digital growth package.
-          </p>
+        <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+          <div class="px-7 pb-7 pt-2 text-sm sm:text-base text-gray-400 leading-relaxed border-t border-white/10">
+            We set up a private Slack or Discord channel for your brand with our production leads. Video reviews are handled via Frame.io, allowing you to leave exact timestamped comments with a single click.
+          </div>
         </div>
       </div>
 
-      <!-- Item 6 -->
-      <div class="accordion-item rounded-xl overflow-hidden">
-        <button class="accordion-item-header w-full flex justify-between items-center p-5 rounded-xl cursor-pointer focus:outline-none">
-          <span class="text-responsive font-semibold text-white">Tell me about your workflow?</span>
-          <svg class="accordion-arrow w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div class="accordion-item-body px-5 text-gray-300">
-          <p class="text-responsive">
-            Discovery → Strategy → Creation → Testing → Results. Transparent and fast-tracked for growth.
-          </p>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const accordionHeaders = document.querySelectorAll('.accordion-item-header');
+  </div>
+</section>
 
-      accordionHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-          const currentItem = header.closest('.accordion-item');
-          const body = currentItem.querySelector('.accordion-item-body');
+<script>
+  (function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const trigger = item.querySelector('.faq-trigger');
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('.faq-icon');
 
-          header.classList.toggle('active');
-          body.classList.toggle('open');
+      trigger.addEventListener('click', () => {
+        const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
 
-          accordionHeaders.forEach(otherHeader => {
-            if (otherHeader !== header) {
-              const otherItem = otherHeader.closest('.accordion-item');
-              const otherBody = otherItem.querySelector('.accordion-item-body');
-              otherHeader.classList.remove('active');
-              otherBody.classList.remove('open');
-            }
-          });
+        // Close all others
+        faqItems.forEach(otherItem => {
+          const otherContent = otherItem.querySelector('.faq-content');
+          const otherIcon = otherItem.querySelector('.faq-icon');
+          otherContent.style.maxHeight = '0px';
+          otherIcon.style.transform = 'rotate(0deg)';
+          otherItem.classList.remove('border-violet-500/60', 'bg-[#151524]', 'shadow-[0_0_30px_rgba(139,92,246,0.25)]');
         });
-      });
 
-      // Heading animation on scroll
-      const heading = document.getElementById('faqHeading');
-      const sub = document.getElementById('faqSub');
-      function animateOnScroll() {
-        const rect = heading.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          heading.classList.add('visible');
-          if (sub) sub.classList.add('visible');
-          window.removeEventListener('scroll', animateOnScroll);
+        if (!isOpen) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          icon.style.transform = 'rotate(45deg)';
+          item.classList.add('border-violet-500/60', 'bg-[#151524]', 'shadow-[0_0_30px_rgba(139,92,246,0.25)]');
         }
-      }
-      window.addEventListener('scroll', animateOnScroll);
-      animateOnScroll();
+      });
     });
-  </script>
-</body>
-</html>
+  })();
+</script>

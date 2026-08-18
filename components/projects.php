@@ -1,446 +1,279 @@
 <?php
-$videos = [
-    // Shorts Section (Updated)
-    ["id" => 1, "category" => "shorts", "videoUrl" => "https://youtube.com/shorts/LPXvOwKmgF0?feature=share", "title" => "Shorts Clip 1"],
-    ["id" => 2, "category" => "shorts", "videoUrl" => "https://youtube.com/shorts/A0K4cyrD48U?feature=share", "title" => "Shorts Clip 2"],
-    ["id" => 3, "category" => "shorts", "videoUrl" => "https://youtube.com/shorts/BSDP0qphx8o?feature=share", "title" => "Shorts Clip 3"],
-    ["id" => 4, "category" => "shorts", "videoUrl" => "https://youtube.com/shorts/v03bJY39b6U?feature=share", "title" => "Shorts Clip 4"],
-    ["id" => 5, "category" => "shorts", "videoUrl" => "https://youtube.com/shorts/kRtHRAsHKk8?feature=share", "title" => "Shorts Clip 5"],
-    ["id" => 6, "category" => "shorts", "videoUrl" => "https://youtube.com/shorts/3gDusm-pYr4?feature=share", "title" => "Shorts Clip 6"],
+// Load all section videos from fast data layer
+$raw_videos = get_section_videos('all');
+$videos = [];
 
-    // Other Categories
-    ["id" => 7, "category" => "3d", "videoUrl" => "https://nextlevelmedia.digital/components/videos/3d.mp4", "title" => "YouTube Promo"],
+foreach ($raw_videos as $row) {
+    $sec = $row['section'] ?? 'shorts';
+    $category_mapped = ($sec === 'motion_3d') ? '3d' : (($sec === 'vsl' || $sec === 'ads') ? 'ad' : $sec);
     
-    ["id" => 8, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=_VZpzlfgMog&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=1", "title" => "Quick Edit Sample"],
-    ["id" => 9, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=vVjQcWh7pVI&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=24", "title" => "Quick Edit Sample"],
-    ["id" => 10, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=ZdaiBOEJhTY&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=3", "title" => "Quick Edit Sample"],
-    ["id" => 11, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=mF2so1ihSQ4&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=4", "title" => "Quick Edit Sample"],
-    ["id" => 12, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=WyWPeGKKVIE&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=5", "title" => "Quick Edit Sample"],
-    ["id" => 13, "category" => "youtube", "videoUrl" => "https://www.youtube.com/watch?v=m7VVOVvncjA&list=PLqJTtIbzjXQ9JNH8zi9WaCA9ePZHAj244&index=6", "title" => "Quick Edit Sample"],
-    
-    ["id" => 14, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail1.png", "title" => "Quick Edit Sample"],
-    ["id" => 15, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail2.png", "title" => "Quick Edit Sample"],
-    ["id" => 16, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail3.png", "title" => "Quick Edit Sample"],
-    ["id" => 17, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail4.png", "title" => ""],
-    ["id" => 18, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail5.png", "title" => ""],
-    ["id" => 19, "category" => "thumbnails", "videoUrl" => "https://nextlevelmedia.digital/components/videos/thumbnail6.png", "title" => ""],
+    $tag_label = 'Production Asset';
+    if ($sec === 'shorts') $tag_label = 'Short Form';
+    elseif ($sec === 'youtube') $tag_label = 'YouTube Long-form';
+    elseif ($sec === '3d' || $sec === 'motion_3d') $tag_label = '3D & VFX';
+    elseif ($sec === 'vsl' || $sec === 'ads') $tag_label = 'Paid Ads & VSL';
+    elseif ($sec === 'reviews') $tag_label = 'Client Review';
 
-    // Ads
-    ["id" => 20, "category" => "ad", "videoUrl" => "https://www.youtube.com/watch?v=s7p6OLwV_50", "title" => ""],
-    ["id" => 21, "category" => "ad", "videoUrl" => "https://youtu.be/WMxo_4q0MNg?si=7qJCztvC7rDcDyks", "title" => ""],
-    ["id" => 22, "category" => "ad", "videoUrl" => "https://youtu.be/AlsXNhTm4AA?si=WPcfwXd_c308ScLN", "title" => ""],
-    ["id" => 23, "category" => "ad", "videoUrl" => "https://www.youtube.com/watch?v=VrAAguJPBjc&list=PLqJTtIbzjXQ94aO2wPZnliKi_rfz8DdJX&index=2", "title" => ""]
+    $videos[] = [
+        'id' => $row['id'] ?? 1,
+        'category' => $category_mapped,
+        'videoUrl' => $row['video_url'] ?? '',
+        'title' => $row['title'] ?? 'Video Production Asset',
+        'tag' => $tag_label,
+        'client' => $row['client_name'] ?? 'Next Level Media',
+        'thumbnail_url' => $row['thumbnail_url'] ?? '',
+    ];
+}
+
+// Add thumbnail showcase samples
+$thumbnails_sample = [
+    ["id" => 201, "category" => "thumbnails", "videoUrl" => "CL1.jpg", "title" => "High CTR Visual 01", "tag" => "Graphic Design", "client" => "YouTube Creator"],
+    ["id" => 202, "category" => "thumbnails", "videoUrl" => "CL2.jpg", "title" => "High CTR Visual 02", "tag" => "Graphic Design", "client" => "Creator Channel"],
+    ["id" => 203, "category" => "thumbnails", "videoUrl" => "CL3.jpg", "title" => "High CTR Visual 03", "tag" => "Graphic Design", "client" => "Podcast"],
+    ["id" => 204, "category" => "thumbnails", "videoUrl" => "CL4.jpg", "title" => "High CTR Visual 04", "tag" => "Graphic Design", "client" => "Documentary"],
+    ["id" => 205, "category" => "thumbnails", "videoUrl" => "CL5.jpg", "title" => "High CTR Visual 05", "tag" => "Graphic Design", "client" => "SaaS Brand"],
+    ["id" => 206, "category" => "thumbnails", "videoUrl" => "CL6.jpg", "title" => "High CTR Visual 06", "tag" => "Graphic Design", "client" => "Growth Channel"],
 ];
+$videos = array_merge($videos, $thumbnails_sample);
+
+function getYoutubeIdFromUrl($url) {
+    if (preg_match('/(?:shorts\/|v=|\/embed\/|youtu\.be\/|\/v\/|watch\?v=|\&v=)([^#\&\?\/]+)/', $url, $matches)) {
+        return $matches[1];
+    }
+    return '';
+}
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Projects</title>
-   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'primary-purple': '#8A2BE2',
-            'deep-black': '#0A0A0A'
-          },
-          fontFamily: {
-            grotesk: ['Space Grotesk', 'sans-serif']
-          }
-        }
-      }
-    }
-  </script>
- <style>
-    .play-button-overlay {
-      position: absolute;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.3s ease;
-      cursor: pointer;
-      z-index: 10;
-    }
-
-    .video-card video,
-    .video-card img,
-    .video-card .youtube-thumbnail {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 0.75rem;
-      display: block;
-    }
-
-    .video-playing .play-button-overlay {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .play-button {
-      background-color: #8A2BE2;
-      border-radius: 9999px;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: box-shadow 0.3s ease;
-    }
-
-    .play-button:hover {
-      box-shadow: 0 0 0 4px rgba(138, 43, 226, 0.4);
-    }
-
-    .play-icon {
-      fill: white;
-      width: 24px;
-      height: 24px;
-    }
-
-    .video-card {
-      opacity: 0;
-      transform: translateY(40px) scale(0.98);
-      transition: opacity 0.7s cubic-bezier(.4, 0, .2, 1), transform 0.7s cubic-bezier(.4, 0, .2, 1);
-    }
-
-    .video-card.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    .aspect-16-9 {
-      aspect-ratio: 16/9;
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .aspect-9-16 {
-      aspect-ratio: 9/16;
-      width: 100%;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .category-label {
-      position: absolute;
-      top: 0.75rem;
-      left: 0.75rem;
-      background: #8A2BE2;
-      color: #fff;
-      font-size: 0.85rem;
-      padding: 0.25rem 0.75rem;
-      border-radius: 9999px;
-      z-index: 20;
-      pointer-events: none;
-      opacity: 0.92;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      text-transform: capitalize;
-    }
-  </style>
-</head>
-<body class="bg-deep-black text-white p-6 min-h-screen text-center font-grotesk justify-center">
-  <section id="projects" class="pt-10">
-    <div class="max-w-4xl mx-auto pb-24">
-      <h2 class="text-xl sm:text-4xl font-bold text-center mb-4">What We’ve Created</h2>
-      <span class="text-sm md:text-xl text-center font-normal text-gray-600 mb-8 block">Take a Look at Some of Our Standout Work</span>
-     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 ">
-  <button class="filter-btn min-w-[140px] text-center bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="youtube">Youtube Videos</button>
-  <button class="filter-btn min-w-[140px] text-center bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="shorts">Shorts</button>
-  <button class="filter-btn min-w-[140px] text-center bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="ad">Ad Creative & VSL</button>
-  <button class="filter-btn min-w-[140px] text-center bg-gray-700 px-2 py-2 rounded-xl text-white text-md sm:text-base font-medium" data-category="thumbnails">Thumbnails</button>
-</div>
-
-      <div id="project-grid" class="grid grid-cols-1 px-5 sm:grid-cols-2 gap-6"></div>
+<!-- Featured Projects & Portfolio Section (Immersive MZ Media Style) -->
+<section class="relative w-full py-24 px-4 sm:px-6 lg:px-8 bg-transparent" id="projects">
+  
+  <div class="max-w-7xl mx-auto relative z-10">
+    
+    <!-- Section Title -->
+    <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#09090d]/90 border border-white/15 backdrop-blur-xl mb-6 shadow-[0_0_20px_rgba(99,102,241,0.2)]">
+        <span class="w-2 h-2 rounded-full bg-violet-400 animate-ping"></span>
+        <span class="text-xs font-bold uppercase tracking-widest text-violet-300">Selected Case Studies</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight font-display">
+        Work that builds <br class="hidden sm:inline" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-violet-400">authority and drives revenue</span>
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-gray-300">
+        Explore our recent high-retention video edits, viral shorts, ads, 3D assets, and high-CTR creatives.
+      </p>
     </div>
 
-    <script>
-      const videos = <?php echo json_encode($videos); ?>;
-      const grid = document.getElementById("project-grid");
-      const buttons = document.querySelectorAll(".filter-btn");
+    <!-- Category Filter Tabs (MZ Media Pill Tabs) -->
+    <div class="flex items-center justify-center flex-wrap gap-2.5 sm:gap-3 mb-14" data-aos="fade-up" data-aos-delay="100">
+      <button data-filter="all" class="project-filter-btn active px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 bg-white text-black shadow-[0_0_25px_rgba(255,255,255,0.3)]">
+        All Works
+      </button>
+      <button data-filter="shorts" class="project-filter-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 bg-[#09090d]/90 text-gray-300 border border-white/10 hover:text-white hover:border-violet-500/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.2)]">
+        Shorts & Reels
+      </button>
+      <button data-filter="youtube" class="project-filter-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 bg-[#09090d]/90 text-gray-300 border border-white/10 hover:text-white hover:border-violet-500/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.2)]">
+        YouTube Long-form
+      </button>
+      <button data-filter="ad" class="project-filter-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 bg-[#09090d]/90 text-gray-300 border border-white/10 hover:text-white hover:border-violet-500/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.2)]">
+        Paid Ads & VSL
+      </button>
+      <button data-filter="3d" class="project-filter-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 bg-[#09090d]/90 text-gray-300 border border-white/10 hover:text-white hover:border-violet-500/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.2)]">
+        3D & Motion
+      </button>
+      <button data-filter="thumbnails" class="project-filter-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 bg-[#09090d]/90 text-gray-300 border border-white/10 hover:text-white hover:border-violet-500/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.2)]">
+        Thumbnails
+      </button>
+    </div>
 
-      function getAspectClass(category) {
-        // Shorts are 9:16, others are 16:9
-        return category === "shorts" ? "aspect-9-16" : "aspect-16-9";
-      }
-
-      function getYouTubeVideoId(url) {
-        // First, try to extract from your custom googleusercontent.com/youtube.com/ID format
-        const customUrlMatch = url.match(/http:\/\/googleusercontent\.com\/youtube\.com\/(\d+)/);
-        if (customUrlMatch && customUrlMatch[1]) {
-          const customId = customUrlMatch[1];
-          // *** IMPORTANT: You need to map these custom numerical IDs to actual YouTube Video IDs. ***
-          // Replace the placeholder YouTube video IDs (like 'dQw4w9WgXcQ') with your real YouTube video IDs.
-          const idMap = {
-            '0': 'dQw4w9WgXcQ', // Example: Rick Astley - Never Gonna Give You Up (for Shorts Clip 1)
-            '1': 'M7lc1UVf-VE', // Example: Another ID for Shorts Clip 2
-            '2': 'LXb3EKWsInQ', // Example for Shorts Clip 3 (replace with your actual ID)
-            '3': 'J3gW4-B_4jM', // Example for Shorts Clip 4
-            '4': 'P-mR7P8_J_k', // Example for Shorts Clip 5
-            '5': 'p13n_yK_Ie4', // Example for Shorts Clip 6
-            '7': 'GgLp-F1M48E', // Example for Quick Edit Sample (YouTube)
-            '8': 'dFk5QoYfF8Y',
-            '9': 'X_2j3yv5_fE',
-            '10': 'Z_j-4u6X_aA',
-            '11': 'Y_i-2u3X_aB',
-            '12': 'V_c-8u9X_cD',
-            '20': 'A_a-1b2C_3D', // Example for Ad 1
-            '21': 'B_b-3c4D_5E', // Example for Ad 2
-            '22': 'C_c-5d6E_7F', // Example for Ad 3
-            '23': 'D_d-7e8F_9G'  // Example for Ad 4
-          };
-          return idMap[customId] || 'dQw4w9WgXcQ'; // Fallback to Rick Astley if ID not found
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
+      <?php foreach ($videos as $item): 
+        $ytId = getYoutubeIdFromUrl($item['videoUrl']);
+        $isShort = $item['category'] === 'shorts';
+        $isThumbnail = $item['category'] === 'thumbnails';
+        $is3D = $item['category'] === '3d';
+        
+        $thumbUrl = !empty($item['thumbnail_url']) ? $item['thumbnail_url'] : '';
+        if (empty($thumbUrl)) {
+            if (!empty($ytId)) {
+                $thumbUrl = "https://img.youtube.com/vi/{$ytId}/hqdefault.jpg";
+            } elseif ($isThumbnail) {
+                $thumbUrl = $item['videoUrl'];
+            } else {
+                $thumbUrl = 'review-thumb.png';
+            }
         }
-        // Then, try to extract from standard YouTube URLs (watch?v=ID, /shorts/ID, youtu.be/ID)
-        const ytMatch = url.match(/(?:v=|\/shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
-        return ytMatch ? ytMatch[1] : null;
-      }
+      ?>
+        <div class="project-card-item immersive-card group cursor-pointer" data-category="<?= $item['category']; ?>" data-video-url="<?= htmlspecialchars($item['videoUrl']); ?>" data-title="<?= htmlspecialchars($item['title']); ?>" data-tag="<?= htmlspecialchars($item['tag']); ?>">
+          <div class="hud-corner-tl"></div>
+          <div class="hud-corner-br"></div>
 
-      function getYouTubeThumbnail(videoId) {
-        // CORRECTED: Use the standard YouTube thumbnail domain
-        return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-      }
-
-      function render(category) {
-        grid.innerHTML = "";
-        const filtered = category === "all" ? videos : videos.filter(v => v.category === category);
-
-        filtered.forEach((v, index) => {
-          const id = `video-${v.id}`; // Use video id for unique DOM element ID
-          const isMp4 = v.videoUrl.endsWith(".mp4");
-          // Check if the URL *contains* your specific custom YouTube domain
-          const isYouTubeCustom = v.videoUrl.includes("http://googleusercontent.com/youtube.com/");
-          // Also check for standard YouTube domains if you ever include them directly
-          const isYouTubeStandard = v.videoUrl.includes("youtube.com") || v.videoUrl.includes("youtu.be");
-          const isYouTube = isYouTubeCustom || isYouTubeStandard; // Combine checks
-
-          const isImage = v.videoUrl.endsWith(".png") || v.videoUrl.endsWith(".jpg") || v.videoUrl.endsWith(".jpeg") || v.videoUrl.endsWith(".gif");
-          const aspectClass = getAspectClass(v.category);
-
-          let mediaHTML = "";
-          let objectFitClass = "object-cover"; // Default for videos
-
-          if (isImage) {
-            objectFitClass = "object-contain"; // For images, use object-contain
-          }
-
-          if (isMp4) {
-            mediaHTML = `
-              <div class="relative ${aspectClass}">
-                <video id="${id}" class="w-full h-full ${objectFitClass} rounded-xl" preload="metadata"></video>
-                <div class="absolute inset-0 flex items-center justify-center play-button-overlay" onclick="playVideo('${id}', this)">
-                  <div class="play-button">
-                    <svg class="play-icon" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z"/>
-                    </svg>
-                  </div>
-                </div>
-                <div class="absolute bottom-2 left-2 flex gap-2 z-30">
-                  <button class="custom-play bg-primary-purple/80 hover:bg-primary-purple text-white rounded-full w-10 h-10 flex items-center justify-center shadow" data-action="play" data-video="${id}">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" stroke="currentColor" fill="currentColor"/>
-                    </svg>
-                  </button>
-                  <button class="custom-mute bg-primary-purple/80 hover:bg-primary-purple text-white rounded-full w-10 h-10 flex items-center justify-center shadow" data-action="mute" data-video="${id}">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                      <path d="M9 9v6h4l5 5V4l-5 5H9z" stroke="currentColor" fill="currentColor"/>
-                    </svg>
-                  </button>
-                  <button class="custom-fullscreen bg-primary-purple/80 hover:bg-primary-purple text-white rounded-full w-10 h-10 flex items-center justify-center shadow" data-action="fullscreen" data-video="${id}" title="Fullscreen">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                      <path d="M4 4h7M4 4v7M20 20h-7M20 20v-7M20 4v7M20 4h-7M4 20v-7M4 20h7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            `;
-          } else if (isYouTube) {
-            const videoId = getYouTubeVideoId(v.videoUrl);
-            const thumbnailUrl = getYouTubeThumbnail(videoId);
-            // CORRECTED: Use the standard YouTube embed domain
-            const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`; 
+          <!-- Video Thumbnail Frame -->
+          <div class="relative w-full <?= $isShort ? 'aspect-[9/16]' : ($isThumbnail ? 'aspect-[16/9]' : 'aspect-video'); ?> overflow-hidden bg-black/40">
+            <img src="<?= $thumbUrl; ?>" alt="<?= htmlspecialchars($item['title']); ?>" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
             
-            mediaHTML = `
-              <div class="relative ${aspectClass} youtube-container">
-                <img src="${thumbnailUrl}" alt="Video Thumbnail" class="youtube-thumbnail w-full h-full ${objectFitClass} rounded-xl" onerror="this.onerror=null; this.src='https://via.placeholder.com/480x360.png?text=Video+Thumbnail';" />
-                <div class="absolute inset-0 flex items-center justify-center play-button-overlay" onclick="loadYouTubeVideo('${id}', '${embedUrl}', this)">
-                  <div class="play-button">
-                    <svg class="play-icon" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z"/>
-                    </svg>
-                  </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a10] via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+
+            <!-- Play Icon Badge -->
+            <?php if (!$isThumbnail): ?>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/90 text-black flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.4)] group-hover:scale-110 group-hover:bg-white transition-all duration-300">
+                  <svg class="w-6 h-6 sm:w-7 sm:h-7 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
                 </div>
-                <div id="youtube-iframe-${id}" class="absolute inset-0 hidden"></div>
               </div>
-            `;
-          } else if (isImage) {
-            // Assume image
-            mediaHTML = `
-              <div class="relative aspect-16-9">
-                <span class="category-label">${v.category.replace(/^\w/, c => c.toUpperCase())}</span>
-                <img src="${v.videoUrl}" alt="${v.title || 'Image'}" class="w-full h-full ${objectFitClass} rounded-xl" />
-              </div>
-            `;
-          } else {
-            // Fallback for unknown types, display a generic placeholder
-            mediaHTML = `
-              <div class="relative aspect-16-9 bg-gray-800 flex items-center justify-center rounded-xl">
-                <p class="text-gray-400">Unsupported Media Type</p>
-              </div>
-            `;
-          }
+            <?php endif; ?>
 
-          grid.innerHTML += `
-            <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg video-card relative group">
-              ${mediaHTML}
+            <!-- Tag Badge -->
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 rounded-full bg-[#0e0e18]/80 border border-white/20 text-white text-[11px] font-bold backdrop-blur-md">
+                <?= htmlspecialchars($item['tag']); ?>
+              </span>
             </div>
-          `;
+          </div>
 
-          // Dynamically set video source after element is in DOM for MP4s
-          setTimeout(() => {
-            if (isMp4) {
-              const videoEl = document.getElementById(id);
-              if (videoEl && !videoEl.src) {
-                videoEl.src = v.videoUrl;
-              }
-            }
-          }, 0);
+          <!-- Card Content Info -->
+          <div class="p-6">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-xs font-semibold text-gray-400"><?= htmlspecialchars($item['client'] ?? 'Next Level Media'); ?></span>
+              <span class="text-xs text-violet-400 font-bold group-hover:translate-x-1 transition-transform">Watch ➔</span>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-violet-300 transition-colors line-clamp-1 font-display">
+              <?= htmlspecialchars($item['title']); ?>
+            </h3>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+
+  </div>
+</section>
+
+<!-- Global Responsive Video Modal Player -->
+<div id="videoModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-xl opacity-0 pointer-events-none transition-opacity duration-300">
+  <div class="relative w-full max-w-4xl bg-[#09090e] border border-white/20 rounded-3xl overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.95)]" id="videoModalContent">
+    
+    <!-- Modal Header -->
+    <div class="flex items-center justify-between p-4 sm:p-5 border-b border-white/10 bg-[#0c0c12]">
+      <div>
+        <span id="modalVideoTag" class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-violet-400"></span>
+        <h3 id="modalVideoTitle" class="text-sm sm:text-lg font-bold text-white truncate max-w-xs sm:max-w-lg"></h3>
+      </div>
+      <button id="closeVideoModal" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white flex items-center justify-center transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Modal Player Container -->
+    <div class="relative w-full aspect-video bg-black" id="modalPlayerSlot">
+      <!-- Injected iframe or video element -->
+    </div>
+  </div>
+</div>
+
+<script>
+  (function initProjectsSection() {
+    // 1. Filter Tabs Logic
+    const filterBtns = document.querySelectorAll('.project-filter-btn');
+    const projectCards = document.querySelectorAll('.project-card-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('active', 'bg-white', 'text-black', 'shadow-[0_0_25px_rgba(255,255,255,0.3)]');
+          b.classList.add('bg-[#09090d]/90', 'text-gray-300', 'border', 'border-white/10');
         });
 
-        // Animate cards on scroll
-        animateOnScroll();
+        btn.classList.add('active', 'bg-white', 'text-black', 'shadow-[0_0_25px_rgba(255,255,255,0.3)]');
+        btn.classList.remove('bg-[#09090d]/90', 'text-gray-300', 'border', 'border-white/10');
 
-        // Attach custom controls for MP4s
-        attachCustomControls();
-      }
+        const filter = btn.getAttribute('data-filter');
 
-      function playVideo(id, btn) {
-        const video = document.getElementById(id);
-        const card = btn.closest('.video-card');
-
-        // Pause all other videos
-        document.querySelectorAll("video").forEach(v => {
-          v.pause();
-          v.closest('.video-card')?.classList.remove("video-playing");
-        });
-
-        video.play();
-        card.classList.add("video-playing");
-      }
-
-      function loadYouTubeVideo(id, embedUrl, overlayElement) {
-        // Hide overlay and thumbnail
-        overlayElement.style.display = 'none';
-        const container = overlayElement.closest('.youtube-container');
-        const thumbnail = container.querySelector('.youtube-thumbnail');
-        if (thumbnail) {
-            thumbnail.style.display = 'none';
-        }
-
-        // Create and append iframe
-        const iframeContainer = document.getElementById(`youtube-iframe-${id}`);
-        iframeContainer.innerHTML = `<iframe src="${embedUrl}" class="w-full h-full rounded-xl" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-        iframeContainer.classList.remove('hidden');
-      }
-
-
-      function attachCustomControls() {
-        // Play/Pause
-        document.querySelectorAll('.custom-play').forEach(btn => {
-          btn.onclick = function(e) {
-            e.stopPropagation();
-            const video = document.getElementById(this.dataset.video);
-            if (video.paused) {
-              document.querySelectorAll("video").forEach(v => {
-                v.pause();
-                v.closest('.video-card')?.classList.remove("video-playing");
-              });
-              video.play();
-              video.closest('.video-card').classList.add("video-playing");
-              this.innerHTML = `<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" fill="currentColor"/><rect x="14" y="5" width="4" height="14" fill="currentColor"/></svg>`;
-            } else {
-              video.pause();
-              video.closest('.video-card').classList.remove("video-playing");
-              this.innerHTML = `<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" stroke="currentColor" fill="currentColor"/></svg>`;
-            }
-          };
-        });
-
-        // Mute/Unmute
-        document.querySelectorAll('.custom-mute').forEach(btn => {
-          btn.onclick = function(e) {
-            e.stopPropagation();
-            const video = document.getElementById(this.dataset.video);
-            video.muted = !video.muted;
-            if (video.muted) {
-              this.innerHTML = `<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 9v6h4l5 5V4l-5 5H9z" stroke="currentColor" fill="currentColor"/><line x1="19" y1="5" x2="5" y2="19" stroke="white" stroke-width="2"/></svg>`;
-            } else {
-              this.innerHTML = `<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 9v6h4l5 5V4l-5 5H9z" stroke="currentColor" fill="currentColor"/></svg>`;
-            }
-          };
-        });
-
-        // Fullscreen
-        document.querySelectorAll('.custom-fullscreen').forEach(btn => {
-          btn.onclick = function(e) {
-            e.stopPropagation();
-            const video = document.getElementById(this.dataset.video);
-            if (video.requestFullscreen) {
-              video.requestFullscreen();
-            } else if (video.webkitRequestFullscreen) {
-              video.webkitRequestFullscreen();
-            } else if (video.msRequestFullscreen) {
-              video.msRequestFullscreen();
-            }
-          };
-        });
-      }
-
-      // Animation on scroll using Intersection Observer
-      function animateOnScroll() {
-        const cards = document.querySelectorAll('.video-card');
-        const observer = new window.IntersectionObserver((entries, obs) => {
-          entries.forEach((entry, i) => {
-            if (entry.isIntersecting) {
-              setTimeout(() => {
-                entry.target.classList.add('visible');
-              }, i * 120); // Staggered animation
-              obs.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.2 });
-
-        cards.forEach(card => observer.observe(card));
-      }
-
-      // Initial render
-      render("youtube"); // Render YouTube videos by default
-
-      // Set initial active button style
-      document.querySelector('.filter-btn[data-category="youtube"]').classList.remove("bg-gray-700");
-      document.querySelector('.filter-btn[data-category="youtube"]').classList.add("bg-primary-purple", "active");
-
-
-      buttons.forEach(btn => {
-        btn.addEventListener("click", () => {
-          buttons.forEach(b => {
-            b.classList.remove("bg-primary-purple", "active");
-            b.classList.add("bg-gray-700");
-          });
-          btn.classList.remove("bg-gray-700");
-          btn.classList.add("bg-primary-purple", "active");
-          render(btn.dataset.category);
+        projectCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
         });
       });
-    </script>
-  </section>
-</body>
-</html>
+    });
+
+    // 2. Video Modal Logic
+    const modal = document.getElementById('videoModal');
+    const modalSlot = document.getElementById('modalPlayerSlot');
+    const modalTitle = document.getElementById('modalVideoTitle');
+    const modalTag = document.getElementById('modalVideoTag');
+    const closeBtn = document.getElementById('closeVideoModal');
+
+    function openModal(videoUrl, title, tag, isThumbnail = false) {
+      modalTitle.textContent = title;
+      modalTag.textContent = tag;
+
+      if (isThumbnail) {
+        modalSlot.innerHTML = `<img src="${videoUrl}" class="w-full h-full object-contain bg-black" alt="${title}" />`;
+      } else if (videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be')) {
+        let ytId = '';
+        const match = videoUrl.match(/(?:shorts\/|v=|\/embed\/|youtu\.be\/|\/v\/|watch\?v=|\&v=)([^#\&\?\/]+)/);
+        if (match) ytId = match[1];
+        modalSlot.innerHTML = `
+          <iframe class="w-full h-full"
+            src="https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1"
+            title="${title}"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        `;
+      } else if (videoUrl.includes('vimeo.com')) {
+        const vimeoId = videoUrl.split('/').pop();
+        modalSlot.innerHTML = `
+          <iframe class="w-full h-full"
+            src="https://player.vimeo.com/video/${vimeoId}?autoplay=1"
+            title="${title}"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen></iframe>
+        `;
+      } else {
+        modalSlot.innerHTML = `
+          <video class="w-full h-full object-contain" controls autoplay>
+            <source src="${videoUrl}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        `;
+      }
+
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modalSlot.innerHTML = '';
+      document.body.style.overflow = 'auto';
+    }
+
+    projectCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const videoUrl = card.getAttribute('data-video-url');
+        const title = card.getAttribute('data-title');
+        const tag = card.getAttribute('data-tag');
+        const category = card.getAttribute('data-category');
+        openModal(videoUrl, title, tag, category === 'thumbnails');
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  })();
+</script>

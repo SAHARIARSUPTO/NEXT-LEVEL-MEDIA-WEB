@@ -1,203 +1,141 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Client Benefits Carousel</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .animated-heading { opacity: 0; transition: opacity 0.3s; }
-    .animated-heading.visible { animation: fadeInUp 0.8s cubic-bezier(.77,0,.18,1) forwards; opacity: 1; }
-    .carousel-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: #000;
-      cursor: pointer;
-      transition: background-color 0.1s ease;
-    }
-    .carousel-dot.active { background-color: #F3F4F6; }
-    body {
-      background-color: #000000;
-      font-family: 'Inter', sans-serif;
-      color: #F3F4F6;
-    }
-    .card-inner {
-      transition: transform 0.1s ease, box-shadow 0.1s ease;
-    }
-    .card-inner:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
-    }
-  </style>
-</head>
-<body class="bg-black text-gray-100 min-h-screen flex items-center justify-center py-12">
-  <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <p class="text-gray-400 uppercase text-sm tracking-widest mb-2 animated-heading" id="feedbackSub">Feedback</p>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight animated-heading" id="feedbackHeading">
-        How We <br class="sm:hidden"> Benefit Our Clients
-      </h2>
-    </div>
-
-    <div class="relative overflow-hidden">
-      <div id="carousel-wrapper" class="flex transition-all duration-700 ease-in-out">
-        <!-- Slides will be inserted here -->
+<!-- Client Benefits Section (Immersive MZ Media Style) -->
+<section class="relative w-full py-24 px-4 sm:px-6 lg:px-8 bg-transparent" id="benefits">
+  
+  <div class="max-w-7xl mx-auto relative z-10">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#09090d]/90 border border-white/15 backdrop-blur-xl mb-6 shadow-[0_0_20px_rgba(99,102,241,0.2)]">
+        <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
+        <span class="text-xs font-bold uppercase tracking-widest text-indigo-300">Client ROI & Output Value</span>
       </div>
-      <div id="carousel-dots" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2"></div>
-      <button id="prev-btn" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-700 bg-opacity-75 text-white p-2 rounded-full shadow-lg hover:bg-opacity-100 focus:outline-none hidden sm:block">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-      <button id="next-btn" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-700 bg-opacity-75 text-white p-2 rounded-full shadow-lg hover:bg-opacity-100 focus:outline-none hidden sm:block">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight font-display">
+        How we benefit <br class="hidden sm:inline" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-violet-400">our creative partners</span>
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-gray-300">
+        Engineered for founders and creators who want measurable output without production friction.
+      </p>
     </div>
-  </section>
 
-  <script>
-    const clientsData = [
-      { name: 'Thales Peterson', niche: 'Football Coach.', views: '10K subs', subs: '20K viewers', image: 'https://nextlevelmedia.digital/components/images/CL6.jpg' },
-      { name: 'Dan Kieft', niche: 'Content Creator', views: '78K subs', subs: '1M viewers', image: 'https://nextlevelmedia.digital/components/images/CL5.jpg' },
-      { name: 'Trade with Pat', niche: 'Trading Related Niche', views: '200K subs', subs: '3M viewers', image: 'https://nextlevelmedia.digital/components/images/CL1.jpg' },
-      { name: 'Kallaway', niche: 'Creator Growth Strategy Niche', views: '', subs: '2M viewers', image: 'https://nextlevelmedia.digital/components/images/CL3.jpg' },
-      { name: 'Revive Systems', niche: 'Fitness Related Niche', views: '$60K sales', subs: '', image: 'https://nextlevelmedia.digital/components/images/CL4.jpg' }
-    ];
+    <!-- Benefit Grid (Immersive 3D Tilt Cards) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="100">
+      
+      <!-- Benefit 1 -->
+      <div class="immersive-card p-8 sm:p-9 flex flex-col justify-between group">
+        <div class="hud-corner-tl"></div>
+        <div class="hud-corner-br"></div>
 
-    const carouselWrapper = document.getElementById('carousel-wrapper');
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-    const carouselDotsContainer = document.getElementById('carousel-dots');
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-2xl bg-violet-500/10 border border-violet-500/30 flex items-center justify-center text-violet-400 text-lg font-black mb-6 shadow-[0_0_15px_rgba(139,92,246,0.2)]">
+            01
+          </div>
+          <h3 class="text-2xl font-black text-white mb-3 group-hover:text-violet-300 transition-colors">Zero Freelancer Babysitting</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            No more hunting on job boards, reviewing countless portfolios, or following up on missed deadlines. You get a dedicated Slack channel with seasoned leads.
+          </p>
+        </div>
+        <div class="relative z-10 mt-8 pt-4 border-t border-white/10 text-xs text-violet-400 font-bold uppercase tracking-wider">
+          100% Peace of Mind
+        </div>
+      </div>
 
-    let currentIndex = 0;
-    let itemsPerView = 1;
-    let slides = [];
-    let totalSlides = 0;
-    let intervalId;
-    const autoSlideInterval = 5000;
+      <!-- Benefit 2 -->
+      <div class="immersive-card p-8 sm:p-9 flex flex-col justify-between group">
+        <div class="hud-corner-tl"></div>
+        <div class="hud-corner-br"></div>
 
-    function renderSlides() {
-      carouselWrapper.innerHTML = '';
-      clientsData.forEach(client => {
-        const slideDiv = document.createElement('div');
-        slideDiv.classList.add('carousel-slide', 'flex-shrink-0', 'w-full', 'sm:w-1/2', 'lg:w-1/3', 'p-4');
-        slideDiv.innerHTML = `
-          <div class="card-inner relative rounded-xl shadow-lg bg-gradient-to-b from-zinc-900 via-black to-zinc-800">
-            <img src="${client.image}" alt="${client.name}" class="w-full h-64 object-cover rounded-t-xl">
-            <div class="p-6">
-              <h3 class="text-xl font-semibold text-white mb-2">${client.name}</h3>
-              <p class="text-gray-400 text-sm mb-4">${client.niche}</p>
-              <div class="flex items-center justify-between text-gray-400 text-sm">
-                ${client.views ? `<span>${client.views}</span>` : ''}
-                <p ><span classname="font-bold">Generated</span> ${client.subs ? `${client.subs}` : ''}</p>
-              </div>
-            </div>
-          </div>`;
-        carouselWrapper.appendChild(slideDiv);
-      });
-      slides = Array.from(carouselWrapper.children);
-      totalSlides = slides.length;
-    }
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-lg font-black mb-6 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+            02
+          </div>
+          <h3 class="text-2xl font-black text-white mb-3 group-hover:text-blue-300 transition-colors">Blazing Fast Turnaround</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Receive initial cuts within 24 to 48 hours. Our in-house editors collaborate seamlessly with art directors to prevent any operational bottlenecks.
+          </p>
+        </div>
+        <div class="relative z-10 mt-8 pt-4 border-t border-white/10 text-xs text-blue-400 font-bold uppercase tracking-wider">
+          24 / 48 Hour Delivery Cycle
+        </div>
+      </div>
 
-    function updateItemsPerView() {
-      if (window.innerWidth >= 1024) {
-        itemsPerView = 3;
-      } else if (window.innerWidth >= 640) {
-        itemsPerView = 2;
-      } else {
-        itemsPerView = 1;
-      }
-      updateCarousel();
-      generateDots();
-    }
+      <!-- Benefit 3 -->
+      <div class="immersive-card p-8 sm:p-9 flex flex-col justify-between group">
+        <div class="hud-corner-tl"></div>
+        <div class="hud-corner-br"></div>
 
-    function generateDots() {
-      carouselDotsContainer.innerHTML = '';
-      const numDots = Math.ceil(totalSlides / itemsPerView);
-      for (let i = 0; i < numDots; i++) {
-        const dot = document.createElement('div');
-        dot.classList.add('carousel-dot');
-        if (i === Math.floor(currentIndex / itemsPerView)) {
-          dot.classList.add('active');
-        }
-        dot.dataset.index = i * itemsPerView;
-        dot.addEventListener('click', () => {
-          currentIndex = parseInt(dot.dataset.index);
-          updateCarousel();
-          resetAutoSlide();
-        });
-        carouselDotsContainer.appendChild(dot);
-      }
-    }
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-lg font-black mb-6 shadow-[0_0_15px_rgba(6,182,212,0.2)]">
+            03
+          </div>
+          <h3 class="text-2xl font-black text-white mb-3 group-hover:text-cyan-300 transition-colors">Unlimited Revisions Policy</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            We iterate until you are genuinely proud of every cut, sound effect, graphic placement, and transition. No hidden fees or arbitrary caps.
+          </p>
+        </div>
+        <div class="relative z-10 mt-8 pt-4 border-t border-white/10 text-xs text-cyan-400 font-bold uppercase tracking-wider">
+          100% Satisfaction Guaranteed
+        </div>
+      </div>
 
-    function updateDots() {
-      const dots = Array.from(carouselDotsContainer.children);
-      dots.forEach(dot => {
-        const dotPageIndex = Math.floor(parseInt(dot.dataset.index) / itemsPerView);
-        const currentPageIndex = Math.floor(currentIndex / itemsPerView);
-        dot.classList.toggle('active', dotPageIndex === currentPageIndex);
-      });
-    }
+      <!-- Benefit 4 -->
+      <div class="immersive-card p-8 sm:p-9 flex flex-col justify-between group">
+        <div class="hud-corner-tl"></div>
+        <div class="hud-corner-br"></div>
 
-    function updateCarousel() {
-      const slideWidth = slides[0].offsetWidth;
-      const translateValue = -(currentIndex * slideWidth);
-      carouselWrapper.style.transform = `translateX(${translateValue}px)`;
-      updateDots();
-    }
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-2xl bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-pink-400 text-lg font-black mb-6 shadow-[0_0_15px_rgba(236,72,153,0.2)]">
+            04
+          </div>
+          <h3 class="text-2xl font-black text-white mb-3 group-hover:text-pink-300 transition-colors">Full Source Asset Ownership</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            You own 100% of all raw project files (Premiere / After Effects / Blender / PSDs), final 4K masters, and cutdown variations from day one.
+          </p>
+        </div>
+        <div class="relative z-10 mt-8 pt-4 border-t border-white/10 text-xs text-pink-400 font-bold uppercase tracking-wider">
+          Complete IP Ownership
+        </div>
+      </div>
 
-    function nextSlide() {
-      const maxIndex = totalSlides - itemsPerView;
-      currentIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
-      updateCarousel();
-    }
+      <!-- Benefit 5 -->
+      <div class="immersive-card p-8 sm:p-9 flex flex-col justify-between group">
+        <div class="hud-corner-tl"></div>
+        <div class="hud-corner-br"></div>
 
-    function prevSlide() {
-      const maxIndex = totalSlides - itemsPerView;
-      currentIndex = currentIndex > 0 ? currentIndex - 1 : maxIndex;
-      updateCarousel();
-    }
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-lg font-black mb-6 shadow-[0_0_15px_rgba(245,158,11,0.2)]">
+            05
+          </div>
+          <h3 class="text-2xl font-black text-white mb-3 group-hover:text-amber-300 transition-colors">Elastic On-Demand Capacity</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Need 10 videos this week and 50 next month? Scale your production bandwidth up or down dynamically to support upcoming product launches.
+          </p>
+        </div>
+        <div class="relative z-10 mt-8 pt-4 border-t border-white/10 text-xs text-amber-400 font-bold uppercase tracking-wider">
+          Flexible Production Volume
+        </div>
+      </div>
 
-    function startAutoSlide() {
-      intervalId = setInterval(nextSlide, autoSlideInterval);
-    }
+      <!-- Benefit 6 -->
+      <div class="immersive-card p-8 sm:p-9 flex flex-col justify-between group">
+        <div class="hud-corner-tl"></div>
+        <div class="hud-corner-br"></div>
 
-    function resetAutoSlide() {
-      clearInterval(intervalId);
-      startAutoSlide();
-    }
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-lg font-black mb-6 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+            06
+          </div>
+          <h3 class="text-2xl font-black text-white mb-3 group-hover:text-emerald-300 transition-colors">Data-Backed ROI Focus</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Every creative decision is engineered around audience psychology, click-through rates, average view duration, and measurable customer acquisition.
+          </p>
+        </div>
+        <div class="relative z-10 mt-8 pt-4 border-t border-white/10 text-xs text-emerald-400 font-bold uppercase tracking-wider">
+          Conversion-First Strategy
+        </div>
+      </div>
 
-    prevBtn.addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
-    nextBtn.addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
-    window.addEventListener('resize', () => { updateItemsPerView(); resetAutoSlide(); });
+    </div>
 
-    window.onload = function () {
-      renderSlides();
-      updateItemsPerView();
-      startAutoSlide();
-    };
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const heading = document.getElementById('feedbackHeading');
-      const sub = document.getElementById('feedbackSub');
-      function animateOnScroll() {
-        const rect = heading.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          heading.classList.add('visible');
-          if (sub) sub.classList.add('visible');
-          window.removeEventListener('scroll', animateOnScroll);
-        }
-      }
-      window.addEventListener('scroll', animateOnScroll);
-      animateOnScroll();
-    });
-  </script>
-</body>
-</html>
+  </div>
+</section>

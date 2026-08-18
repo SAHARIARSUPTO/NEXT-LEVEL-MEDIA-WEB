@@ -1,316 +1,221 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Next Level Media Footer</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome for social media icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Pure black background for the body, ensuring consistency */
-        body {
-            background-color: #000000; /* Pure Black */
-            font-family: 'Space Grotesk', sans-serif; /* Changed to Space Grotesk */
-            color: #F3F4F6; /* Light text color */
+<!-- Footer Component (Polished Pure Black Obsidian Style with Modern Social Brand Logos) -->
+<footer class="relative w-full bg-black border-t border-white/10 pt-20 pb-12 overflow-hidden text-gray-400">
+  
+  <!-- Subtle Ambient Bottom Glow -->
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[250px] bg-gradient-to-t from-violet-900/10 via-indigo-950/5 to-transparent rounded-full blur-[140px] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Big Pre-Footer CTA Card -->
+    <div class="relative p-8 sm:p-12 lg:p-16 rounded-3xl bg-[#09090d] border border-white/15 shadow-[0_20px_70px_rgba(0,0,0,0.95)] text-center mb-20 overflow-hidden" data-aos="fade-up">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(99,102,241,0.12),_transparent_70%)] pointer-events-none"></div>
+      
+      <div class="max-w-3xl mx-auto relative z-10">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="text-xs font-bold uppercase tracking-wider text-gray-200">Accepting 3 New Brands This Month</span>
+        </div>
+        
+        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] font-display">
+          Ready to scale your content <br class="hidden sm:inline" />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-violet-400">to the Next Level?</span>
+        </h2>
+        
+        <p class="mt-5 text-sm sm:text-base md:text-lg text-gray-300 max-w-xl mx-auto leading-relaxed">
+          Book a 15-minute creative strategy call or start a direct project order with our team today.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <!-- Main Action Button -->
+          <a href="https://calendly.com/nextlevelmediacall/30min?month=2025-07" target="_blank" class="mz-btn bg-white text-black shadow-[0_0_35px_rgba(255,255,255,0.35)] hover:shadow-[0_0_45px_rgba(99,102,241,0.6)] hover:bg-gray-100 w-full sm:w-auto justify-center">
+            <span>Book A Strategy Call</span>
+            <div class="mz-btn-icon bg-black text-white">
+              <svg class="w-3.5 h-3.5 transform -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Create Order Button -->
+          <a href="order.php" class="mz-btn bg-violet-600/20 text-violet-300 border border-violet-500/40 hover:bg-violet-600/30 hover:border-violet-400 hover:text-white w-full sm:w-auto justify-center backdrop-blur-xl">
+            <span>Start A Project Order</span>
+            <div class="mz-btn-icon bg-violet-500/30 text-violet-200">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Main Columns -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+      
+      <!-- Brand Summary Column -->
+      <div class="md:col-span-5 space-y-5">
+        <a href="index.php" class="flex items-center space-x-3 group w-fit">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-indigo-600/30 to-violet-500/20 border border-white/15 flex items-center justify-center overflow-hidden shadow-[0_0_15px_rgba(99,102,241,0.3)]">
+            <img src="main-logo.png" alt="Logo" class="w-7 h-7 object-contain">
+          </div>
+          <span class="text-white font-black text-lg tracking-wider uppercase font-display">
+            NEXT LEVEL <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400">MEDIA</span>
+          </span>
+        </a>
+
+        <p class="text-sm text-gray-300 max-w-sm leading-relaxed">
+          High-performance video production, retention editing, and creative growth systems for creators, SaaS founders, and global brands.
+        </p>
+
+        <!-- Social Brand Logos Row -->
+        <div class="pt-2">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">Official Channels & Contact</h4>
+          <div class="flex items-center gap-3">
             
-        }
+            <!-- WhatsApp -->
+            <a href="https://wa.me/8801753506047" target="_blank" rel="noopener noreferrer" title="WhatsApp: +880 1753-506047" class="w-10 h-10 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 hover:text-white hover:bg-emerald-600 hover:border-emerald-500 hover:shadow-[0_0_15px_rgba(16,185,129,0.5)] transition-all">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.693.076-1.127-.063-.264-.085-.604-.207-1.042-.396-1.849-.798-3.045-2.673-3.137-2.797-.093-.125-.758-.999-.758-1.905s.475-1.353.644-1.54c.169-.187.369-.234.492-.234.124 0 .247.001.355.006.114.006.266-.043.416.319.155.374.529 1.292.576 1.385.046.094.077.203.015.328-.061.125-.092.203-.184.312-.092.11-.194.244-.277.328-.093.094-.19.196-.082.383.108.187.479.79 1.028 1.28.707.63 1.303.824 1.49.918.187.094.296.079.406-.047.11-.125.468-.546.593-.733.125-.187.249-.156.417-.094.168.063 1.066.503 1.249.596.183.094.305.14.351.219.046.078.046.452-.098.857z"/>
+              </svg>
+            </a>
 
-        /* Custom styles for subtle hover effects on links and icons */
-        .footer-link:hover, .social-icon:hover {
-            color: #9CA3AF; /* Gray-400 on hover */
-            transition: color 0.3s ease;
-        }
+            <!-- YouTube -->
+            <a href="https://youtube.com/@nextlevelmedia" target="_blank" rel="noopener noreferrer" title="YouTube" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:bg-red-600/20 hover:border-red-500/50 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)] transition-all">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
 
-        /* Modal specific styles */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000; /* Ensure it's on top */
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/nextlevelmedia_production/" target="_blank" rel="noopener noreferrer" title="Instagram" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:bg-pink-600/20 hover:border-pink-500/50 hover:shadow-[0_0_15px_rgba(236,72,153,0.4)] transition-all">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
 
-        .modal-overlay.open {
-            opacity: 1;
-            visibility: visible;
-        }
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/company/nextlevelmedia" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600/20 hover:border-blue-500/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition-all">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
 
-        .modal-content {
-            background-color: #1a1a1a; /* Dark background for modal */
-            border-radius: 0.75rem; /* rounded-xl */
-            padding: 2rem;
-            max-width: 90%;
-            max-height: 90%;
-            overflow-y: auto; /* Enable scrolling for long content */
-            position: relative;
-            transform: translateY(20px); /* Start slightly below */
-            opacity: 0;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
+            <!-- Direct Email -->
+            <a href="mailto:contact@nextlevelmediadigital.com" title="Send Email" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:bg-violet-600/20 hover:border-violet-500/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.4)] transition-all">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </a>
 
-        .modal-overlay.open .modal-content {
-            transform: translateY(0); /* Slide into view */
-            opacity: 1;
-        }
-
-        .modal-close-btn {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #9CA3AF; /* Gray-400 */
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .modal-close-btn:hover {
-            color: #F3F4F6; /* Light text color on hover */
-        }
-
-        /* Responsive text sizes for modal content */
-        .modal-text-responsive {
-            font-size: 0.875rem; /* Default text-sm for mobile */
-        }
-        @media (min-width: 640px) { /* sm breakpoint */
-            .modal-text-responsive {
-                font-size: 1rem; /* text-base */
-            }
-        }
-        @media (min-width: 1024px) { /* lg breakpoint */
-            .modal-text-responsive {
-                font-size: 1.125rem; /* text-lg */
-            }
-        }
-    </style>
-</head>
-<body class="bg-black">
-    <footer class="bg-black py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <!-- Top Section: Logo and Navigation Links -->
-            <div class="flex flex-col sm:flex-row items-center justify-between text-center sm:text-left mb-8">
-                <!-- Logo -->
-                <div class="mb-6 sm:mb-0">
-                    <a href="#" class="text-white text-2xl font-bold uppercase tracking-wider">
-                        Next Level Media
-                    </a>
-                </div>
-
-                <!-- Navigation Links -->
-                <nav class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8 text-gray-300 text-sm sm:text-base">
-                    <a href="#" id="terms-link" class="footer-link hover:text-gray-400">Terms & Conditions</a>
-                    <a href="#" id="refund-link" class="footer-link hover:text-gray-400">Refund Policy</a>
-                    <a href="#" id="privacy-link" class="footer-link hover:text-gray-400">Privacy Policy</a>
-                </nav>
-            </div>
-
-            <!-- Separator Line -->
-            <hr class="border-gray-700 my-8">
-
-            <!-- Bottom Section: Copyright and Social Icons -->
-            <div class="flex flex-col sm:flex-row items-center justify-between text-center sm:text-left text-gray-500 text-sm">
-                <!-- Copyright Text -->
-                <p class="mb-6 sm:mb-0">
-                    &copy; 2025 Next Level Media | All rights reserved.
-                </p>
-
-                <!-- Social Media Icons -->
-                <div class="flex space-x-6 text-xl">
-                    <a href="https://www.instagram.com/nextlevelmedia_production/" target=_blank  class="social-icon hover:text-white" aria-label="LinkedIn">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    
-                    <a href="https://www.facebook.com/nextzenedit" target=_blank class="social-icon hover:text-white" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                </div>
-            </div>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <!-- Terms & Conditions Modal -->
-    <div id="terms-modal" class="modal-overlay hidden">
-        <div class="modal-content w-full sm:w-3/4 lg:w-1/2">
-            <button class="modal-close-btn" data-modal-id="terms-modal">&times;</button>
-            <h3 class="text-2xl font-bold text-white mb-4">Terms & Conditions</h3>
-            <p class="modal-text-responsive text-gray-300 leading-relaxed">
-                Welcome to Next Level Media! These terms and conditions outline the rules and regulations for the use of Next Level Media's Website.
-                By accessing this website we assume you accept these terms and conditions. Do not continue to use Next Level Media if you do not agree to take all of the terms and conditions stated on this page.
-                The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all Agreements: "Client", "You" and "Your" refers to you, the person log on this website and compliant to the Company’s terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company. "Party", "Parties", or "Us", refers to both the Client and ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our assistance to the Client in the most appropriate manner for the express purpose of meeting the Client’s needs in respect of provision of the Company’s stated services, in accordance with and subject to, prevailing law of Netherlands. Any use of the above terminology or other words in the singular, plural, capitalization and/or he/she or they, are taken as interchangeable and therefore as referring to same.
-                <br><br>
-                **Cookies:** We employ the use of cookies. By accessing Next Level Media, you agreed to use cookies in agreement with the Next Level Media's Privacy Policy. Most interactive websites use cookies to let us retrieve the user’s details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.
-                <br><br>
-                **License:** Unless otherwise stated, Next Level Media and/or its licensors own the intellectual property rights for all material on Next Level Media. All intellectual property rights are reserved. You may access this from Next Level Media for your own personal use subjected to restrictions set in these terms and conditions.
-                <br><br>
-                You must not:
-                * Republish material from Next Level Media
-                * Sell, rent or sub-license material from Next Level Media
-                * Reproduce, duplicate or copy material from Next Level Media
-                * Redistribute content from Next Level Media
-                <br><br>
-                This Agreement shall begin on the date hereof. Parts of this website offer an opportunity for users to post and exchange opinions and information in certain areas of the website. Next Level Media does not filter, edit, publish or review Comments prior to their presence on the website. Comments do not reflect the views and opinions of Next Level Media,its agents and/or affiliates. Comments reflect the views and opinions of the person who post their views and opinions. To the extent permitted by applicable laws, Next Level Media shall not be liable for the Comments or for any liability, damages or expenses caused and/or suffered as a result of any use of and/or posting of and/or appearance of the Comments on this website.
-                <br><br>
-                Next Level Media reserves the right to monitor all Comments and to remove any Comments which can be considered inappropriate, offensive or causes breach of these Terms and Conditions.
-                <br><br>
-                You warrant and represent that:
-                * You are entitled to post the Comments on our website and have all necessary licenses and consents to do so;
-                * The Comments do not invade any intellectual property right, including without limitation copyright, patent or trademark of any third party;
-                * The Comments do not contain any defamatory, libelous, offensive, indecent or otherwise unlawful material which is an invasion of privacy
-                * The Comments will not be used to solicit or promote business or custom or present commercial activities or unlawful activity.
-                <br><br>
-                You hereby grant Next Level Media a non-exclusive license to use, reproduce, edit and authorize others to use, reproduce and edit any of your Comments in any and all forms, formats or media.
-            </p>
+      <!-- Quick Links -->
+      <div class="md:col-span-3">
+        <h4 class="text-sm font-bold uppercase tracking-wider text-white mb-4">Navigation</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="index.php" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="index.php#projects" class="hover:text-white transition-colors">Featured Portfolio</a></li>
+          <li><a href="index.php#strategy" class="hover:text-white transition-colors">How It Works</a></li>
+          <li><a href="index.php#clients-testimonials" class="hover:text-white transition-colors">Client Reviews</a></li>
+          <li><a href="index.php#core-services" class="hover:text-white transition-colors">Services & Deliverables</a></li>
+          <li><a href="contact.php" class="hover:text-white transition-colors">Contact Us</a></li>
+          <li><a href="order.php" class="text-violet-400 font-semibold hover:text-violet-300 transition-colors">★ Create Project Order</a></li>
+        </ul>
+      </div>
+
+      <!-- Services List -->
+      <div class="md:col-span-4">
+        <h4 class="text-sm font-bold uppercase tracking-wider text-white mb-4">Production Solutions</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li class="text-gray-300">⚡ Viral Shorts, Reels & TikTok Systems</li>
+          <li class="text-gray-300">🎬 High-Retention YouTube Video Editing</li>
+          <li class="text-gray-300">🎯 Direct Response VSLs & Paid Ad Creatives</li>
+          <li class="text-gray-300">🧊 3D Motion Graphics & Product Assets</li>
+          <li class="text-gray-300">🖼️ Custom High-CTR Thumbnail Strategy</li>
+        </ul>
+
+        <div class="mt-6 pt-4 border-t border-white/10 text-xs text-gray-400 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>Average turn-around: 24 to 48 hours</span>
         </div>
+      </div>
+
     </div>
 
-    <!-- Refund Policy Modal -->
-    <div id="refund-modal" class="modal-overlay hidden">
-        <div class="modal-content w-full sm:w-3/4 lg:w-1/2">
-            <button class="modal-close-btn" data-modal-id="refund-modal">&times;</button>
-            <h3 class="text-2xl font-bold text-white mb-4">Refund Policy</h3>
-            <p class="modal-text-responsive text-gray-300 leading-relaxed">
-                At Next Level Media, we strive for your complete satisfaction with our services. Our refund policy is as follows:
-                <br><br>
-                **1. Eligibility for Refund:**
-                Refunds are considered on a case-by-case basis. Generally, refunds may be issued if:
-                * The service was not delivered as described.
-                * There was a clear and demonstrable failure on our part to meet agreed-upon service levels.
-                * A request for cancellation is made within a specified cooling-off period (if applicable to the service).
-                <br><br>
-                **2. Non-Refundable Services:**
-                Certain services, once initiated or completed, may be non-refundable. This includes, but is not limited to:
-                * Custom strategy development and consultation fees.
-                * Third-party advertising spend (e.g., Google Ads, Facebook Ads).
-                * Services where significant work has already been performed and delivered.
-                <br><br>
-                **3. Refund Process:**
-                To request a refund, please contact our support team at [Your Support Email] within [Number] days of the issue arising. You will need to provide:
-                * Your name and contact information.
-                * Details of the service purchased.
-                * A clear explanation of why you are requesting a refund.
-                * Any supporting documentation or evidence.
-                <br><br>
-                We will review your request and respond within [Number] business days. If approved, refunds will be processed back to the original payment method within [Number] business days. Please note that it may take additional time for the refund to appear on your statement depending on your bank or payment provider.
-                <br><br>
-                **4. Changes to Policy:**
-                Next Level Media reserves the right to modify this refund policy at any time. Any changes will be posted on this page.
-            </p>
-        </div>
+    <!-- Bottom Copyright & Modals -->
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4 border-t border-white/5 mt-8">
+      <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+        <span>&copy; <?= date('Y'); ?> Next Level Media. All rights reserved.</span>
+        <span class="hidden sm:inline text-gray-700">|</span>
+        <span>Developed by <a href="https://dev-sahariarsupto.vercel.app" target="_blank" rel="noopener noreferrer" class="text-violet-400 hover:text-white font-semibold transition-colors underline underline-offset-2">Sahariar Supto</a></span>
+      </div>
+      <div class="flex items-center space-x-6">
+        <button id="openPrivacyModal" class="hover:text-gray-300 transition-colors focus:outline-none">Privacy Policy</button>
+        <button id="openTermsModal" class="hover:text-gray-300 transition-colors focus:outline-none">Terms of Service</button>
+        <a href="admin/login.php" class="text-gray-600 hover:text-gray-400 transition-colors">Admin Portal</a>
+      </div>
     </div>
 
-    <!-- Privacy Policy Modal -->
-    <div id="privacy-modal" class="modal-overlay hidden">
-        <div class="modal-content w-full sm:w-3/4 lg:w-1/2">
-            <button class="modal-close-btn" data-modal-id="privacy-modal">&times;</button>
-            <h3 class="text-2xl font-bold text-white mb-4">Privacy Policy</h3>
-            <p class="modal-text-responsive text-gray-300 leading-relaxed">
-                Your privacy is critically important to us. At Next Level Media, we have a few fundamental principles:
-                <br><br>
-                * We don’t ask you for personal information unless we truly need it.
-                * We don’t share your personal information with anyone except to comply with the law, develop our products, or protect our rights.
-                * We don’t store personal information on our servers unless required for the on-going operation of one of our services.
-                <br><br>
-                It is Next Level Media's policy to respect your privacy regarding any information we may collect while operating our website.
-                <br><br>
-                **Website Visitors:** Like most website operators, Next Level Media collects non-personally-identifying information of the sort that web browsers and servers typically make available, such as the browser type, language preference, referring site, and the date and time of each visitor request. Next Level Media’s purpose in collecting non-personally identifying information is to better understand how Next Level Media’s visitors use its website. From time to time, Next Level Media may release non-personally-identifying information in the aggregate, e.g., by publishing a report on trends in the usage of its website.
-                <br><br>
-                Next Level Media also collects potentially personally-identifying information like Internet Protocol (IP) addresses for logged in users and for users leaving comments on [Blog URL] blogs/sites. Next Level Media only discloses logged in user and commenter IP addresses under the same circumstances that it uses and discloses personally-identifying information as described below.
-                <br><br>
-                **Gathering of Personally-Identifying Information:** Certain visitors to Next Level Media’s websites choose to interact with Next Level Media in ways that require Next Level Media to gather personally-identifying information. The amount and type of information that Next Level Media gathers depends on the nature of the interaction. For example, we ask visitors who sign up at [Your Website URL] to provide a username and email address. Those who engage in transactions with Next Level Media are asked to provide additional information, including as necessary the personal and financial information required to process those transactions. In each case, Next Level Media collects such information only insofar as is necessary or appropriate to fulfill the purpose of the visitor’s interaction with Next Level Media. Next Level Media does not disclose personally-identifying information other than as described below. And visitors can always refuse to supply personally-identifying information, with the caveat that it may prevent them from engaging in certain website-related activities.
-                <br><br>
-                **Protection of Certain Personally-Identifying Information:** Next Level Media discloses potentially personally-identifying and personally-identifying information only to those of its employees, contractors and affiliated organizations that (i) need to know that information in order to process it on Next Level Media’s behalf or to provide services available at Next Level Media’s websites, and (ii) that have agreed not to disclose it to others. Some of those employees, contractors and affiliated organizations may be located outside of your home country; by using Next Level Media’s websites, you consent to the transfer of such information to them. Next Level Media will not rent or sell potentially personally-identifying and personally-identifying information to anyone. Other than to its employees, contractors and affiliated organizations, as described above, Next Level Media discloses potentially personally-identifying and personally-identifying information only in response to a subpoena, court order or other governmental request, or when Next Level Media believes in good faith that disclosure is reasonably necessary to protect the property or rights of Next Level Media, third parties or the public at large.
-                <br><br>
-                If you are a registered user of an Next Level Media website and have supplied your email address, Next Level Media may occasionally send you an email to tell you about new features, solicit your feedback, or just keep you up to date with what’s going on with Next Level Media and our products. If you send us a request (for example via email or via one of our feedback mechanisms), we reserve the right to publish it in order to help us clarify or respond to your request or to help us support other users. Next Level Media takes all measures reasonably necessary to protect against the unauthorized access, use, alteration or destruction of potentially personally-identifying and personally-identifying information.
-            </p>
-        </div>
+  </div>
+</footer>
+
+<!-- Privacy Policy Modal -->
+<div id="privacyModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+  <div class="relative w-full max-w-2xl bg-[#12121a] border border-white/15 rounded-3xl p-6 sm:p-8 max-h-[85vh] overflow-y-auto text-gray-300">
+    <button id="closePrivacyModal" class="absolute top-5 right-5 text-gray-400 hover:text-white">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <h3 class="text-xl font-bold text-white mb-4">Privacy Policy</h3>
+    <div class="space-y-3 text-sm leading-relaxed text-gray-400">
+      <p>At Next Level Media, your privacy is a paramount priority. We collect only necessary information to deliver our media production, strategy, and creative services.</p>
+      <p>Any media files, videos, script drafts, and branding guidelines shared with us remain strictly confidential and will never be shared or distributed without explicit written permission.</p>
+      <p>If you have any questions regarding your data or request deletion of communication logs, feel free to contact our data team at contact@nextlevelmediadigital.com.</p>
     </div>
+  </div>
+</div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Get references to the policy links
-            const termsLink = document.getElementById('terms-link');
-            const refundLink = document.getElementById('refund-link');
-            const privacyLink = document.getElementById('privacy-link');
+<!-- Terms of Service Modal -->
+<div id="termsModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+  <div class="relative w-full max-w-2xl bg-[#12121a] border border-white/15 rounded-3xl p-6 sm:p-8 max-h-[85vh] overflow-y-auto text-gray-300">
+    <button id="closeTermsModal" class="absolute top-5 right-5 text-gray-400 hover:text-white">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <h3 class="text-xl font-bold text-white mb-4">Terms of Service</h3>
+    <div class="space-y-3 text-sm leading-relaxed text-gray-400">
+      <p>By engaging with Next Level Media services or browsing our site, you agree to our standard service guidelines.</p>
+      <p>All video deliverables, motion designs, and final exports transfer full copyright and ownership to the client upon receipt of final settlement.</p>
+      <p>Revisions are conducted until customer satisfaction within the outlined project scope. Custom requests outside scope will be quoted transparently.</p>
+    </div>
+  </div>
+</div>
 
-            // Get references to the modal elements
-            const termsModal = document.getElementById('terms-modal');
-            const refundModal = document.getElementById('refund-modal');
-            const privacyModal = document.getElementById('privacy-modal');
+<script>
+  (function() {
+    function setupModal(openBtnId, closeBtnId, modalId) {
+      const openBtn = document.getElementById(openBtnId);
+      const closeBtn = document.getElementById(closeBtnId);
+      const modal = document.getElementById(modalId);
+      if (!openBtn || !closeBtn || !modal) return;
 
-            // Get all close buttons
-            const closeButtons = document.querySelectorAll('.modal-close-btn');
+      openBtn.addEventListener('click', () => {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = 'hidden';
+      });
 
-            /**
-             * Opens a specified modal.
-             * @param {HTMLElement} modalElement - The modal element to open.
-             */
-            function openModal(modalElement) {
-                modalElement.classList.add('open');
-                modalElement.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling on body when modal is open
-            }
+      const close = () => {
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = 'auto';
+      };
 
-            /**
-             * Closes a specified modal.
-             * @param {HTMLElement} modalElement - The modal element to close.
-             */
-            function closeModal(modalElement) {
-                modalElement.classList.remove('open');
-                // Use a timeout to allow the transition to complete before hiding
-                setTimeout(() => {
-                    modalElement.classList.add('hidden');
-                    document.body.style.overflow = ''; // Restore body scrolling
-                }, 300); // Match transition duration
-            }
+      closeBtn.addEventListener('click', close);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) close();
+      });
+    }
 
-            // Add event listeners to open modals
-            termsLink.addEventListener('click', (e) => {
-                e.preventDefault(); // Prevent default link behavior
-                openModal(termsModal);
-            });
-
-            refundLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                openModal(refundModal);
-            });
-
-            privacyLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                openModal(privacyModal);
-            });
-
-            // Add event listeners to close modals using the close button
-            closeButtons.forEach(button => {
-                button.addEventListener('click', (e) => {
-                    const modalId = e.target.dataset.modalId;
-                    const modalToClose = document.getElementById(modalId);
-                    if (modalToClose) {
-                        closeModal(modalToClose);
-                    }
-                });
-            });
-
-            // Close modal when clicking outside the content (on the overlay)
-            document.querySelectorAll('.modal-overlay').forEach(overlay => {
-                overlay.addEventListener('click', (e) => {
-                    if (e.target === overlay) { // Check if the click was directly on the overlay
-                        closeModal(overlay);
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+    setupModal('openPrivacyModal', 'closePrivacyModal', 'privacyModal');
+    setupModal('openTermsModal', 'closeTermsModal', 'termsModal');
+  })();
+</script>

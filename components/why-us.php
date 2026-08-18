@@ -1,301 +1,169 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <title>Why US?</title>
-</head>
-<style>
-     body {
-            
-            font-family: 'Space Grotesk', sans-serif; /* Changed to Space Grotesk */
-         
-            
-        }
-    .why-card {
-  transition: transform 0.4s ease, background-color 0.3s ease, box-shadow 0.4s ease;
-  transform: translateY(0);
-}
+<!-- Why Choose Us / Comparison Section (Immersive MZ Media Style) -->
+<section class="relative w-full py-24 px-4 sm:px-6 lg:px-8 bg-transparent" id="why-us">
+  
+  <div class="max-w-7xl mx-auto relative z-10">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#09090d]/90 border border-white/15 backdrop-blur-xl mb-6 shadow-[0_0_20px_rgba(99,102,241,0.2)]">
+        <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
+        <span class="text-xs font-bold uppercase tracking-widest text-indigo-300">The Next Level Difference</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight font-display">
+        Here's how we do <br class="hidden sm:inline" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-violet-400">things differently</span>
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-gray-300">
+        Skip the headache of ghosting freelancers and slow corporate bureaucracies.
+      </p>
+    </div>
 
-.why-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  background-color: rgba(0, 0, 0, 0.8); /* subtle dark background */
-  box-shadow: 0 20px 40px rgba(128, 0, 128, 0.3); /* purple glow */
-}
+    <!-- Comparison Cards Grid (Immersive 3D Tilt Matrix) -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch" data-aos="fade-up" data-aos-delay="100">
+      
+      <!-- Card 1: Freelancers -->
+      <div class="immersive-card p-8 sm:p-9 flex flex-col justify-between group">
+        <div class="hud-corner-tl"></div>
+        <div class="hud-corner-br"></div>
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-.why-choose-us-header h4,
-.why-choose-us-header h2 {
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-.why-choose-us-header.animated h4,
-.why-choose-us-header.animated h2 {
-    animation: fadeInUp 0.8s cubic-bezier(.77,0,.18,1) forwards;
-    opacity: 1;
-}
-.why-choose-us-header.animated h2 {
-    animation-delay: 0.2s;
-}
-</style>
-<body>
-    <section class="why-choose-us-section">
-        <div class="why-choose-us-bg"></div>
-        <div class="why-choose-us-container">
-            <div class="why-choose-us-header">
-                <h4>WHY WORK US</h4>
-                <h2><br><span class="highlight">Here’s How We Do Things Differently
-</span></h2>
-            </div>
-            <div class="why-choose-us-cards ">
-                <div class="why-card mz-media-card hover:cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:bg-black hover:shadow-[0_20px_40px_rgba(168,85,247,0.3)]">
+        <div class="relative z-10">
+          <div class="inline-block px-3.5 py-1 rounded-full bg-red-500/10 text-red-400 text-xs font-bold uppercase tracking-wider mb-4 border border-red-500/25">
+            Unreliable
+          </div>
+          <h3 class="text-2xl font-black text-white mb-2">Random Freelancers</h3>
+          <p class="text-sm text-gray-400 mb-8 leading-relaxed">Inconsistent output, ghosting, and zero marketing accountability.</p>
 
-                    <div class="mz-media-logo">
-                        <img src="main-logo.png" alt="next level media" />
-                        <span class="mz-media-title">Next Level Media</span>
-                    </div>
-                    <ul>
-                        <li><span class="check">&#10003;</span> In house team of 20+ Experts</li>
-                        <li><span class="check">&#10003;</span> Results oriented</li>
-                        <li><span class="check">&#10003;</span> Experience with 500+ Clients</li>
-                        <li><span class="check">&#10003;</span> Personalised CRM</li>
-                        <li><span class="check">&#10003;</span> 24/7 Support, Anytime You Need Us</li>
-                    </ul>
-                </div>
-                <div class="why-card other-agencies-card">
-                    <h3>Other Agencies</h3>
-                    <ul>
-                        <li><span class="cross">&#10005;</span> Unreliable Freelancers with slow turnarounds</li>
-                        <li><span class="cross">&#10005;</span> Edits that fail to convert or perform.</li>
-                        <li><span class="cross">&#10005;</span> Weak thumbnails and titles with no CTR strategy.</li>
-                        <li><span class="cross">&#10005;</span> Lack of proper distribution systems</li>
-                        <li><span class="cross">&#10005;</span> No expertise in funnels or lead capture systems.</li>
-                    </ul>
-                </div>
-            </div>
+          <ul class="space-y-4 text-sm text-gray-400">
+            <li class="flex items-start gap-3">
+              <span class="text-red-400 font-bold text-base mt-0.5">✕</span>
+              <span>Disappearing acts & missed campaign deadlines</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-400 font-bold text-base mt-0.5">✕</span>
+              <span>No marketing strategy or psychology insight</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-400 font-bold text-base mt-0.5">✕</span>
+              <span>Requires continuous micromanagement</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-400 font-bold text-base mt-0.5">✕</span>
+              <span>Narrow skillset (cannot do 3D/VFX/Sound design)</span>
+            </li>
+          </ul>
         </div>
-    </section>
-    <style>
-        .why-choose-us-section {
-            position: relative;
-            min-height: 100vh;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            /* Remove extra space from top and bottom */
-            padding-top: 0;
-            padding-bottom: 0;
-        }
-.why-choose-us-bg {
-  position: absolute;
-  inset: 0;
-  background: url('https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b5dd36b3452df31baf9345_Glow.avif') center/cover no-repeat;
-  z-index: 1;
-  opacity: 30%;
-}
 
-@media (max-width: 1024px) {
-  .why-choose-us-bg {
-    display: none !important;
-    background: none !important;
-  }
+        <div class="relative z-10 mt-8 pt-4 border-t border-white/10 text-xs text-red-400/80 font-medium">
+          Low Price, High Hidden Headache
+        </div>
+      </div>
 
-}
-        .why-choose-us-container {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            /* Remove extra space from top and bottom */
-            padding-top: 0;
-            padding-bottom: 0;
-            padding-left: 24px;
-            padding-right: 24px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .why-choose-us-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-        .why-choose-us-header h4 {
-            color: #fff;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-        .why-choose-us-header h2 {
-            color: #bdbdbd;
-            font-size: 2.5rem;
-            font-weight: 400;
-            line-height: 1.2;
-        }
-        .why-choose-us-header .highlight {
-            color: #fff;
-            font-size: 3rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-        }
-        .why-choose-us-cards {
-            display: flex;
-            gap: 32px;
-            width: 100%;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .why-card {
-            background: #000; /* Changed from rgba(20, 22, 34, 0.95) to solid black */
-            border-radius: 24px;
-            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.25);
-            padding: 36px 32px;
-            min-width: 320px;
-            max-width: 400px;
-            flex: 1 1 320px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .mz-media-card {
-            border: 1.5px solid #000000;
-        }
-        .other-agencies-card {
-            border: 1.5px solid #23232e;
-        }
-.mz-media-logo {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 24px;
-    /* 50% black */
-}
+      <!-- Card 2: Next Level Media (Ultra-Featured Cyber Glow Card) -->
+      <div class="immersive-card p-8 sm:p-10 flex flex-col justify-between transform lg:-translate-y-4 z-20 border-2 border-violet-500/80 shadow-[0_0_60px_rgba(139,92,246,0.35)] group bg-gradient-to-b from-[#18182b] via-[#11111e] to-[#0a0a12]">
+        
+        <div class="hud-corner-tl" style="opacity:1; border-color:#a855f7;"></div>
+        <div class="hud-corner-br" style="opacity:1; border-color:#a855f7;"></div>
 
-        .mz-media-logo img {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: #fff;
-            object-fit: contain;
-        }
-        .mz-media-title {
-            font-size: 1.7rem;
-            font-weight: 700;
-            color: #fff;
-            letter-spacing: 1px;
-        }
-        .why-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            width: 100%;
-        }
-        .why-card li {
-            font-size: 1.1rem;
-            color: #e0e0e0;
-            margin-bottom: 18px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 500;
-        }
-        .why-card li:last-child {
-            margin-bottom: 0;
-        }
-        .check {
-            color: #6fff8e;
-            font-size: 1.3rem;
-            font-weight: bold;
-        }
-        .cross {
-            color: #ff6f6f;
-            font-size: 1.3rem;
-            font-weight: bold;
-        }
-        .other-agencies-card h3 {
-            color: #fff;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 24px;
-        }
-        @media (max-width: 900px) {
-            .why-choose-us-cards {
-                flex-direction: column;
-                align-items: center;
-                gap: 24px;
-            }
-            .why-card {
-                max-width: 100%;
-                width: 100%;
-            }
-        }
-        @media (max-width: 600px) {
-             .why-choose-us-header h4 {
-        font-size: 0.9rem;
-        letter-spacing: 1px;
-    }
+        <!-- Popular Badge -->
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-1.5 rounded-full bg-gradient-to-r from-blue-500 via-indigo-500 to-violet-600 text-white text-xs font-black uppercase tracking-wider shadow-[0_0_25px_rgba(99,102,241,0.6)] z-30">
+          ★ The Ultimate Growth Engine
+        </div>
 
-    .why-choose-us-header h2 {
-        font-size: 1.2rem;
-    }
+        <div class="relative z-10 pt-2">
+          <div class="flex items-center gap-3 mb-4 mt-2">
+            <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-violet-600/40 to-blue-500/30 border border-white/20 flex items-center justify-center shadow-lg">
+              <img src="main-logo.png" alt="Logo" class="w-8 h-8 object-contain" />
+            </div>
+            <div>
+              <h3 class="text-2xl font-black text-white">Next Level Media</h3>
+              <p class="text-xs text-indigo-300 font-semibold">In-House Dedicated Partner</p>
+            </div>
+          </div>
 
-    .why-choose-us-header .highlight {
-        font-size: 1.5rem;
-    }
+          <p class="text-sm text-indigo-100/90 mb-8 leading-relaxed">Dedicated production firepower built specifically for speed, retention, and measurable revenue growth.</p>
 
-    .why-card {
-        padding: 20px 12px;
-        border-radius: 14px;
-    }
+          <ul class="space-y-4 text-sm text-gray-200">
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-emerald-500/25 border border-emerald-500/50 flex items-center justify-center text-emerald-400 flex-shrink-0 mt-0.5 shadow-[0_0_10px_rgba(16,185,129,0.3)]">
+                ✓
+              </div>
+              <span class="font-bold text-white">20+ In-house production experts</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-emerald-500/25 border border-emerald-500/50 flex items-center justify-center text-emerald-400 flex-shrink-0 mt-0.5 shadow-[0_0_10px_rgba(16,185,129,0.3)]">
+                ✓
+              </div>
+              <span class="font-bold text-white">Rapid turnaround (24h – 48h initial cuts)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-emerald-500/25 border border-emerald-500/50 flex items-center justify-center text-emerald-400 flex-shrink-0 mt-0.5 shadow-[0_0_10px_rgba(16,185,129,0.3)]">
+                ✓
+              </div>
+              <span class="font-bold text-white">Proven track record with 500+ global brands</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-emerald-500/25 border border-emerald-500/50 flex items-center justify-center text-emerald-400 flex-shrink-0 mt-0.5 shadow-[0_0_10px_rgba(16,185,129,0.3)]">
+                ✓
+              </div>
+              <span class="font-bold text-white">End-to-End: Scripting, 3D, VFX, Sound & Ads</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-emerald-500/25 border border-emerald-500/50 flex items-center justify-center text-emerald-400 flex-shrink-0 mt-0.5 shadow-[0_0_10px_rgba(16,185,129,0.3)]">
+                ✓
+              </div>
+              <span class="font-bold text-white">Unlimited revisions until 100% satisfied</span>
+            </li>
+          </ul>
+        </div>
 
-    .mz-media-logo img {
-        width: 32px;
-        height: 32px;
-    }
+        <div class="relative z-10 mt-8 pt-6 border-t border-white/15">
+          <a href="https://calendly.com/nextlevelmediacall/30min?month=2025-07" target="_blank" class="w-full flex items-center justify-center gap-2 py-4 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-wider hover:bg-gray-100 transition shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:shadow-[0_0_40px_rgba(139,92,246,0.6)]">
+            <span>Upgrade Your Media Production</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
 
-    .mz-media-title {
-        font-size: 1rem;
-    }
+      <!-- Card 3: Traditional Agencies -->
+      <div class="immersive-card p-8 sm:p-9 flex flex-col justify-between group">
+        <div class="hud-corner-tl"></div>
+        <div class="hud-corner-br"></div>
 
-    .why-card li {
-        font-size: 0.95rem;
-    }
+        <div class="relative z-10">
+          <div class="inline-block px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4 border border-amber-500/25">
+            Outdated & Bloated
+          </div>
+          <h3 class="text-2xl font-black text-white mb-2">Traditional Agencies</h3>
+          <p class="text-sm text-gray-400 mb-8 leading-relaxed">Bloated retainers, endless account managers, and glacial speed.</p>
 
-    .other-agencies-card h3 {
-        font-size: 1.3rem;
-    }
-        }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const header = document.querySelector('.why-choose-us-header');
-            if (!header) return;
-            const observer = new IntersectionObserver(
-                (entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            header.classList.add('animated');
-                            observer.unobserve(header);
-                        }
-                    });
-                },
-                { threshold: 0.5 }
-            );
-            observer.observe(header);
-        });
-    </script>
-</body>
-</html>
+          <ul class="space-y-4 text-sm text-gray-400">
+            <li class="flex items-start gap-3">
+              <span class="text-amber-400 font-bold text-base mt-0.5">✕</span>
+              <span>$10k+/mo minimum retainers with locked contracts</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-amber-400 font-bold text-base mt-0.5">✕</span>
+              <span>Weeks of internal back-and-forth for minor tweaks</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-amber-400 font-bold text-base mt-0.5">✕</span>
+              <span>Work pawned off to inexperienced junior interns</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-amber-400 font-bold text-base mt-0.5">✕</span>
+              <span>Rigid scope with extra invoices for each revision</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="relative z-10 mt-8 pt-4 border-t border-white/10 text-xs text-amber-400/80 font-medium">
+          Excess Overhead, Zero Agility
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

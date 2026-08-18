@@ -1,236 +1,159 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-  <title>Next Level Media</title>
-
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      max-width: 100vw;
-      overflow-x: hidden;
-      background-color: black;
-      color: white;
-      font-family: sans-serif;
-    }
-
-    .glow-effect {
-      background: radial-gradient(ellipse at center, rgba(231, 11, 231, 0.2), transparent 70%);
-      filter: blur(100px);
-      z-index: 0;
-    }
-
-    .floating-tags-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      position: relative;
-      height: 12rem;
-    }
-
-    .floating-tags-group {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .floating-tag {
-      min-width: 180px;
-      text-align: center;
-      transition: transform 0.2s;
-    }
-
-    @keyframes floatLeft {
-      0% { opacity: 0; transform: translateX(-60px); }
-      100% { opacity: 1; transform: translateX(0); }
-    }
-
-    @keyframes floatRight {
-      0% { opacity: 0; transform: translateX(60px); }
-      100% { opacity: 1; transform: translateX(0); }
-    }
-
-    .animate-floatLeft {
-      animation: floatLeft 1.2s ease-out forwards;
-      opacity: 0;
-    }
-
-    .animate-floatRight {
-      animation: floatRight 1.2s ease-out forwards;
-      opacity: 0;
-    }
-
-    @keyframes fadeInSlideUp {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .animate-fadeInSlideUp {
-      opacity: 0;
-      animation: fadeInSlideUp 1s ease-out forwards;
-    }
-
-    .delay-100 { animation-delay: 0.1s; }
-    .delay-200 { animation-delay: 0.2s; }
-    .delay-300 { animation-delay: 0.3s; }
-    .delay-400 { animation-delay: 0.4s; }
-    .delay-500 { animation-delay: 0.5s; }
-    .delay-600 { animation-delay: 0.6s; }
-    .delay-700 { animation-delay: 0.7s; }
-    .delay-800 { animation-delay: 0.8s; }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      text-align: center;
-    }
-
-    @media (max-width: 640px) {
-      .floating-tags-container {
-        flex-direction: column;
-        gap: 1rem;
-        height: auto;
-      }
-
-      .floating-tags-group {
-        flex-direction: row;
-        justify-content: center;
-        gap: 0.5rem;
-      }
-
-      .floating-tag {
-        min-width: 120px;
-        font-size: 0.95rem;
-        transform: none !important;
-      }
-
-      .animate-floatLeft,
-      .animate-floatRight {
-        animation: fadeInSlideUp 1s ease-out forwards;
-        opacity: 0;
-      }
-
-     
-    }
-  </style>
-</head>
-<body>
-  <section class="px-4 bg-black relative w-full overflow-hidden pb-5">
-    <!-- Responsive Glow Effects -->
-    <div class="absolute inset-0 pointer-events-none z-0">
-      <div class="glow-effect w-[60vw] h-[60vw] max-w-[400px] max-h-[400px] absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 rounded-xl"></div>
-      <div class="glow-effect w-[50vw] h-[50vw] max-w-[300px] max-h-[300px] absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 rounded-xl"></div>
+<!-- Second Intro & Value Proposition Section -->
+<section class="relative w-full py-24 px-4 sm:px-6 lg:px-8 bg-transparent overflow-hidden" id="about">
+  
+  <div class="max-w-6xl mx-auto relative z-10">
+    
+    <!-- Headline Block -->
+    <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#09090d]/90 border border-white/15 backdrop-blur-xl mb-6 shadow-[0_0_20px_rgba(99,102,241,0.2)]">
+        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+        <span class="text-xs font-bold uppercase tracking-widest text-cyan-300">Why Modern Brands Upgrade With Us</span>
+      </div>
+      
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight font-display">
+        Tired of boring video content that <br class="hidden sm:inline" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-violet-400">doesn't convert or stand out?</span>
+      </h2>
+      
+      <p class="mt-5 text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
+        We engineer high-retention video content, dynamic visual systems, and motion assets built from the ground up to captivate attention and generate consistent client pipeline.
+      </p>
     </div>
 
-    <div class="max-w-7xl mx-auto relative z-10">
-      <div class="text-center mb-12 md:mb-20">
-        <h2 id="headline-animate" class="text-3xl md:text-5xl font-semibold leading-tight text-white max-w-4xl mx-auto delay-100 mt-10 animate-fadeInSlideUp">
-          Tired of boring video content that don't stand out? <br>
-          <span class="text-blue-400 text-sm sm:text-xl">It's time to upgrade the game with us!</span>
-        </h2>
-
-        <!-- Floating tags -->
-        <div class="floating-tags-container mt-8 md:mt-12">
-          <div class="floating-tags-group animate-floatLeft">
-            <div class="floating-tag bg-blue-700 bg-opacity-70 backdrop-blur-sm text-sm px-4 py-2 rounded-xl shadow-lg flex items-center -rotate-12 animate-fadeInSlideUp delay-200">
-              <span>Podcast Editing</span> 
-            </div>
-            <div class="floating-tag bg-purple-700 bg-opacity-70 backdrop-blur-sm text-sm px-4 py-2 rounded-xl shadow-lg flex items-center rotate-6 animate-fadeInSlideUp delay-300">
-              <span>Ad Creatives & VSL</span> 
-            </div>
-          </div>
-
-          <div class="floating-tags-group animate-floatRight ml-8">
-            <div class="floating-tag bg-purple-700 bg-opacity-70 backdrop-blur-sm text-sm px-4 py-2 rounded-xl shadow-lg flex items-center rotate-12 animate-fadeInSlideUp delay-400">
-              <span>Short Form Content</span> 
-            </div>
-            <div class="floating-tag bg-blue-700 bg-opacity-70 backdrop-blur-sm text-sm px-4 py-2 rounded-xl shadow-lg flex items-center -rotate-6 animate-fadeInSlideUp delay-500">
-              <span>Youtube Videos</span> 
-            </div>
-          </div>
+    <!-- Floating Capability Pills (MZ Media Holographic Style) -->
+    <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-4 mb-20 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+      
+      <div class="group relative px-5 py-3 rounded-2xl bg-[#09090d]/90 border border-white/10 backdrop-blur-xl shadow-[0_4px_25px_rgba(0,0,0,0.5)] hover:border-blue-400/60 hover:shadow-[0_0_25px_rgba(59,130,246,0.35)] transition-all duration-300 hover:-translate-y-1">
+        <div class="flex items-center gap-2.5">
+          <div class="w-2.5 h-2.5 rounded-full bg-blue-500 shadow-[0_0_8px_#3b82f6]"></div>
+          <span class="text-sm font-semibold text-gray-200 group-hover:text-white transition-colors">Podcast & Long-Form Systems</span>
         </div>
       </div>
 
-<!-- Numbers grid: always 3 columns, animate all texts -->
-<div class="grid grid-cols-3 gap-2 text-center mt-8 md:mt-0">
-  <div class="flex flex-col items-center animate-fadeInSlideUp delay-300">
-    <h3 class="text-xl sm:text-2xl md:text-4xl font-bold text-white mb-1 animate-fadeInSlideUp delay-400">
-      <span class="count-up" data-target="200">0</span> <span class="text-blue-400">%</span>
-    </h3>
-    <p class="text-xs sm:text-sm text-gray-300 mb-1 animate-fadeInSlideUp delay-500">Engagement</p>
-    <p class="text-[10px] text-gray-500 animate-fadeInSlideUp delay-600">Viral Edits</p>
+      <div class="group relative px-5 py-3 rounded-2xl bg-[#09090d]/90 border border-white/10 backdrop-blur-xl shadow-[0_4px_25px_rgba(0,0,0,0.5)] hover:border-violet-400/60 hover:shadow-[0_0_25px_rgba(139,92,246,0.35)] transition-all duration-300 hover:-translate-y-1">
+        <div class="flex items-center gap-2.5">
+          <div class="w-2.5 h-2.5 rounded-full bg-violet-500 shadow-[0_0_8px_#8b5cf6]"></div>
+          <span class="text-sm font-semibold text-gray-200 group-hover:text-white transition-colors">Ad Creatives & VSL Architecture</span>
+        </div>
+      </div>
+
+      <div class="group relative px-5 py-3 rounded-2xl bg-[#09090d]/90 border border-white/10 backdrop-blur-xl shadow-[0_4px_25px_rgba(0,0,0,0.5)] hover:border-cyan-400/60 hover:shadow-[0_0_25px_rgba(6,182,212,0.35)] transition-all duration-300 hover:-translate-y-1">
+        <div class="flex items-center gap-2.5">
+          <div class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#06b6d4]"></div>
+          <span class="text-sm font-semibold text-gray-200 group-hover:text-white transition-colors">Short-Form Viral TikToks & Reels</span>
+        </div>
+      </div>
+
+      <div class="group relative px-5 py-3 rounded-2xl bg-[#09090d]/90 border border-white/10 backdrop-blur-xl shadow-[0_4px_25px_rgba(0,0,0,0.5)] hover:border-pink-400/60 hover:shadow-[0_0_25px_rgba(236,72,153,0.35)] transition-all duration-300 hover:-translate-y-1">
+        <div class="flex items-center gap-2.5">
+          <div class="w-2.5 h-2.5 rounded-full bg-pink-500 shadow-[0_0_8px_#ec4899]"></div>
+          <span class="text-sm font-semibold text-gray-200 group-hover:text-white transition-colors">High-Converting YouTube Edits</span>
+        </div>
+      </div>
+
+      <div class="group relative px-5 py-3 rounded-2xl bg-[#09090d]/90 border border-white/10 backdrop-blur-xl shadow-[0_4px_25px_rgba(0,0,0,0.5)] hover:border-emerald-400/60 hover:shadow-[0_0_25px_rgba(16,185,129,0.35)] transition-all duration-300 hover:-translate-y-1">
+        <div class="flex items-center gap-2.5">
+          <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#10b981]"></div>
+          <span class="text-sm font-semibold text-gray-200 group-hover:text-white transition-colors">3D Motion & CGI Visual Effects</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Immersive Bento Metric Cards (3D Tilt & Cyber Spotlight) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="200">
+      
+      <!-- Card 1 -->
+      <div class="immersive-card p-8 sm:p-9 flex flex-col justify-between group">
+        <div class="hud-corner-tl"></div>
+        <div class="hud-corner-br"></div>
+        
+        <div class="relative z-10">
+          <div class="flex items-center justify-between mb-8">
+            <div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.2)] group-hover:scale-110 group-hover:bg-blue-500/20 transition-all duration-300">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+              </svg>
+            </div>
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/30">Viral Hooks</span>
+          </div>
+
+          <div class="flex items-baseline gap-1.5">
+            <span class="text-5xl sm:text-6xl font-black text-white tracking-tight count-up" data-target="200">0</span>
+            <span class="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">%</span>
+          </div>
+
+          <h3 class="text-xl font-extrabold text-white mt-4 mb-2 group-hover:text-blue-300 transition-colors">Higher Retention & Watch Time</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">Dynamic narrative pacing, visual resets, and psychology-backed storytelling keep watch times high above industry benchmarks.</p>
+        </div>
+
+        <div class="relative z-10 mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-blue-400 font-semibold">
+          <span>Retention Benchmark +200%</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="immersive-card p-8 sm:p-9 flex flex-col justify-between group">
+        <div class="hud-corner-tl"></div>
+        <div class="hud-corner-br"></div>
+
+        <div class="relative z-10">
+          <div class="flex items-center justify-between mb-8">
+            <div class="w-14 h-14 rounded-2xl bg-violet-500/10 border border-violet-500/30 flex items-center justify-center text-violet-400 shadow-[0_0_20px_rgba(139,92,246,0.2)] group-hover:scale-110 group-hover:bg-violet-500/20 transition-all duration-300">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+              </svg>
+            </div>
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-violet-500/10 text-violet-300 border border-violet-500/30">Omnichannel</span>
+          </div>
+
+          <div class="flex items-baseline gap-1.5">
+            <span class="text-5xl sm:text-6xl font-black text-white tracking-tight count-up" data-target="5">0</span>
+            <span class="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400">X</span>
+          </div>
+
+          <h3 class="text-xl font-extrabold text-white mt-4 mb-2 group-hover:text-violet-300 transition-colors">Organic Reach Expansion</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">Multi-platform distribution across YouTube, Shorts, TikTok, and LinkedIn to maximize algorithmic impressions and follower velocity.</p>
+        </div>
+
+        <div class="relative z-10 mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-violet-400 font-semibold">
+          <span>Cross-Platform Distribution</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="immersive-card p-8 sm:p-9 flex flex-col justify-between group">
+        <div class="hud-corner-tl"></div>
+        <div class="hud-corner-br"></div>
+
+        <div class="relative z-10">
+          <div class="flex items-center justify-between mb-8">
+            <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.2)] group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all duration-300">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+            </div>
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">Conversion</span>
+          </div>
+
+          <div class="flex items-baseline gap-1.5">
+            <span class="text-5xl sm:text-6xl font-black text-white tracking-tight count-up" data-target="50">0</span>
+            <span class="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">%</span>
+          </div>
+
+          <h3 class="text-xl font-extrabold text-white mt-4 mb-2 group-hover:text-cyan-300 transition-colors">More Qualified Sales Leads</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">Turn passive viewers into booked calendar meetings, product sign-ups, and inbound high-ticket inquiries with direct-response architecture.</p>
+        </div>
+
+        <div class="relative z-10 mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-cyan-400 font-semibold">
+          <span>Inbound Sales Conversion</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+
+    </div>
+
   </div>
-
-  <div class="flex flex-col items-center animate-fadeInSlideUp delay-400">
-    <h3 class="text-xl sm:text-2xl md:text-4xl font-bold text-white mb-1 animate-fadeInSlideUp delay-500">
-      <span class="count-up" data-target="5">0</span> <span class="text-blue-400">X</span>
-    </h3>
-    <p class="text-xs sm:text-sm text-gray-300 mb-1 animate-fadeInSlideUp delay-600">More Reach</p>
-    <p class="text-[10px] text-gray-500 animate-fadeInSlideUp delay-700">Strategic Distribution</p>
-  </div>
-
-  <div class="flex flex-col items-center animate-fadeInSlideUp delay-500">
-    <h3 class="text-xl sm:text-2xl md:text-4xl font-bold text-white mb-1 animate-fadeInSlideUp delay-600">
-      <span class="count-up" data-target="50">0</span> <span class="text-blue-400">%</span>
-    </h3>
-    <p class="text-xs sm:text-sm text-gray-300 mb-1 animate-fadeInSlideUp delay-700">More Leads</p>
-    <p class="text-[10px] text-gray-500 animate-fadeInSlideUp delay-800">Automated Systems</p>
-  </div>
-</div>
-
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      function animateCountUp(el, target, duration = 1500) {
-        let start = 0;
-        let startTime = null;
-        target = +target;
-        function updateCount(currentTime) {
-          if (!startTime) startTime = currentTime;
-          const progress = Math.min((currentTime - startTime) / duration, 1);
-          const value = Math.floor(progress * (target - start) + start);
-          el.textContent = value;
-          if (progress < 1) {
-            requestAnimationFrame(updateCount);
-          } else {
-            el.textContent = target;
-          }
-        }
-        requestAnimationFrame(updateCount);
-      }
-
-      const counters = document.querySelectorAll('.count-up');
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const el = entry.target;
-            animateCountUp(el, el.getAttribute('data-target'));
-            obs.unobserve(el);
-          }
-        });
-      }, { threshold: 0.6 });
-
-      counters.forEach(counter => observer.observe(counter));
-
-      const headline = document.getElementById('headline-animate');
-      if (headline) {
-        headline.classList.remove('animate-fadeInSlideUp');
-        const observer = new IntersectionObserver((entries, obs) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              headline.classList.add('animate-fadeInSlideUp');
-              obs.unobserve(headline);
-            }
-          });
-        }, { threshold: 0.6 });
-        observer.observe(headline);
-      }
-    });
-  </script>
-</body>
-</html>
+</section>

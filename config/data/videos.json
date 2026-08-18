@@ -1,0 +1,130 @@
+[
+    {
+        "id": 1,
+        "section": "shorts",
+        "title": "Viral Hook Breakdown",
+        "client_name": "Fitness Creator",
+        "video_url": "https:\/\/youtube.com\/shorts\/LPXvOwKmgF0",
+        "is_active": 1
+    },
+    {
+        "id": 2,
+        "section": "shorts",
+        "title": "SaaS Product Demo Reel",
+        "client_name": "SaaS Brand",
+        "video_url": "https:\/\/youtube.com\/shorts\/A0K4cyrD48U",
+        "is_active": 1
+    },
+    {
+        "id": 3,
+        "section": "shorts",
+        "title": "Personal Brand Story",
+        "client_name": "Agency Founder",
+        "video_url": "https:\/\/youtube.com\/shorts\/BSDP0qphx8o",
+        "is_active": 1
+    },
+    {
+        "id": 4,
+        "section": "shorts",
+        "title": "High Retention Pacing",
+        "client_name": "YouTube Creator",
+        "video_url": "https:\/\/youtube.com\/shorts\/v03bJY39b6U",
+        "is_active": 1
+    },
+    {
+        "id": 5,
+        "section": "shorts",
+        "title": "E-Commerce Spotlight",
+        "client_name": "E-Com Brand",
+        "video_url": "https:\/\/youtube.com\/shorts\/kRtHRAsHKk8",
+        "is_active": 1
+    },
+    {
+        "id": 6,
+        "section": "shorts",
+        "title": "Conversion Focused Cut",
+        "client_name": "Growth Brand",
+        "video_url": "https:\/\/youtube.com\/shorts\/3gDusm-pYr4",
+        "is_active": 1
+    },
+    {
+        "id": 7,
+        "section": "youtube",
+        "title": "Full Production Showcase 01",
+        "client_name": "Creator Channel",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_VZpzlfgMog",
+        "is_active": 1
+    },
+    {
+        "id": 8,
+        "section": "youtube",
+        "title": "Full Production Showcase 02",
+        "client_name": "Tech Channel",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=vVjQcWh7pVI",
+        "is_active": 1
+    },
+    {
+        "id": 9,
+        "section": "youtube",
+        "title": "Full Production Showcase 03",
+        "client_name": "Documentary",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=ZdaiBOEJhTY",
+        "is_active": 1
+    },
+    {
+        "id": 10,
+        "section": "youtube",
+        "title": "Full Production Showcase 04",
+        "client_name": "Creator Studio",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=mF2so1ihSQ4",
+        "is_active": 1
+    },
+    {
+        "id": 11,
+        "section": "youtube",
+        "title": "Full Production Showcase 05",
+        "client_name": "Podcast Cut",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=WyWPeGKKVIE",
+        "is_active": 1
+    },
+    {
+        "id": 12,
+        "section": "vsl",
+        "title": "Direct Response Performance Ad 01",
+        "client_name": "Direct Response",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=s7p6OLwV_50",
+        "is_active": 1
+    },
+    {
+        "id": 13,
+        "section": "vsl",
+        "title": "Direct Response Performance Ad 02",
+        "client_name": "App Growth",
+        "video_url": "https:\/\/youtu.be\/WMxo_4q0MNg",
+        "is_active": 1
+    },
+    {
+        "id": 14,
+        "section": "vsl",
+        "title": "Direct Response Performance Ad 03",
+        "client_name": "E-Com Ad",
+        "video_url": "https:\/\/youtu.be\/AlsXNhTm4AA",
+        "is_active": 1
+    },
+    {
+        "id": 15,
+        "section": "motion_3d",
+        "title": "3D Product Animation Showcase",
+        "client_name": "3D Studio",
+        "video_url": "https:\/\/nextlevelmediadigital.com\/components\/videos\/3d.mp4",
+        "is_active": 1
+    },
+    {
+        "id": 16,
+        "section": "reviews",
+        "title": "Client Story - Mike Over Case Study",
+        "client_name": "Mike Over",
+        "video_url": "https:\/\/nextlevelmediadigital.com\/components\/videos\/review.mp4",
+        "is_active": 1
+    }
+]
