@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "name": "Alex Hormozi",
+        "role": "Entrepreneur",
+        "company": "Acquisition.com",
+        "brand_logo": "brands\/logo_4.png",
+        "avatar": "clients\/1.png",
+        "quote": "These guys are the OGs. The fastest \u2018yes\u2019 we\u2019ve ever seen from prospects on our offers. The hook retention and pacing are completely unmatched.",
+        "link_url": "https:\/\/acquisition.com",
+        "is_active": 1
+    },
+    {
+        "id": 2,
+        "name": "Ali Abdaal",
+        "role": "Former Doctor & Author",
+        "company": "Feel-Good Productivity",
+        "brand_logo": "",
+        "avatar": "clients\/2.jpg",
+        "quote": "They turned complexity into clarity fast. If you want premium video then look no further. Our production velocity went up 10x with zero headache.",
+        "link_url": "https:\/\/youtube.com\/@aliabdaal",
+        "is_active": 1
+    },
+    {
+        "id": 3,
+        "name": "Steven Bartlett",
+        "role": "British Businessman",
+        "company": "The Diary Of A CEO",
+        "brand_logo": "",
+        "avatar": "clients\/3.webp",
+        "quote": "Sent them a rough idea. They came back with something we couldn\u2019t have imagined. Felt like a real team behind the project, not just freelancers.",
+        "link_url": "https:\/\/youtube.com\/@TheDiaryOfACEO",
+        "is_active": 1
+    },
+    {
+        "id": 4,
+        "name": "Wisdom Kaye",
+        "role": "Fashion Model & Creator",
+        "company": "Vogue Featured",
+        "brand_logo": "",
+        "avatar": "clients\/4.jpg",
+        "quote": "Top-tier work, delivered faster than anyone else we\u2019ve tried. The visual transitions, motion design, and pacing are world-class.",
+        "link_url": "https:\/\/tiktok.com\/@wisdm8",
+        "is_active": 1
+    },
+    {
+        "id": 5,
+        "name": "Nechristian",
+        "role": "Founder of instaappoint.ai",
+        "company": "instaappoint.ai",
+        "brand_logo": "",
+        "avatar": "clients\/5.png",
+        "quote": "Felt like we hired an elite in-house team, not an agency. The direct response ROI and inbound lead conversions doubled immediately.",
+        "link_url": "https:\/\/instaappoint.ai",
+        "is_active": 1
+    },
+    {
+        "id": 6,
+        "name": "Jason Wojo",
+        "role": "Entrepreneur",
+        "company": "Wojo Media",
+        "brand_logo": "",
+        "avatar": "clients\/6.jpg",
+        "quote": "Honestly the first video team that didn\u2019t make me chase them for updates. They handled every revision in hours and the final delivery was pure gold.",
+        "link_url": "https:\/\/wojomedia.com",
+        "is_active": 1
+    }
+]

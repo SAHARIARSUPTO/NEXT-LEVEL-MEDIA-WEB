@@ -81,8 +81,13 @@ $default_settings = [
     'contact_email' => 'contact@nextlevelmediadigital.com',
     'contact_phone' => '+880 1753-506047',
     'booking_calendly_url' => 'https://calendly.com/nextlevelmediacall/30min?month=2025-07',
-    'hero_video_url' => 'https://player.vimeo.com/video/824804225', // Vimeo support for first hero video
-    'hero_badge_text' => 'Agency Showreel (01:24)',
+    'order_cta_url' => 'order.php',
+    'hero_video_url' => 'https://player.vimeo.com/video/1219066986?autoplay=1&title=0&byline=0&portrait=0&badge=0',
+    'hero_badge_text' => 'Agency Showreel',
+    'social_twitter' => 'https://x.com/neel_nafis',
+    'social_youtube' => 'https://www.youtube.com/@neelnafis',
+    'social_linkedin' => 'https://www.linkedin.com/company/mz-media-digital/',
+    'social_instagram' => 'https://instagram.com/nextlevelmedia',
 ];
 
 function get_setting($key, $default = '') {
@@ -314,27 +319,38 @@ function get_finance_summary() {
 // 5. Section-Wise Videos Manager
 // --------------------------------------------------------------------------
 $initial_videos = [
-    // Shorts
-    ["id" => 1, "section" => "shorts", "title" => "Viral Hook Breakdown", "client_name" => "Fitness Creator", "video_url" => "https://youtube.com/shorts/LPXvOwKmgF0", "is_active" => 1],
-    ["id" => 2, "section" => "shorts", "title" => "SaaS Product Demo Reel", "client_name" => "SaaS Brand", "video_url" => "https://youtube.com/shorts/A0K4cyrD48U", "is_active" => 1],
-    ["id" => 3, "section" => "shorts", "title" => "Personal Brand Story", "client_name" => "Agency Founder", "video_url" => "https://youtube.com/shorts/BSDP0qphx8o", "is_active" => 1],
-    ["id" => 4, "section" => "shorts", "title" => "High Retention Pacing", "client_name" => "YouTube Creator", "video_url" => "https://youtube.com/shorts/v03bJY39b6U", "is_active" => 1],
-    ["id" => 5, "section" => "shorts", "title" => "E-Commerce Spotlight", "client_name" => "E-Com Brand", "video_url" => "https://youtube.com/shorts/kRtHRAsHKk8", "is_active" => 1],
-    ["id" => 6, "section" => "shorts", "title" => "Conversion Focused Cut", "client_name" => "Growth Brand", "video_url" => "https://youtube.com/shorts/3gDusm-pYr4", "is_active" => 1],
-    // YouTube Long-Form
-    ["id" => 7, "section" => "youtube", "title" => "Full Production Showcase 01", "client_name" => "Creator Channel", "video_url" => "https://www.youtube.com/watch?v=_VZpzlfgMog", "is_active" => 1],
-    ["id" => 8, "section" => "youtube", "title" => "Full Production Showcase 02", "client_name" => "Tech Channel", "video_url" => "https://www.youtube.com/watch?v=vVjQcWh7pVI", "is_active" => 1],
-    ["id" => 9, "section" => "youtube", "title" => "Full Production Showcase 03", "client_name" => "Documentary", "video_url" => "https://www.youtube.com/watch?v=ZdaiBOEJhTY", "is_active" => 1],
-    ["id" => 10, "section" => "youtube", "title" => "Full Production Showcase 04", "client_name" => "Creator Studio", "video_url" => "https://www.youtube.com/watch?v=mF2so1ihSQ4", "is_active" => 1],
-    ["id" => 11, "section" => "youtube", "title" => "Full Production Showcase 05", "client_name" => "Podcast Cut", "video_url" => "https://www.youtube.com/watch?v=WyWPeGKKVIE", "is_active" => 1],
-    // Paid Ads & VSL
-    ["id" => 12, "section" => "vsl", "title" => "Direct Response Performance Ad 01", "client_name" => "Direct Response", "video_url" => "https://www.youtube.com/watch?v=s7p6OLwV_50", "is_active" => 1],
-    ["id" => 13, "section" => "vsl", "title" => "Direct Response Performance Ad 02", "client_name" => "App Growth", "video_url" => "https://youtu.be/WMxo_4q0MNg", "is_active" => 1],
-    ["id" => 14, "section" => "vsl", "title" => "Direct Response Performance Ad 03", "client_name" => "E-Com Ad", "video_url" => "https://youtu.be/AlsXNhTm4AA", "is_active" => 1],
+    // Shorts (Vimeo)
+    ["id" => 1, "section" => "shorts", "title" => "Viral Hook Breakdown", "client_name" => "Fitness Creator", "video_url" => "https://vimeo.com/1219657057", "is_active" => 1],
+    ["id" => 2, "section" => "shorts", "title" => "SaaS Product Demo Reel", "client_name" => "SaaS Brand", "video_url" => "https://vimeo.com/1219657058", "is_active" => 1],
+    ["id" => 3, "section" => "shorts", "title" => "Personal Brand Story", "client_name" => "Agency Founder", "video_url" => "https://vimeo.com/1219657056", "is_active" => 1],
+    ["id" => 4, "section" => "shorts", "title" => "High Retention Pacing", "client_name" => "YouTube Creator", "video_url" => "https://vimeo.com/1219657047", "is_active" => 1],
+    ["id" => 5, "section" => "shorts", "title" => "E-Commerce Spotlight", "client_name" => "E-Com Brand", "video_url" => "https://vimeo.com/1219578174", "is_active" => 1],
+    ["id" => 6, "section" => "shorts", "title" => "Conversion Focused Cut", "client_name" => "Growth Brand", "video_url" => "https://vimeo.com/1219577544", "is_active" => 1],
+    // YouTube Long-Form (Vimeo URLs)
+    ["id" => 7, "section" => "youtube", "title" => "High-Retention YouTube Masterclass", "client_name" => "YouTube Creator", "video_url" => "https://vimeo.com/1219614785", "thumbnail_url" => "CL1.jpg", "is_active" => 1],
+    ["id" => 8, "section" => "youtube", "title" => "Authority Documentary Production", "client_name" => "Creator Studio", "video_url" => "https://vimeo.com/1219614782", "thumbnail_url" => "CL2.jpg", "is_active" => 1],
+    ["id" => 9, "section" => "youtube", "title" => "Viral Long-Form Breakdown", "client_name" => "Growth Channel", "video_url" => "https://vimeo.com/1219353241", "thumbnail_url" => "CL3.jpg", "is_active" => 1],
+    ["id" => 10, "section" => "youtube", "title" => "Founder Storytelling & Case Study", "client_name" => "SaaS Brand", "video_url" => "https://vimeo.com/1219614784", "thumbnail_url" => "CL4.jpg", "is_active" => 1],
+    ["id" => 11, "section" => "youtube", "title" => "Cinematic Video Essay Cut", "client_name" => "Media Channel", "video_url" => "https://vimeo.com/1219353240", "thumbnail_url" => "CL5.jpg", "is_active" => 1],
+    ["id" => 12, "section" => "youtube", "title" => "Studio Deep Dive & Visual Essay", "client_name" => "Podcast & Show", "video_url" => "https://vimeo.com/1219353239", "thumbnail_url" => "CL6.jpg", "is_active" => 1],
+    // Paid Ads & VSL (Vimeo URLs)
+    ["id" => 13, "section" => "vsl", "title" => "Direct Response Performance VSL 01", "client_name" => "Direct Response", "video_url" => "https://vimeo.com/1219660179?fl=ip&fe=ec", "is_active" => 1],
+    ["id" => 14, "section" => "vsl", "title" => "Direct Response Performance VSL 02", "client_name" => "App Growth", "video_url" => "https://vimeo.com/1219668107?fl=ip&fe=ec", "is_active" => 1],
+    ["id" => 15, "section" => "vsl", "title" => "Direct Response Performance VSL 03", "client_name" => "Scale Brand", "video_url" => "https://vimeo.com/1219664254?fl=ip&fe=ec", "is_active" => 1],
+    ["id" => 16, "section" => "vsl", "title" => "Direct Response Performance VSL 04", "client_name" => "Growth Agency", "video_url" => "https://vimeo.com/1219669663?fl=ip&fe=ec", "is_active" => 1],
+    ["id" => 17, "section" => "vsl", "title" => "Direct Response Performance VSL 05", "client_name" => "Performance Marketing", "video_url" => "https://vimeo.com/1219663527?fl=ip&fe=ec", "is_active" => 1],
+    ["id" => 18, "section" => "vsl", "title" => "Direct Response Performance VSL 06", "client_name" => "E-Com Brand", "video_url" => "https://vimeo.com/1219614073?fl=ip&fe=ec", "is_active" => 1],
+    // Podcast
+    ["id" => 19, "section" => "podcast", "title" => "Studio Podcast Production 01", "client_name" => "Podcast & Show", "video_url" => "https://youtu.be/H8f7pukBu2k?si=7NP1TL9ZPhQk-lZ8", "is_active" => 1],
+    ["id" => 20, "section" => "podcast", "title" => "Studio Podcast Production 02", "client_name" => "Founder Interview", "video_url" => "https://youtu.be/JtZYHd3txEc?si=bnAVHchqkb7s9OHn", "is_active" => 1],
+    ["id" => 21, "section" => "podcast", "title" => "Studio Podcast Production 03", "client_name" => "Creator Studio", "video_url" => "https://youtu.be/14ahDH7Ud74?si=sLnyg45M9Zk63ET0", "is_active" => 1],
+    ["id" => 22, "section" => "podcast", "title" => "Studio Podcast Production 04", "client_name" => "Industry Insights", "video_url" => "https://youtu.be/xHB5zFYb0M4?si=osxMCVbuTbGmv2w3", "is_active" => 1],
+    ["id" => 23, "section" => "podcast", "title" => "Studio Podcast Production 05", "client_name" => "Tech & Growth", "video_url" => "https://youtu.be/sE3OsRi9LWk?si=qZyVzZNHIZP-7Dwi", "is_active" => 1],
     // 3D Motion
-    ["id" => 15, "section" => "motion_3d", "title" => "3D Product Animation Showcase", "client_name" => "3D Studio", "video_url" => "https://nextlevelmediadigital.com/components/videos/3d.mp4", "is_active" => 1],
-    // Client Review Videos
-    ["id" => 16, "section" => "reviews", "title" => "Client Story - Mike Over Case Study", "client_name" => "Mike Over", "video_url" => "https://nextlevelmediadigital.com/components/videos/review.mp4", "is_active" => 1]
+    ["id" => 24, "section" => "motion_3d", "title" => "3D Product Animation Showcase", "client_name" => "3D Studio", "video_url" => "https://nextlevelmediadigital.com/components/videos/3d.mp4", "is_active" => 1],
+    // Client Review Videos (Portrait)
+    ["id" => 25, "section" => "reviews", "title" => "Client Video Review & Growth Breakdown", "client_name" => "Verified Client Story", "video_url" => "testimonials/Testimonial 1 .mp4", "thumbnail_url" => "testimonials/thumb1.jpg", "is_active" => 1],
+    ["id" => 26, "section" => "reviews", "title" => "Scale & Content Performance Breakdown", "client_name" => "Creator Case Study", "video_url" => "testimonials/Testimonial 2.mp4", "thumbnail_url" => "testimonials/thumb2.jpg", "is_active" => 1]
 ];
 
 function get_section_videos($section = 'all') {
@@ -346,7 +362,7 @@ function get_section_videos($section = 'all') {
     }));
 }
 
-function save_video_item($section, $title, $client_name, $video_url, $id = 0) {
+function save_video_item($section, $title, $client_name, $video_url, $thumbnail_url = '', $link_url = '', $id = 0) {
     global $initial_videos;
     $videos = get_json_file('videos', $initial_videos);
     if ($id > 0) {
@@ -356,6 +372,10 @@ function save_video_item($section, $title, $client_name, $video_url, $id = 0) {
                 $v['title'] = $title;
                 $v['client_name'] = $client_name;
                 $v['video_url'] = $video_url;
+                if (!empty($thumbnail_url)) {
+                    $v['thumbnail_url'] = $thumbnail_url;
+                }
+                $v['link_url'] = $link_url;
                 break;
             }
         }
@@ -367,6 +387,8 @@ function save_video_item($section, $title, $client_name, $video_url, $id = 0) {
             'title' => $title,
             'client_name' => $client_name,
             'video_url' => $video_url,
+            'thumbnail_url' => $thumbnail_url,
+            'link_url' => $link_url,
             'is_active' => 1
         ];
     }
@@ -380,6 +402,125 @@ function delete_video_item($id) {
         return $v['id'] != $id;
     }));
     save_json_file('videos', $videos);
+}
+
+// --------------------------------------------------------------------------
+// 5.1 Written Client Reviews Manager
+// --------------------------------------------------------------------------
+$initial_reviews = [
+    [
+        'id' => 1,
+        'name' => 'Alex Hormozi',
+        'role' => 'Entrepreneur',
+        'company' => 'Acquisition.com',
+        'brand_logo' => 'brands/logo_4.png',
+        'avatar' => 'clients/1.png',
+        'quote' => 'These guys are the OGs. The fastest ‘yes’ we’ve ever seen from prospects on our offers. The hook retention and pacing are completely unmatched.',
+        'link_url' => 'https://acquisition.com',
+        'is_active' => 1
+    ],
+    [
+        'id' => 2,
+        'name' => 'Ali Abdaal',
+        'role' => 'Former Doctor & Author',
+        'company' => 'Feel-Good Productivity',
+        'brand_logo' => '',
+        'avatar' => 'clients/2.jpg',
+        'quote' => 'They turned complexity into clarity fast. If you want premium video then look no further. Our production velocity went up 10x with zero headache.',
+        'link_url' => 'https://youtube.com/@aliabdaal',
+        'is_active' => 1
+    ],
+    [
+        'id' => 3,
+        'name' => 'Steven Bartlett',
+        'role' => 'British Businessman',
+        'company' => 'The Diary Of A CEO',
+        'brand_logo' => '',
+        'avatar' => 'clients/3.webp',
+        'quote' => 'Sent them a rough idea. They came back with something we couldn’t have imagined. Felt like a real team behind the project, not just freelancers.',
+        'link_url' => 'https://youtube.com/@TheDiaryOfACEO',
+        'is_active' => 1
+    ],
+    [
+        'id' => 4,
+        'name' => 'Wisdom Kaye',
+        'role' => 'Fashion Model & Creator',
+        'company' => 'Vogue Featured',
+        'brand_logo' => '',
+        'avatar' => 'clients/4.jpg',
+        'quote' => 'Top-tier work, delivered faster than anyone else we’ve tried. The visual transitions, motion design, and pacing are world-class.',
+        'link_url' => 'https://tiktok.com/@wisdm8',
+        'is_active' => 1
+    ],
+    [
+        'id' => 5,
+        'name' => 'Nechristian',
+        'role' => 'Founder of instaappoint.ai',
+        'company' => 'instaappoint.ai',
+        'brand_logo' => '',
+        'avatar' => 'clients/5.png',
+        'quote' => 'Felt like we hired an elite in-house team, not an agency. The direct response ROI and inbound lead conversions doubled immediately.',
+        'link_url' => 'https://instaappoint.ai',
+        'is_active' => 1
+    ],
+    [
+        'id' => 6,
+        'name' => 'Jason Wojo',
+        'role' => 'Entrepreneur',
+        'company' => 'Wojo Media',
+        'brand_logo' => '',
+        'avatar' => 'clients/6.jpg',
+        'quote' => 'Honestly the first video team that didn’t make me chase them for updates. They handled every revision in hours and the final delivery was pure gold.',
+        'link_url' => 'https://wojomedia.com',
+        'is_active' => 1
+    ]
+];
+
+function get_client_reviews() {
+    global $pdo, $initial_reviews;
+    return get_json_file('client_reviews', $initial_reviews);
+}
+
+function save_client_review($name, $role, $company, $quote, $avatar = '', $brand_logo = '', $link_url = '', $id = 0) {
+    global $initial_reviews;
+    $reviews = get_json_file('client_reviews', $initial_reviews);
+    if ($id > 0) {
+        foreach ($reviews as &$r) {
+            if ($r['id'] == $id) {
+                $r['name'] = $name;
+                $r['role'] = $role;
+                $r['company'] = $company;
+                $r['quote'] = $quote;
+                if (!empty($avatar)) $r['avatar'] = $avatar;
+                if (!empty($brand_logo)) $r['brand_logo'] = $brand_logo;
+                $r['link_url'] = $link_url;
+                break;
+            }
+        }
+    } else {
+        $new_id = count($reviews) > 0 ? (max(array_column($reviews, 'id')) + 1) : 1;
+        $reviews[] = [
+            'id' => $new_id,
+            'name' => $name,
+            'role' => $role,
+            'company' => $company,
+            'quote' => $quote,
+            'avatar' => $avatar ?: 'clients/1.png',
+            'brand_logo' => $brand_logo,
+            'link_url' => $link_url,
+            'is_active' => 1
+        ];
+    }
+    save_json_file('client_reviews', $reviews);
+}
+
+function delete_client_review($id) {
+    global $initial_reviews;
+    $reviews = get_json_file('client_reviews', $initial_reviews);
+    $reviews = array_values(array_filter($reviews, function($r) use ($id) {
+        return $r['id'] != $id;
+    }));
+    save_json_file('client_reviews', $reviews);
 }
 
 // --------------------------------------------------------------------------
@@ -412,6 +553,7 @@ function get_all_analytics() {
 // 7. Contact Inquiries Manager
 // --------------------------------------------------------------------------
 function save_contact_inquiry($name, $email, $phone, $subject, $message) {
+    global $pdo;
     $inquiries = get_json_file('inquiries', []);
     $new_id = count($inquiries) > 0 ? (max(array_column($inquiries, 'id')) + 1) : 1;
     $inquiries[] = [
@@ -425,9 +567,27 @@ function save_contact_inquiry($name, $email, $phone, $subject, $message) {
         'created_at' => date('Y-m-d H:i:s')
     ];
     save_json_file('inquiries', $inquiries);
+
+    if ($pdo) {
+        try {
+            $stmt = $pdo->prepare("INSERT INTO contact_inquiries (name, email, phone, subject, message, status) VALUES (?, ?, ?, ?, ?, 'Unread')");
+            $stmt->execute([$name, $email, $phone, $subject, $message]);
+        } catch (Exception $e) {}
+    }
+    return $new_id;
 }
 
 function get_all_inquiries() {
+    global $pdo;
     $inquiries = get_json_file('inquiries', []);
+    if ($pdo) {
+        try {
+            $stmt = $pdo->query("SELECT * FROM contact_inquiries ORDER BY id DESC");
+            if ($stmt) {
+                $db_inq = $stmt->fetchAll();
+                if (!empty($db_inq)) return $db_inq;
+            }
+        } catch (Exception $e) {}
+    }
     return array_reverse($inquiries);
 }

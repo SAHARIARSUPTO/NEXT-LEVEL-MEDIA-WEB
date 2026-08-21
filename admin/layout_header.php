@@ -226,6 +226,14 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <span>Orders</span>
           </a>
 
+          <!-- Inquiries & Messages -->
+          <a href="inquiries.php" class="flex items-center gap-2 px-3 lg:px-3.5 py-2 rounded-xl text-xs lg:text-sm font-bold whitespace-nowrap transition-all <?= $current_page === 'inquiries.php' ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30' : 'text-slate-300 hover:text-white hover:bg-white/[0.06]'; ?>">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+            </svg>
+            <span>Messages</span>
+          </a>
+
           <!-- Income & Expenses (Finances) -->
           <a href="finances.php" class="flex items-center gap-2 px-3 lg:px-3.5 py-2 rounded-xl text-xs lg:text-sm font-bold whitespace-nowrap transition-all <?= $current_page === 'finances.php' ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30' : 'text-slate-300 hover:text-white hover:bg-white/[0.06]'; ?>">
             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

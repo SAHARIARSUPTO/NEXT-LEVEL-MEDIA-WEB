@@ -35,8 +35,8 @@ INSERT INTO `site_settings` (`setting_key`, `setting_value`) VALUES
 ('contact_email', 'contact@nextlevelmediadigital.com'),
 ('contact_phone', '+880 1753-506047'),
 ('booking_calendly_url', 'https://calendly.com/nextlevelmediacall/30min?month=2025-07'),
-('hero_video_url', 'https://player.vimeo.com/video/824804225'),
-('hero_badge_text', 'Agency Showreel (01:24)')
+('hero_video_url', 'https://player.vimeo.com/video/1219066986?autoplay=1&title=0&byline=0&portrait=0&badge=0'),
+('hero_badge_text', 'Agency Showreel')
 ON DUPLICATE KEY UPDATE `setting_value` = VALUES(`setting_value`);
 
 -- 3. Client Orders Table
@@ -117,20 +117,29 @@ CREATE TABLE IF NOT EXISTS `section_videos` (
 
 -- Initial Section Videos
 INSERT INTO `section_videos` (`id`, `section`, `title`, `client_name`, `video_url`, `is_active`) VALUES
-(1, 'shorts', 'Viral Hook Breakdown', 'Fitness Creator', 'https://youtube.com/shorts/LPXvOwKmgF0', 1),
-(2, 'shorts', 'SaaS Product Demo Reel', 'SaaS Brand', 'https://youtube.com/shorts/A0K4cyrD48U', 1),
-(3, 'shorts', 'Personal Brand Story', 'Agency Founder', 'https://youtube.com/shorts/BSDP0qphx8o', 1),
-(4, 'shorts', 'High Retention Pacing', 'YouTube Creator', 'https://youtube.com/shorts/v03bJY39b6U', 1),
-(5, 'shorts', 'E-Commerce Spotlight', 'E-Com Brand', 'https://youtube.com/shorts/kRtHRAsHKk8', 1),
-(6, 'shorts', 'Conversion Focused Cut', 'Growth Brand', 'https://youtube.com/shorts/3gDusm-pYr4', 1),
-(7, 'youtube', 'Full Production Showcase 01', 'Creator Channel', 'https://www.youtube.com/watch?v=_VZpzlfgMog', 1),
-(8, 'youtube', 'Full Production Showcase 02', 'Tech Channel', 'https://www.youtube.com/watch?v=vVjQcWh7pVI', 1),
-(9, 'youtube', 'Full Production Showcase 03', 'Documentary', 'https://www.youtube.com/watch?v=ZdaiBOEJhTY', 1),
-(10, 'youtube', 'Full Production Showcase 04', 'Creator Studio', 'https://www.youtube.com/watch?v=mF2so1ihSQ4', 1),
-(11, 'youtube', 'Full Production Showcase 05', 'Podcast Cut', 'https://www.youtube.com/watch?v=WyWPeGKKVIE', 1),
-(12, 'vsl', 'Direct Response Performance Ad 01', 'Direct Response', 'https://www.youtube.com/watch?v=s7p6OLwV_50', 1),
-(13, 'vsl', 'Direct Response Performance Ad 02', 'App Growth', 'https://youtu.be/WMxo_4q0MNg', 1),
-(14, 'vsl', 'Direct Response Performance Ad 03', 'E-Com Ad', 'https://youtu.be/AlsXNhTm4AA', 1),
-(15, 'motion_3d', '3D Product Animation Showcase', '3D Studio', 'https://nextlevelmediadigital.com/components/videos/3d.mp4', 1),
-(16, 'reviews', 'Client Story - Mike Over Case Study', 'Mike Over', 'https://nextlevelmediadigital.com/components/videos/review.mp4', 1)
-ON DUPLICATE KEY UPDATE `title` = VALUES(`title`);
+(1, 'shorts', 'Viral Hook Breakdown', 'Fitness Creator', 'https://vimeo.com/1219657057', 1),
+(2, 'shorts', 'SaaS Product Demo Reel', 'SaaS Brand', 'https://vimeo.com/1219657058', 1),
+(3, 'shorts', 'Personal Brand Story', 'Agency Founder', 'https://vimeo.com/1219657056', 1),
+(4, 'shorts', 'High Retention Pacing', 'YouTube Creator', 'https://vimeo.com/1219657047', 1),
+(5, 'shorts', 'E-Commerce Spotlight', 'E-Com Brand', 'https://vimeo.com/1219578174', 1),
+(6, 'shorts', 'Conversion Focused Cut', 'Growth Brand', 'https://vimeo.com/1219577544', 1),
+(7, 'youtube', 'High-Retention YouTube Masterclass', 'YouTube Creator', 'https://vimeo.com/1219614785', 1),
+(8, 'youtube', 'Authority Documentary Production', 'Creator Studio', 'https://vimeo.com/1219614782', 1),
+(9, 'youtube', 'Viral Long-Form Breakdown', 'Growth Channel', 'https://vimeo.com/1219353241', 1),
+(10, 'youtube', 'Founder Storytelling & Case Study', 'SaaS Brand', 'https://vimeo.com/1219614784', 1),
+(11, 'youtube', 'Cinematic Video Essay Cut', 'Media Channel', 'https://vimeo.com/1219353240', 1),
+(12, 'youtube', 'Studio Deep Dive & Visual Essay', 'Podcast & Show', 'https://vimeo.com/1219353239', 1),
+(13, 'vsl', 'Direct Response Performance VSL 01', 'Direct Response', 'https://vimeo.com/1219660179?fl=ip&fe=ec', 1),
+(14, 'vsl', 'Direct Response Performance VSL 02', 'App Growth', 'https://vimeo.com/1219668107?fl=ip&fe=ec', 1),
+(15, 'vsl', 'Direct Response Performance VSL 03', 'Scale Brand', 'https://vimeo.com/1219664254?fl=ip&fe=ec', 1),
+(16, 'vsl', 'Direct Response Performance VSL 04', 'Growth Agency', 'https://vimeo.com/1219669663?fl=ip&fe=ec', 1),
+(17, 'vsl', 'Direct Response Performance VSL 05', 'Performance Marketing', 'https://vimeo.com/1219663527?fl=ip&fe=ec', 1),
+(18, 'vsl', 'Direct Response Performance VSL 06', 'E-Com Brand', 'https://vimeo.com/1219614073?fl=ip&fe=ec', 1),
+(19, 'podcast', 'Studio Podcast Production 01', 'Podcast & Show', 'https://youtu.be/H8f7pukBu2k?si=7NP1TL9ZPhQk-lZ8', 1),
+(20, 'podcast', 'Studio Podcast Production 02', 'Founder Interview', 'https://youtu.be/JtZYHd3txEc?si=bnAVHchqkb7s9OHn', 1),
+(21, 'podcast', 'Studio Podcast Production 03', 'Creator Studio', 'https://youtu.be/14ahDH7Ud74?si=sLnyg45M9Zk63ET0', 1),
+(22, 'podcast', 'Studio Podcast Production 04', 'Industry Insights', 'https://youtu.be/xHB5zFYb0M4?si=osxMCVbuTbGmv2w3', 1),
+(23, 'podcast', 'Studio Podcast Production 05', 'Tech & Growth', 'https://youtu.be/sE3OsRi9LWk?si=qZyVzZNHIZP-7Dwi', 1),
+(24, 'motion_3d', '3D Product Animation Showcase', '3D Studio', 'https://nextlevelmediadigital.com/components/videos/3d.mp4', 1),
+(25, 'reviews', 'Client Story - Mike Over Case Study', 'Mike Over', 'https://nextlevelmediadigital.com/components/videos/review.mp4', 1)
+ON DUPLICATE KEY UPDATE `title` = VALUES(`title`), `video_url` = VALUES(`video_url`), `section` = VALUES(`section`);

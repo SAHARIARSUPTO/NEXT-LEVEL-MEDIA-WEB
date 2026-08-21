@@ -1,10 +1,10 @@
 <?php
-$page_title = 'Google SEO & Website Settings';
+$page_title = 'Website Links & SEO Settings';
 require_once('layout_header.php');
 
 $msg = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $pdo) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $settings_to_update = [
         'meta_title' => $_POST['meta_title'] ?? '',
         'meta_description' => $_POST['meta_description'] ?? '',
@@ -13,19 +13,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $pdo) {
         'contact_email' => $_POST['contact_email'] ?? '',
         'contact_phone' => $_POST['contact_phone'] ?? '',
         'booking_calendly_url' => $_POST['booking_calendly_url'] ?? '',
+        'order_cta_url' => $_POST['order_cta_url'] ?? 'order.php',
         'hero_video_url' => $_POST['hero_video_url'] ?? '',
         'hero_badge_text' => $_POST['hero_badge_text'] ?? '',
+        'social_twitter' => $_POST['social_twitter'] ?? '',
+        'social_youtube' => $_POST['social_youtube'] ?? '',
+        'social_linkedin' => $_POST['social_linkedin'] ?? '',
+        'social_instagram' => $_POST['social_instagram'] ?? '',
     ];
 
-    try {
-        $update_stmt = $pdo->prepare("INSERT INTO site_settings (setting_key, setting_value) VALUES (?, ?) ON DUPLICATE KEY UPDATE setting_value = VALUES(setting_value)");
-        foreach ($settings_to_update as $key => $val) {
-            $update_stmt->execute([$key, trim($val)]);
-        }
-        $msg = 'Website settings and Google SEO tags updated successfully!';
-    } catch (Exception $e) {
-        $msg = 'Error updating settings: ' . $e->getMessage();
+    foreach ($settings_to_update as $key => $val) {
+        save_setting($key, trim($val));
     }
+    $msg = 'All website links, social profiles, and SEO settings updated successfully!';
 }
 
 $current_title = get_setting('meta_title', 'Next Level Media | High-Performance Video Production & Creative Systems');
@@ -35,24 +35,39 @@ $current_og_image = get_setting('og_image', 'main-logo.png');
 $current_email = get_setting('contact_email', 'contact@nextlevelmediadigital.com');
 $current_phone = get_setting('contact_phone', '+880 1753-506047');
 $current_calendly = get_setting('booking_calendly_url', 'https://calendly.com/nextlevelmediacall/30min?month=2025-07');
+$current_order_cta = get_setting('order_cta_url', 'order.php');
+$current_hero_url = get_setting('hero_video_url', 'https://player.vimeo.com/video/1219066986?autoplay=1&title=0&byline=0&portrait=0&badge=0');
+$current_hero_badge = get_setting('hero_badge_text', 'Agency Showreel');
+$current_twitter = get_setting('social_twitter', 'https://x.com/neel_nafis');
+$current_youtube = get_setting('social_youtube', 'https://www.youtube.com/@neelnafis');
+$current_linkedin = get_setting('social_linkedin', 'https://www.linkedin.com/company/mz-media-digital/');
+$current_instagram = get_setting('social_instagram', 'https://instagram.com/nextlevelmedia');
 ?>
 
-<div class="max-w-4xl mx-auto">
+<div class="max-w-5xl mx-auto space-y-8">
   
   <!-- Page Header -->
-  <div class="mb-8">
-    <div class="flex items-center gap-2 text-xs font-semibold text-slate-400 mb-1">
-      <a href="index.php" class="hover:text-white transition-colors">Admin</a>
-      <span>/</span>
-      <span class="text-indigo-400 font-bold">SEO & Settings</span>
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <div>
+      <div class="flex items-center gap-2 text-xs font-semibold text-slate-400 mb-1">
+        <a href="index.php" class="hover:text-white transition-colors">Admin</a>
+        <span>/</span>
+        <span class="text-white font-bold">Homepage Links & SEO</span>
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">Website Links & Settings Center</h1>
+      <p class="text-sm text-slate-300 mt-1">Easily control all buttons, CTA links, social accounts, and search previews across your entire website.</p>
     </div>
-    <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">Website Settings & Google SEO</h1>
-    <p class="text-sm sm:text-base text-slate-300 mt-1">Configure your search engine preview, social sharing image, contact email, and Calendly meeting link.</p>
+    
+    <div>
+      <a href="../index.php" target="_blank" class="px-5 py-2.5 bg-black border-2 border-white/40 text-white font-bold text-xs uppercase tracking-wider hover:border-white hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] transition-all">
+        <span>View Live Website ↗</span>
+      </a>
+    </div>
   </div>
 
   <!-- Alert Banner -->
   <?php if (!empty($msg)): ?>
-    <div class="mb-6 p-4 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-200 text-sm font-semibold flex items-center justify-between gap-3">
+    <div class="p-4 rounded-none bg-emerald-500/15 border-2 border-emerald-500/40 text-emerald-200 text-sm font-semibold flex items-center justify-between gap-3 shadow-[0_0_25px_rgba(16,185,129,0.2)]">
       <div class="flex items-center gap-2.5">
         <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
@@ -65,81 +80,163 @@ $current_calendly = get_setting('booking_calendly_url', 'https://calendly.com/ne
 
   <form action="seo.php" method="POST" class="space-y-8">
     
-    <!-- Section 1: Search Engine Optimization -->
-    <div class="adm-card p-6 sm:p-8 space-y-6">
-      <div class="border-b border-white/[0.08] pb-4">
-        <div class="flex items-center gap-2 mb-1">
-          <span class="px-2.5 py-0.5 rounded-md bg-indigo-500/20 text-indigo-300 font-bold text-xs">
-            Google Search Appearance
-          </span>
+    <!-- 1. Global CTA & Homepage Action Links -->
+    <div class="p-6 sm:p-8 bg-[#09090d]/90 border-2 border-white/20 hover:border-white/40 backdrop-blur-xl shadow-xl space-y-6">
+      <div class="border-b border-white/15 pb-4">
+        <div class="inline-flex items-center gap-2 px-2.5 py-1 bg-white/10 border border-white/20 text-white font-mono text-xs uppercase font-bold mb-2">
+          <span>Action Buttons & CTAs</span>
         </div>
-        <h2 class="text-xl font-bold text-white font-display">1. Google Search & Social Media SEO</h2>
-        <p class="text-sm text-slate-300 mt-0.5">Control how your agency looks when people search on Google or share your link on Twitter/Facebook.</p>
+        <h2 class="text-xl sm:text-2xl font-bold text-white font-display">1. Homepage CTA Buttons & Navigation Links</h2>
+        <p class="text-xs sm:text-sm text-slate-300 mt-0.5">Control where visitors are redirected when clicking buttons on the homepage and header.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-200 mb-2">"Book a Discovery Call" Calendly URL</label>
+          <input 
+            type="url" 
+            name="booking_calendly_url" 
+            required 
+            class="w-full bg-black border-2 border-white/30 px-4 py-3 text-white text-sm font-mono focus:border-white focus:outline-none" 
+            value="<?= htmlspecialchars($current_calendly); ?>" 
+          />
+          <p class="text-[11px] text-gray-400 mt-1">Used for all Calendly / discovery meeting buttons on the site.</p>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-200 mb-2">"Get your video done" / Order CTA Link</label>
+          <input 
+            type="text" 
+            name="order_cta_url" 
+            required 
+            class="w-full bg-black border-2 border-white/30 px-4 py-3 text-white text-sm font-mono focus:border-white focus:outline-none" 
+            value="<?= htmlspecialchars($current_order_cta); ?>" 
+          />
+          <p class="text-[11px] text-gray-400 mt-1">Target for the primary project order / start video buttons.</p>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-200 mb-2">Agency Contact Email</label>
+          <input 
+            type="email" 
+            name="contact_email" 
+            required 
+            class="w-full bg-black border-2 border-white/30 px-4 py-3 text-white text-sm font-mono focus:border-white focus:outline-none" 
+            value="<?= htmlspecialchars($current_email); ?>" 
+          />
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-200 mb-2">Agency Phone / WhatsApp</label>
+          <input 
+            type="text" 
+            name="contact_phone" 
+            required 
+            class="w-full bg-black border-2 border-white/30 px-4 py-3 text-white text-sm font-mono focus:border-white focus:outline-none" 
+            value="<?= htmlspecialchars($current_phone); ?>" 
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Social Media & External Channels -->
+    <div class="p-6 sm:p-8 bg-[#09090d]/90 border-2 border-white/20 hover:border-white/40 backdrop-blur-xl shadow-xl space-y-6">
+      <div class="border-b border-white/15 pb-4">
+        <div class="inline-flex items-center gap-2 px-2.5 py-1 bg-white/10 border border-white/20 text-white font-mono text-xs uppercase font-bold mb-2">
+          <span>Social Media</span>
+        </div>
+        <h2 class="text-xl sm:text-2xl font-bold text-white font-display">2. Social Media & Channel Links</h2>
+        <p class="text-xs sm:text-sm text-slate-300 mt-0.5">Control the social icons displayed in the footer and contact sections.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-200 mb-2">X / Twitter Profile Link</label>
+          <input type="url" name="social_twitter" class="w-full bg-black border-2 border-white/30 px-4 py-3 text-white text-sm font-mono focus:border-white focus:outline-none" value="<?= htmlspecialchars($current_twitter); ?>" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-200 mb-2">YouTube Channel Link</label>
+          <input type="url" name="social_youtube" class="w-full bg-black border-2 border-white/30 px-4 py-3 text-white text-sm font-mono focus:border-white focus:outline-none" value="<?= htmlspecialchars($current_youtube); ?>" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-200 mb-2">LinkedIn Company / Profile Link</label>
+          <input type="url" name="social_linkedin" class="w-full bg-black border-2 border-white/30 px-4 py-3 text-white text-sm font-mono focus:border-white focus:outline-none" value="<?= htmlspecialchars($current_linkedin); ?>" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-200 mb-2">Instagram Profile Link</label>
+          <input type="url" name="social_instagram" class="w-full bg-black border-2 border-white/30 px-4 py-3 text-white text-sm font-mono focus:border-white focus:outline-none" value="<?= htmlspecialchars($current_instagram); ?>" />
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Google SEO & Meta Tags -->
+    <div class="p-6 sm:p-8 bg-[#09090d]/90 border-2 border-white/20 hover:border-white/40 backdrop-blur-xl shadow-xl space-y-6">
+      <div class="border-b border-white/15 pb-4">
+        <div class="inline-flex items-center gap-2 px-2.5 py-1 bg-white/10 border border-white/20 text-white font-mono text-xs uppercase font-bold mb-2">
+          <span>Search Engine Appearance</span>
+        </div>
+        <h2 class="text-xl sm:text-2xl font-bold text-white font-display">3. Google Search & Social Media SEO</h2>
+        <p class="text-xs sm:text-sm text-slate-300 mt-0.5">Control how your agency appears on Google searches and link unfurls.</p>
       </div>
 
       <div class="space-y-5">
         <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-slate-200 mb-1.5">Website Title (Appears in Google Tab & Search)</label>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-200 mb-2">Website Title (Google Title Tag)</label>
           <input 
             type="text" 
             name="meta_title" 
             id="metaTitleInput" 
-            class="adm-input text-sm font-semibold" 
+            class="w-full bg-black border-2 border-white/30 px-4 py-3 text-white text-sm focus:border-white focus:outline-none" 
             value="<?= htmlspecialchars($current_title); ?>" 
             oninput="updateSerpPreview()" 
           />
-          <p class="text-xs text-slate-400 mt-1">Recommended length: 50–60 characters.</p>
         </div>
 
         <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-slate-200 mb-1.5">Search Description (Google Snippet Text)</label>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-200 mb-2">Search Description (Google Snippet Text)</label>
           <textarea 
             name="meta_description" 
             id="metaDescInput" 
             rows="3" 
-            class="adm-input text-sm leading-relaxed" 
+            class="w-full bg-black border-2 border-white/30 px-4 py-3 text-white text-sm focus:border-white focus:outline-none leading-relaxed" 
             oninput="updateSerpPreview()"
           ><?= htmlspecialchars($current_desc); ?></textarea>
-          <p class="text-xs text-slate-400 mt-1">A short summary of your agency (approx. 140–160 characters).</p>
         </div>
 
         <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-slate-200 mb-1.5">Keywords (Comma-Separated)</label>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-200 mb-2">SEO Keywords (Comma-Separated)</label>
           <input 
             type="text" 
             name="meta_keywords" 
-            class="adm-input text-sm" 
+            class="w-full bg-black border-2 border-white/30 px-4 py-3 text-white text-sm focus:border-white focus:outline-none" 
             value="<?= htmlspecialchars($current_keywords); ?>" 
           />
         </div>
 
         <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-slate-200 mb-1.5">Social Share & Logo Image Path</label>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-200 mb-2">OG Share Image / Logo Path</label>
           <input 
             type="text" 
             name="og_image" 
-            class="adm-input text-sm font-mono" 
+            class="w-full bg-black border-2 border-white/30 px-4 py-3 text-white text-sm font-mono focus:border-white focus:outline-none" 
             value="<?= htmlspecialchars($current_og_image); ?>" 
           />
-          <p class="text-xs text-slate-400 mt-1">Tip: You can upload a new logo in <a href="media.php" class="text-indigo-400 underline font-bold">Image Manager</a> and paste the link here.</p>
         </div>
       </div>
 
       <!-- Live Google Search Simulation Box -->
-      <div class="p-5 rounded-2xl bg-black/40 border border-white/10 mt-6">
+      <div class="p-5 bg-black border-2 border-white/20 mt-6">
         <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-2">
-          <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-          </svg>
           <span>Live Google Search Snippet Preview:</span>
         </div>
-        <div class="p-4 rounded-xl bg-[#0f111a] border border-white/[0.08] space-y-1">
-          <div class="text-xs text-slate-400 font-mono flex items-center gap-1">
-            <span>https://nextlevelmediadigital.com</span>
-            <span>›</span>
+        <div class="p-4 bg-[#0a0a0f] border border-white/10 space-y-1">
+          <div class="text-xs text-slate-400 font-mono">
+            https://nextlevelmediadigital.com
           </div>
-          <div class="text-base sm:text-lg font-semibold text-[#8ab4f8] hover:underline cursor-pointer" id="serpTitle">
+          <div class="text-base sm:text-lg font-semibold text-[#8ab4f8] hover:underline cursor-pointer font-display" id="serpTitle">
             <?= htmlspecialchars($current_title); ?>
           </div>
           <div class="text-xs sm:text-sm text-[#cbd5e1] leading-relaxed line-clamp-2" id="serpDesc">
@@ -147,63 +244,12 @@ $current_calendly = get_setting('booking_calendly_url', 'https://calendly.com/ne
           </div>
         </div>
       </div>
-
-    </div>
-
-    <!-- Section 2: Global Contact & Discovery Links -->
-    <div class="adm-card p-6 sm:p-8 space-y-6">
-      <div class="border-b border-white/[0.08] pb-4">
-        <div class="flex items-center gap-2 mb-1">
-          <span class="px-2.5 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 font-bold text-xs">
-            Client Communication
-          </span>
-        </div>
-        <h2 class="text-xl font-bold text-white font-display">2. Contact Channels & Meeting Booking</h2>
-        <p class="text-sm text-slate-300 mt-0.5">Where client emails are delivered and which Calendly link is used for booking discovery calls.</p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-slate-200 mb-1.5">Primary Contact Email</label>
-          <input 
-            type="email" 
-            name="contact_email" 
-            class="adm-input text-sm font-semibold" 
-            value="<?= htmlspecialchars($current_email); ?>" 
-          />
-          <p class="text-xs text-slate-400 mt-1">Clients will see this email across the footer and contact page.</p>
-        </div>
-
-        <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-slate-200 mb-1.5">Primary Phone / WhatsApp</label>
-          <input 
-            type="text" 
-            name="contact_phone" 
-            class="adm-input text-sm font-semibold" 
-            value="<?= htmlspecialchars($current_phone); ?>" 
-          />
-        </div>
-
-        <div class="sm:col-span-2">
-          <label class="block text-xs font-bold uppercase tracking-wider text-slate-200 mb-1.5">Calendly Discovery Call Link</label>
-          <input 
-            type="url" 
-            name="booking_calendly_url" 
-            class="adm-input text-sm font-mono" 
-            value="<?= htmlspecialchars($current_calendly); ?>" 
-          />
-          <p class="text-xs text-slate-400 mt-1">This link opens whenever a client clicks the "Book A 30-Min Call" button on the website.</p>
-        </div>
-      </div>
     </div>
 
     <!-- Save Button Toolbar -->
     <div class="flex justify-end pt-2">
-      <button type="submit" class="adm-btn-primary px-10 py-3.5 text-sm uppercase tracking-wider font-extrabold shadow-lg shadow-indigo-600/40">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-        </svg>
-        <span>Save All Settings</span>
+      <button type="submit" class="bg-white text-black font-extrabold text-sm uppercase tracking-wider py-4 px-10 border-2 border-white hover:bg-black hover:text-white hover:shadow-[0_0_35px_rgba(255,255,255,0.7)] transition-all cursor-pointer">
+        Save All Links & Settings
       </button>
     </div>
 

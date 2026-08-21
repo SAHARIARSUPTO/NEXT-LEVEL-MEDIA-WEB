@@ -1,45 +1,52 @@
 <?php
 $currentPage = basename($_SERVER['PHP_SELF']);
-$isContactPage = $currentPage === 'contact.php';
+$isIndexPage = ($currentPage === 'index.php' || $currentPage === '' || $currentPage === '/');
+$isContactPage = ($currentPage === 'contact.php');
+$isOrderPage = ($currentPage === 'order.php');
 ?>
 <!-- Navigation Bar -->
-<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 px-4 sm:px-6 lg:px-8" id="mainHeader">
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-2.5 sm:py-4 px-2 sm:px-6 lg:px-8" id="mainHeader">
   <div class="max-w-7xl mx-auto">
-    <div class="relative flex items-center justify-between h-16 px-5 sm:px-7 rounded-full bg-[#0d0d12]/80 border border-white/10 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
+    <div class="relative flex items-center justify-between h-14 sm:h-16 px-3.5 sm:px-7 rounded-none bg-black border-2 border-white/20 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.9)]">
       
       <!-- Brand Logo -->
-      <a href="index.php" class="flex items-center space-x-3 group">
-        <div class="relative flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-indigo-600/30 to-violet-500/20 border border-white/10 overflow-hidden group-hover:scale-105 transition-transform duration-300">
-          <img src="main-logo.png" alt="Next Level Media Logo" class="w-7 h-7 object-contain">
+      <a href="index.php" class="flex items-center space-x-2 sm:space-x-3 group">
+        <div class="relative flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-none bg-black border border-white/30 overflow-hidden group-hover:border-white transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.15)] shrink-0">
+          <img src="main-logo.png" alt="Next Level Media Logo" class="w-6 h-6 sm:w-7 sm:h-7 object-contain">
         </div>
-        <span class="text-white font-bold text-sm sm:text-base tracking-wider uppercase font-['Plus_Jakarta_Sans',sans-serif]">
-          NEXT LEVEL <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400">MEDIA</span>
+        <span class="text-white font-bold text-xs sm:text-base tracking-wider uppercase font-['Plus_Jakarta_Sans',sans-serif] whitespace-nowrap">
+          NEXT LEVEL <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#535eee] to-[#8d96ff]">MEDIA</span>
         </span>
       </a>
 
       <!-- Desktop Navigation Links -->
       <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-medium text-gray-300">
-        <a href="index.php#" class="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-colors">Home</a>
-        <?php if (!$isContactPage): ?>
-          <a href="#projects" class="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-colors">Work</a>
-          <a href="#clients-testimonials" class="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-colors">Reviews</a>
-          <a href="#why-us" class="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-colors">Why Us</a>
-          <a href="#core-services" class="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-colors">Services</a>
-          <a href="#faq" class="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-colors">FAQ</a>
+        <a href="<?= $isIndexPage ? '#' : 'index.php' ?>" class="px-3 py-1.5 rounded-none hover:text-white hover:bg-white/10 transition-colors <?= $isIndexPage ? 'text-white' : '' ?>">Home</a>
+        
+        <?php if ($isIndexPage): ?>
+          <a href="#projects" class="px-3 py-1.5 rounded-none hover:text-white hover:bg-white/10 transition-colors">Work</a>
+          <a href="#clients-testimonials" class="px-3 py-1.5 rounded-none hover:text-white hover:bg-white/10 transition-colors">Reviews</a>
+          <a href="#about" class="px-3 py-1.5 rounded-none hover:text-white hover:bg-white/10 transition-colors">Features</a>
+          <a href="#why-us" class="px-3 py-1.5 rounded-none hover:text-white hover:bg-white/10 transition-colors">Why Us</a>
+          <a href="#strategy" class="px-3 py-1.5 rounded-none hover:text-white hover:bg-white/10 transition-colors">Process</a>
+          <a href="#faq" class="px-3 py-1.5 rounded-none hover:text-white hover:bg-white/10 transition-colors">FAQ</a>
         <?php else: ?>
-          <a href="index.php#projects" class="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-colors">Work</a>
-          <a href="index.php#clients-testimonials" class="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-colors">Reviews</a>
-          <a href="index.php#core-services" class="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-colors">Services</a>
+          <!-- Directly routes to homepage sections when viewing other pages -->
+          <a href="index.php#projects" class="px-3 py-1.5 rounded-none hover:text-white hover:bg-white/10 transition-colors">Work</a>
+          <a href="index.php#clients-testimonials" class="px-3 py-1.5 rounded-none hover:text-white hover:bg-white/10 transition-colors">Reviews</a>
+          <a href="index.php#why-us" class="px-3 py-1.5 rounded-none hover:text-white hover:bg-white/10 transition-colors">Why Us</a>
+          <a href="index.php#faq" class="px-3 py-1.5 rounded-none hover:text-white hover:bg-white/10 transition-colors">FAQ</a>
         <?php endif; ?>
-        <a href="contact.php" class="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-colors">Contact</a>
-        <a href="order.php" class="px-3.5 py-1.5 rounded-full text-violet-400 font-bold hover:text-violet-300 hover:bg-violet-600/15 transition-all">Order ➔</a>
+        
+        <a href="contact.php" class="px-3 py-1.5 rounded-none hover:text-white hover:bg-white/10 transition-colors <?= $isContactPage ? 'text-white bg-white/10 font-bold' : '' ?>">Contact</a>
+        <a href="order.php" class="px-3 py-1.5 rounded-none font-bold hover:text-white hover:bg-white/10 transition-all <?= $isOrderPage ? 'text-white bg-[#535eee]/30 border border-[#535eee]/50' : 'text-[#8d96ff]' ?>">Order ➔</a>
       </nav>
 
-      <!-- CTA Button (Desktop) - MZ Media Style -->
+      <!-- CTA Button (Desktop) - Square Border Style with White Hover Glow -->
       <div class="hidden md:flex items-center">
-        <a href="https://calendly.com/nextlevelmediacall/30min?month=2025-07" target="_blank" class="group relative inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider overflow-hidden hover:bg-white/95 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_25px_rgba(99,102,241,0.5)]">
+        <a href="<?= htmlspecialchars(get_setting('booking_calendly_url', 'https://calendly.com/nextlevelmediacall/30min?month=2025-07')); ?>" target="_blank" class="group relative inline-flex items-center gap-2.5 px-5 py-2.5 rounded-none bg-white text-black font-bold text-xs uppercase tracking-wider overflow-hidden hover:bg-white hover:border-white transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.35)] hover:shadow-[0_0_35px_rgba(255,255,255,0.85)] border-2 border-white">
           <span>Let's Talk</span>
-          <div class="flex items-center justify-center w-6 h-6 rounded-full bg-black text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300">
+          <div class="flex items-center justify-center w-5 h-5 rounded-none bg-black text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300">
             <svg class="w-3 h-3 transform -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
             </svg>
@@ -49,11 +56,11 @@ $isContactPage = $currentPage === 'contact.php';
 
       <!-- Mobile Menu Toggle Button -->
       <div class="flex md:hidden">
-        <button id="mobileMenuBtn" aria-label="Toggle navigation menu" class="p-2 rounded-full text-gray-300 hover:text-white hover:bg-white/10 focus:outline-none transition">
-          <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button id="mobileMenuBtn" aria-label="Toggle navigation menu" class="p-1.5 sm:p-2 rounded-none text-gray-300 hover:text-white hover:bg-white/10 focus:outline-none transition">
+          <svg id="menuIcon" class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-          <svg id="closeIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg id="closeIcon" class="w-5 h-5 sm:w-6 sm:h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
@@ -61,22 +68,25 @@ $isContactPage = $currentPage === 'contact.php';
     </div>
 
     <!-- Mobile Drawer Menu -->
-    <div id="mobileMenu" class="md:hidden hidden mt-3 p-5 rounded-3xl bg-[#0e0e14]/95 border border-white/10 backdrop-blur-2xl shadow-2xl space-y-3 text-center transition-all duration-300">
-      <a href="index.php#" class="block py-2 text-gray-200 hover:text-white text-sm font-medium">Home</a>
-      <?php if (!$isContactPage): ?>
+    <div id="mobileMenu" class="md:hidden hidden mt-3 p-5 rounded-none bg-black border-2 border-white/20 backdrop-blur-2xl shadow-2xl space-y-3 text-center transition-all duration-300">
+      <a href="<?= $isIndexPage ? '#' : 'index.php' ?>" class="block py-2 text-gray-200 hover:text-white text-sm font-medium <?= $isIndexPage ? 'text-white font-bold' : '' ?>">Home</a>
+      <?php if ($isIndexPage): ?>
         <a href="#projects" class="block py-2 text-gray-200 hover:text-white text-sm font-medium">Work</a>
         <a href="#clients-testimonials" class="block py-2 text-gray-200 hover:text-white text-sm font-medium">Reviews</a>
+        <a href="#about" class="block py-2 text-gray-200 hover:text-white text-sm font-medium">Features</a>
         <a href="#why-us" class="block py-2 text-gray-200 hover:text-white text-sm font-medium">Why Us</a>
-        <a href="#core-services" class="block py-2 text-gray-200 hover:text-white text-sm font-medium">Services</a>
+        <a href="#strategy" class="block py-2 text-gray-200 hover:text-white text-sm font-medium">Process</a>
         <a href="#faq" class="block py-2 text-gray-200 hover:text-white text-sm font-medium">FAQ</a>
       <?php else: ?>
         <a href="index.php#projects" class="block py-2 text-gray-200 hover:text-white text-sm font-medium">Work</a>
         <a href="index.php#clients-testimonials" class="block py-2 text-gray-200 hover:text-white text-sm font-medium">Reviews</a>
+        <a href="index.php#why-us" class="block py-2 text-gray-200 hover:text-white text-sm font-medium">Why Us</a>
+        <a href="index.php#faq" class="block py-2 text-gray-200 hover:text-white text-sm font-medium">FAQ</a>
       <?php endif; ?>
-      <a href="contact.php" class="block py-2 text-gray-200 hover:text-white text-sm font-medium">Contact</a>
-      <a href="order.php" class="block py-2 text-violet-400 font-bold text-sm">★ Create Project Order</a>
+      <a href="contact.php" class="block py-2 text-gray-200 hover:text-white text-sm font-medium <?= $isContactPage ? 'text-white font-bold bg-white/10' : '' ?>">Contact</a>
+      <a href="order.php" class="block py-2 text-[#8d96ff] font-bold text-sm <?= $isOrderPage ? 'text-white bg-[#535eee]/30' : '' ?>">★ Create Project Order</a>
       <div class="pt-2">
-        <a href="https://calendly.com/nextlevelmediacall/30min?month=2025-07" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 rounded-full bg-gradient-to-r from-blue-600 to-violet-600 text-white font-semibold text-sm shadow-lg">
+        <a href="<?= htmlspecialchars(get_setting('booking_calendly_url', 'https://calendly.com/nextlevelmediacall/30min?month=2025-07')); ?>" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 rounded-none bg-white text-black font-bold text-sm shadow-[0_0_25px_rgba(255,255,255,0.4)] border-2 border-white hover:bg-white transition-colors">
           <span>Book A Discovery Call</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>

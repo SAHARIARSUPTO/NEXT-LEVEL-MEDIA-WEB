@@ -6,11 +6,12 @@ $meta_title = get_setting('meta_title', 'Next Level Media | High-Performance Vid
 $meta_desc = get_setting('meta_description', 'Next Level Media crafts high-retention video content, YouTube edits, viral shorts, VSLs, and 3D motion assets that convert. Trusted by 500+ creators & brands.');
 $meta_keys = get_setting('meta_keywords', 'Next Level Media, video editing agency, SaaS product videos, viral shorts, YouTube video editor, VSL, motion graphics, 3D animation');
 $og_image = get_setting('og_image', 'main-logo.png');
-$hero_video_url = get_setting('hero_video_url', 'https://www.youtube.com/embed/X0SIgFWWb1o');
-$hero_badge_text = get_setting('hero_badge_text', 'Agency Showreel (01:24)');
+$hero_video_url = get_setting('hero_video_url', 'https://player.vimeo.com/video/1219066986?autoplay=1&title=0&byline=0&portrait=0&badge=0');
+$hero_badge_text = get_setting('hero_badge_text', 'Agency Showreel');
+$booking_calendly_url = get_setting('booking_calendly_url', 'https://calendly.com/nextlevelmediacall/30min?month=2025-07');
 ?>
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="overflow-x-clip w-full max-w-full">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
@@ -18,25 +19,44 @@ $hero_badge_text = get_setting('hero_badge_text', 'Agency Showreel (01:24)');
   
   <meta name="description" content="<?= htmlspecialchars($meta_desc); ?>" />
   <meta name="keywords" content="<?= htmlspecialchars($meta_keys); ?>" />
-  <meta name="author" content="Next Level Media" />
-  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Sahariar Supto" />
+  <meta name="developer" content="Sahariar Supto" />
+  <meta name="designer" content="Sahariar Supto" />
+  <meta name="publisher" content="Next Level Media" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Next Level Media" />
+  <meta name="application-name" content="Next Level Media" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="https://nextlevelmediadigital.com/" />
 
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph / Facebook Social Sharing -->
+  <meta property="og:site_name" content="Next Level Media" />
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://nextlevelmediadigital.com/" />
   <meta property="og:title" content="<?= htmlspecialchars($meta_title); ?>" />
   <meta property="og:description" content="<?= htmlspecialchars($meta_desc); ?>" />
-  <meta property="og:image" content="<?= htmlspecialchars($og_image); ?>" />
+  <meta property="og:image" content="https://nextlevelmediadigital.com/main-logo.png" />
+  <meta property="og:image:secure_url" content="https://nextlevelmediadigital.com/main-logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Next Level Media - High-Performance Video Production" />
 
-  <!-- Twitter Cards -->
+  <!-- Twitter / X Cards Social Sharing -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://nextlevelmediadigital.com/" />
   <meta name="twitter:title" content="<?= htmlspecialchars($meta_title); ?>" />
   <meta name="twitter:description" content="<?= htmlspecialchars($meta_desc); ?>" />
-  <meta name="twitter:image" content="<?= htmlspecialchars($og_image); ?>" />
+  <meta name="twitter:image" content="https://nextlevelmediadigital.com/main-logo.png" />
+  <meta name="twitter:image:alt" content="Next Level Media Logo" />
+  <meta name="twitter:creator" content="@SahariarSupto" />
 
-  <link rel="icon" href="main-logo.png" type="image/png" />
+  <!-- Favicons & App Icons -->
+  <link rel="icon" type="image/png" href="main-logo.png" />
+  <link rel="shortcut icon" type="image/png" href="main-logo.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="main-logo.png" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,8 +75,9 @@ $hero_badge_text = get_setting('hero_badge_text', 'Agency Showreel (01:24)');
           },
           colors: {
             brand: {
-              purple: '#8b5cf6',
-              indigo: '#6366f1',
+              primary: '#535eee',
+              purple: '#535eee',
+              indigo: '#4650d4',
               blue: '#3b82f6',
               cyan: '#06b6d4',
               pink: '#ec4899',
@@ -99,81 +120,101 @@ $hero_badge_text = get_setting('hero_badge_text', 'Agency Showreel (01:24)');
     }
   </script>
 
-  <!-- Three.js CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <!-- Lenis Butter-Smooth Scrolling Engine -->
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 
-  <!-- Structured Schema Data -->
+  <!-- Structured Schema Data (JSON-LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Next Level Media",
-    "url": "https://nextlevelmediadigital.com/",
-    "logo": "https://nextlevelmediadigital.com/main-logo.png",
-    "description": "Next Level Media is a video production agency creating high-performing video content and visual systems.",
-    "sameAs": [
-      "https://www.facebook.com/nextlevelmedia",
-      "https://twitter.com/nextlevelmedia",
-      "https://www.linkedin.com/company/nextlevelmedia"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://nextlevelmediadigital.com/#organization",
+        "name": "Next Level Media",
+        "url": "https://nextlevelmediadigital.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://nextlevelmediadigital.com/main-logo.png",
+          "caption": "Next Level Media Logo"
+        },
+        "description": "High-Performance Video Production & Creative Systems",
+        "founder": {
+          "@type": "Person",
+          "name": "Sahariar Supto"
+        },
+        "developer": {
+          "@type": "Person",
+          "name": "Sahariar Supto"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://nextlevelmediadigital.com/#website",
+        "url": "https://nextlevelmediadigital.com/",
+        "name": "Next Level Media",
+        "publisher": {
+          "@id": "https://nextlevelmediadigital.com/#organization"
+        }
+      }
     ]
   }
   </script>
 
   <style>
-    :root {
-      --bg-dark: #000000;
-      --card-bg: #09090d;
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --accent-glow: rgba(139, 92, 246, 0.15);
-    }
-
-    * {
-      box-sizing: border-box;
+    html {
+      scroll-behavior: auto !important;
     }
 
     html, body {
-      background-color: #000000 !important;
-      background: #000000 !important;
-      color: #f8fafc;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      overflow-x: hidden;
+      max-width: 100% !important;
+      overflow-x: clip !important;
+      position: relative;
     }
 
     html.lenis, html.lenis body {
       height: auto;
     }
+
     .lenis.lenis-smooth {
       scroll-behavior: auto !important;
     }
+
     .lenis.lenis-smooth [data-lenis-prevent] {
       overscroll-behavior: contain;
     }
+
     .lenis.lenis-stopped {
       overflow: hidden;
     }
+
     .lenis.lenis-scrolling iframe {
-      pointer-events: none;
+      pointer-events: none !important;
     }
 
-    /* Hero Video Container Scroll-Driven Transform Transition */
-    #heroVideoContainer {
-      transform-origin: center center;
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
-      will-change: transform;
+    /* Noise Texture Overlay */
+    .bg-noise {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
     }
 
-    /* Ultra-Immersive Pure Black Studio Card Style */
+    /* Cyber Grid lines */
+    .bg-cyber-grid {
+      background-size: 50px 50px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    }
+
+    /* Immersive 3D Spotlight Cards */
     .immersive-card {
       position: relative;
-      background: #09090d;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(28px);
-      -webkit-backdrop-filter: blur(28px);
-      border-radius: 1.75rem;
+      background: rgba(8, 8, 12, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 0px !important;
       overflow: hidden;
-      transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.15s ease-out;
+      transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease-out;
       transform-style: preserve-3d;
       box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.95);
     }
@@ -183,7 +224,7 @@ $hero_badge_text = get_setting('hero_badge_text', 'Agency Showreel (01:24)');
       position: absolute;
       inset: 0;
       border-radius: inherit;
-      background: radial-gradient(500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.04), transparent 80%);
+      background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.12), transparent 75%);
       opacity: 0;
       transition: opacity 0.4s ease;
       pointer-events: none;
@@ -195,8 +236,8 @@ $hero_badge_text = get_setting('hero_badge_text', 'Agency Showreel (01:24)');
     }
 
     .immersive-card:hover {
-      border-color: rgba(139, 92, 246, 0.4);
-      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.98), 0 0 30px rgba(139, 92, 246, 0.15);
+      border-color: rgba(255, 255, 255, 0.9) !important;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.98), 0 0 35px rgba(255, 255, 255, 0.3), 0 0 60px rgba(255, 255, 255, 0.12);
     }
 
     /* Corner HUD Cyber Bracket Accents */
@@ -205,39 +246,46 @@ $hero_badge_text = get_setting('hero_badge_text', 'Agency Showreel (01:24)');
       width: 8px;
       height: 8px;
       pointer-events: none;
-      opacity: 0.25;
-      transition: opacity 0.3s ease, border-color 0.3s ease;
+      opacity: 0.35;
+      transition: opacity 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
     }
     .hud-corner-tl {
       top: 10px;
       left: 10px;
-      border-top: 1.5px solid rgba(255, 255, 255, 0.4);
-      border-left: 1.5px solid rgba(255, 255, 255, 0.4);
+      border-top: 1.5px solid rgba(255, 255, 255, 0.6);
+      border-left: 1.5px solid rgba(255, 255, 255, 0.6);
     }
     .hud-corner-br {
       bottom: 10px;
       right: 10px;
-      border-bottom: 1.5px solid rgba(255, 255, 255, 0.4);
-      border-right: 1.5px solid rgba(255, 255, 255, 0.4);
+      border-bottom: 1.5px solid rgba(255, 255, 255, 0.6);
+      border-right: 1.5px solid rgba(255, 255, 255, 0.6);
     }
     .immersive-card:hover .hud-corner-tl,
     .immersive-card:hover .hud-corner-br {
-      opacity: 0.8;
-      border-color: #8b5cf6;
+      opacity: 1;
+      border-color: #ffffff;
+      filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
     }
 
-    /* MZ Media Button Styling */
+    /* Button Styling - Square Borders with White Hover Animations */
     .mz-btn {
       position: relative;
       display: inline-flex;
       align-items: center;
       gap: 0.75rem;
       padding: 0.875rem 1.85rem;
-      border-radius: 9999px;
+      border-radius: 0px !important;
       font-weight: 700;
       font-size: 0.875rem;
       letter-spacing: 0.025em;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .mz-btn:hover {
+      border-color: #ffffff !important;
+      box-shadow: 0 0 35px rgba(255, 255, 255, 0.5), 0 0 65px rgba(255, 255, 255, 0.25) !important;
+      transform: translateY(-2px);
     }
 
     .mz-btn-icon {
@@ -246,7 +294,7 @@ $hero_badge_text = get_setting('hero_badge_text', 'Agency Showreel (01:24)');
       justify-content: center;
       width: 1.85rem;
       height: 1.85rem;
-      border-radius: 9999px;
+      border-radius: 0px !important;
       transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
@@ -255,200 +303,215 @@ $hero_badge_text = get_setting('hero_badge_text', 'Agency Showreel (01:24)');
     }
 
     .fade-in-up {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .fade-in-up.is-visible {
       opacity: 1;
       transform: translateY(0);
-    }
-    /* Global Three.js 3D Objects Canvas (Pure Black Background & Soft Ambient Opacity) */
-    #global-three-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.38;
-      transition: opacity 0.5s ease;
     }
   </style>
 </head>
 
-<body class="relative bg-black text-slate-100 antialiased selection:bg-indigo-600 selection:text-white">
+<body class="relative bg-black text-slate-100 antialiased selection:bg-[#535eee] selection:text-white overflow-x-hidden w-full max-w-full">
 
-  <!-- Fullscreen Interactive 3D Objects Canvas -->
-  <canvas id="global-three-canvas"></canvas>
+  <!-- Dual-Sided Background Color Gradients (MZ Media Cyber Aura Style) -->
+  <!-- Left Side Background Color Gradient Aura -->
+  <div class="fixed top-0 left-0 bottom-0 w-[300px] sm:w-[480px] lg:w-[650px] bg-[radial-gradient(ellipse_at_left,_rgba(83,94,238,0.22)_0%,_rgba(59,130,246,0.12)_45%,_transparent_75%)] pointer-events-none z-0"></div>
+  <div class="fixed top-1/3 left-0 w-[250px] sm:w-[400px] h-[600px] bg-gradient-to-r from-blue-600/15 via-[#535eee]/10 to-transparent blur-[120px] pointer-events-none z-0"></div>
+
+  <!-- Right Side Background Color Gradient Aura -->
+  <div class="fixed top-0 right-0 bottom-0 w-[300px] sm:w-[480px] lg:w-[650px] bg-[radial-gradient(ellipse_at_right,_rgba(141,150,255,0.20)_0%,_rgba(83,94,238,0.12)_45%,_transparent_75%)] pointer-events-none z-0"></div>
+  <div class="fixed top-2/3 right-0 w-[250px] sm:w-[400px] h-[600px] bg-gradient-to-l from-[#8d96ff]/15 via-[#535eee]/10 to-transparent blur-[120px] pointer-events-none z-0"></div>
+
+  <!-- Left Atmospheric Fog (MZ Media Mystical Mist Style) -->
+  <div class="fixed top-0 left-0 bottom-0 w-[260px] sm:w-[420px] lg:w-[540px] pointer-events-none z-0 select-none opacity-35 sm:opacity-45 mix-blend-screen overflow-hidden">
+    <img src="fog-side.svg" alt="Left Ambient Fog" class="w-full h-full object-cover object-left select-none pointer-events-none" />
+  </div>
+
+  <!-- Right Atmospheric Fog (MZ Media Mystical Mist Style) -->
+  <div class="fixed top-0 right-0 bottom-0 w-[260px] sm:w-[420px] lg:w-[540px] pointer-events-none z-0 select-none opacity-35 sm:opacity-45 mix-blend-screen overflow-hidden scale-x-[-1]">
+    <img src="fog-side.svg" alt="Right Ambient Fog" class="w-full h-full object-cover object-left select-none pointer-events-none" />
+  </div>
 
   <!-- Header / Navbar Component -->
   <?php include('components/navbar.php'); ?>
 
   <!-- Main Hero Section -->
-  <main class="relative z-10">
-    <section id="heroSection" class="relative min-h-[95vh] flex flex-col items-center justify-center pt-36 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+  <main class="relative z-10 w-full max-w-full overflow-hidden">
+    <section id="heroSection" class="relative flex flex-col items-center justify-center pt-24 sm:pt-36 pb-3 sm:pb-6 px-2.5 sm:px-6 lg:px-8 overflow-hidden w-full max-w-full">
       
-      <div class="max-w-5xl mx-auto text-center relative z-10">
+      <div class="max-w-6xl w-full mx-auto text-center relative z-10 pt-1 sm:pt-2 flex flex-col items-center justify-center">
         
-        <!-- Trust Pills Row -->
-        <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 mb-8 fade-in-up">
-          
-          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#10101a]/80 border border-white/15 backdrop-blur-xl shadow-lg hover:border-violet-500/50 transition-colors">
-            <div class="flex -space-x-2">
-              <img src="CL1.jpg" alt="Client 1" class="w-6 h-6 rounded-full border-2 border-white/40 object-cover" />
-              <img src="CL2.jpg" alt="Client 2" class="w-6 h-6 rounded-full border-2 border-white/40 object-cover" />
-              <img src="CL3.jpg" alt="Client 3" class="w-6 h-6 rounded-full border-2 border-white/40 object-cover" />
-              <img src="CL4.jpg" alt="Client 4" class="w-6 h-6 rounded-full border-2 border-white/40 object-cover" />
+        <!-- Live Rotating Trust Ticker Pill (MZ Media Exact Architecture) -->
+        <div class="inline-flex items-center justify-center mb-3.5 sm:mb-7" id="heroBadgeWrapper">
+          <div class="group relative h-10 sm:h-13 px-3 sm:px-6 bg-black border-2 border-white/30 shadow-[0_0_25px_rgba(255,255,255,0.18)] hover:border-white hover:shadow-[0_0_40px_rgba(255,255,255,0.5)] transition-all duration-300 backdrop-blur-xl rounded-none overflow-hidden max-w-[95vw] cursor-pointer">
+            
+            <div id="verticalSwipeTicker" class="w-full flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+              
+              <!-- Slide 1: Brands Circle + "Trusted by 500+ Creators & Brands" -->
+              <div class="h-10 sm:h-13 flex-shrink-0 flex items-center justify-center gap-2 sm:gap-3.5 px-1 sm:px-2">
+                <span class="text-[9px] sm:text-xs font-bold uppercase tracking-wider text-gray-400 font-display whitespace-nowrap">Trusted by</span>
+                <div class="flex -space-x-1.5 sm:-space-x-2.5 items-center py-0.5 shrink-0">
+                  <img src="brands/1.jpeg" alt="Brand 1" class="w-5 h-5 sm:w-7 sm:h-7 rounded-full border-2 border-white object-cover shadow-lg ring-1 ring-black/60 saturate-125 transition-all duration-300 group-hover:scale-105 hover:!scale-140 hover:!z-30 shrink-0" />
+                  <img src="brands/2.webp" alt="Brand 2" class="w-5 h-5 sm:w-7 sm:h-7 rounded-full border-2 border-white object-cover shadow-lg ring-1 ring-black/60 saturate-125 transition-all duration-300 group-hover:scale-105 hover:!scale-140 hover:!z-30 shrink-0" />
+                  <img src="brands/3.webp" alt="Brand 3" class="w-5 h-5 sm:w-7 sm:h-7 rounded-full border-2 border-white object-cover shadow-lg ring-1 ring-black/60 saturate-125 transition-all duration-300 group-hover:scale-105 hover:!scale-140 hover:!z-30 shrink-0" />
+                  <img src="brands/4.jpg" alt="Brand 4" class="w-5 h-5 sm:w-7 sm:h-7 rounded-full border-2 border-white object-cover shadow-lg ring-1 ring-black/60 saturate-125 transition-all duration-300 group-hover:scale-105 hover:!scale-140 hover:!z-30 shrink-0" />
+                  <img src="brands/5.png" alt="Brand 5" class="w-5 h-5 sm:w-7 sm:h-7 rounded-full border-2 border-white object-cover shadow-lg ring-1 ring-black/60 saturate-125 transition-all duration-300 group-hover:scale-105 hover:!scale-140 hover:!z-30 shrink-0" />
+                </div>
+                <div class="h-4 sm:h-6 w-[1px] bg-white/20 shrink-0"></div>
+                <span class="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-white font-display whitespace-nowrap">500+ Creators &bull; 100M+ Views</span>
+              </div>
+
+              <!-- Slide 2: Clients Photos Circle + "★★★★★ 4.9 (50+ Reviews)" -->
+              <div class="h-10 sm:h-13 flex-shrink-0 flex items-center justify-center gap-2 sm:gap-3.5 px-1 sm:px-2">
+                <div class="flex -space-x-1.5 sm:-space-x-2.5 items-center py-0.5 shrink-0">
+                  <img src="clients/1.png" alt="Client 1" class="w-5 h-5 sm:w-7 sm:h-7 rounded-full border-2 border-white object-cover shadow-lg ring-1 ring-black/60 saturate-125 transition-all duration-300 group-hover:scale-105 hover:!scale-140 hover:!z-30 shrink-0" />
+                  <img src="clients/2.jpg" alt="Client 2" class="w-5 h-5 sm:w-7 sm:h-7 rounded-full border-2 border-white object-cover shadow-lg ring-1 ring-black/60 saturate-125 transition-all duration-300 group-hover:scale-105 hover:!scale-140 hover:!z-30 shrink-0" />
+                  <img src="clients/3.webp" alt="Client 3" class="w-5 h-5 sm:w-7 sm:h-7 rounded-full border-2 border-white object-cover shadow-lg ring-1 ring-black/60 saturate-125 transition-all duration-300 group-hover:scale-105 hover:!scale-140 hover:!z-30 shrink-0" />
+                  <img src="clients/4.jpg" alt="Client 4" class="w-5 h-5 sm:w-7 sm:h-7 rounded-full border-2 border-white object-cover shadow-lg ring-1 ring-black/60 saturate-125 transition-all duration-300 group-hover:scale-105 hover:!scale-140 hover:!z-30 shrink-0" />
+                  <img src="clients/6.jpg" alt="Client 5" class="w-5 h-5 sm:w-7 sm:h-7 rounded-full border-2 border-white object-cover shadow-lg ring-1 ring-black/60 saturate-125 transition-all duration-300 group-hover:scale-105 hover:!scale-140 hover:!z-30 shrink-0" />
+                </div>
+                <div class="h-4 sm:h-6 w-[1px] bg-white/20 shrink-0"></div>
+                <div class="flex items-center gap-1 sm:gap-1.5 whitespace-nowrap">
+                  <div class="flex text-amber-400 text-[9px] sm:text-xs tracking-wider animate-pulse">★★★★★</div>
+                  <span class="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-white font-display"><span class="text-white font-extrabold">4.9</span> (50+ Reviews)</span>
+                </div>
+              </div>
+
+              <!-- Slide 3: Speed Delivery & Fast Cuts -->
+              <div class="h-10 sm:h-13 flex-shrink-0 flex items-center justify-center gap-2 sm:gap-3.5 px-1 sm:px-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_10px_#10b981] animate-pulse"></span>
+                <span class="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-white font-display whitespace-nowrap"><span class="text-white font-extrabold">24–48h</span> First Cuts &bull; Rapid Scaling</span>
+              </div>
+
+              <!-- Slide 4: 100% Satisfaction Guarantee -->
+              <div class="h-10 sm:h-13 flex-shrink-0 flex items-center justify-center gap-2 sm:gap-3.5 px-1 sm:px-2">
+                <span class="w-2 h-2 rounded-full bg-[#535eee] shadow-[0_0_10px_#535eee] animate-pulse"></span>
+                <span class="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-white font-display whitespace-nowrap">100% Satisfaction Guarantee &bull; Unlimited Revisions</span>
+              </div>
+
             </div>
-            <span class="text-xs sm:text-sm font-semibold text-gray-200">Trusted by <span class="text-white font-extrabold">500+ Businesses</span></span>
-          </div>
 
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#10101a]/80 border border-white/15 backdrop-blur-xl shadow-lg hover:border-violet-500/50 transition-colors">
-            <span class="text-amber-400 text-xs sm:text-sm font-bold">★★★★★</span>
-            <span class="text-xs sm:text-sm font-semibold text-gray-200"><span class="text-white font-extrabold">4.9</span> (50+ Reviews)</span>
           </div>
-
-          <div class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#10101a]/80 border border-white/15 backdrop-blur-xl shadow-lg hover:border-violet-500/50 transition-colors">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span class="text-xs sm:text-sm font-semibold text-gray-200">24–48h First Cuts</span>
-          </div>
-
         </div>
 
-        <!-- Hero Headline -->
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08] mb-6 fade-in-up font-display">
-          Content that <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-violet-400">Performs.</span><br />
-          Systems that <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-purple-300 to-fuchsia-400">Scale.</span>
+        <!-- Hero Headline (Fluid Responsive Typography 320px -> 1920px) -->
+        <h1 class="text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.15] sm:leading-[1.08] mb-4 sm:mb-8 font-display px-1">
+          Content that <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-[#8d96ff] to-[#535eee]">Performs.</span><br />
+          Systems that <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#535eee] via-[#a5adff] to-fuchsia-400">Scale.</span>
         </h1>
 
-        <!-- Subheadline -->
-        <p class="text-base sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-10 fade-in-up font-normal">
-          No more boring content. No more wasted ad spend. We create high-retention video content, viral shorts, VSLs, and 3D motion assets engineered to convert viewers into high-ticket clients.
-        </p>
-
-        <!-- CTA Action Buttons -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-16 fade-in-up">
+        <!-- Featured Showreel Video Card (Enlarged Responsive Preview with Center Cyber Play Button) -->
+        <div class="relative w-full max-w-[350px] xs:max-w-[420px] sm:max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto rounded-none overflow-hidden bg-black border-2 border-white/35 shadow-[0_10px_35px_rgba(0,0,0,0.9)] sm:shadow-[0_25px_80px_rgba(0,0,0,0.85)] group hover:border-white hover:shadow-[0_0_45px_rgba(255,255,255,0.35)] transition-all duration-500 mb-4 sm:mb-8 cursor-pointer" id="heroVideoContainer" onclick="playHeroShowreel()">
           
-          <!-- Primary CTA -->
-          <a href="https://calendly.com/nextlevelmediacall/30min?month=2025-07" target="_blank" class="mz-btn bg-white text-black shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_45px_rgba(99,102,241,0.6)] hover:bg-gray-100 w-full sm:w-auto justify-center">
-            <span>Book A Discovery Call</span>
-            <div class="mz-btn-icon bg-black text-white">
-              <svg class="w-3.5 h-3.5 transform -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-              </svg>
-            </div>
-          </a>
-
-          <!-- Secondary CTA -->
-          <a href="#projects" class="mz-btn bg-[#13131e]/90 text-gray-200 border border-white/15 hover:border-white/40 hover:text-white hover:bg-[#1a1a28] w-full sm:w-auto justify-center backdrop-blur-xl">
-            <span>Explore Portfolio</span>
-            <div class="mz-btn-icon bg-white/10 text-gray-300">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </div>
-          </a>
-
-        </div>
-
-        <!-- Featured Showreel Video Card -->
-        <div class="relative w-full max-w-4xl mx-auto rounded-3xl overflow-hidden bg-[#0c0c14] border-2 border-white/20 shadow-[0_25px_80px_rgba(0,0,0,0.85)] group fade-in-up hover:border-violet-500/60 transition-all duration-500" id="heroVideoContainer">
-          
-          <div class="relative aspect-video w-full cursor-pointer" id="heroVideoTrigger">
-            <img src="https://img.youtube.com/vi/X0SIgFWWb1o/maxresdefault.jpg" alt="Next Level Media Showreel" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" id="heroThumbnail" />
+          <div class="relative aspect-video w-full bg-black overflow-hidden" id="heroShowreelFrame">
             
-            <!-- Gradient Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent"></div>
+            <!-- Clean Preview Iframe (No Vimeo bottom controls shown by default) -->
+            <iframe
+              id="heroShowreelIframe"
+              src="https://player.vimeo.com/video/1219066986?title=0&byline=0&portrait=0&badge=0&controls=0&autopause=0&player_id=0&app_id=58479"
+              class="w-full h-full absolute inset-0 pointer-events-none scale-[1.01]"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+              webkitallowfullscreen
+              mozallowfullscreen
+              allowfullscreen></iframe>
 
-            <!-- Custom Play Button -->
-            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white/95 text-black flex items-center justify-center shadow-[0_0_50px_rgba(255,255,255,0.45)] group-hover:scale-110 group-hover:bg-white transition-all duration-300">
-                <svg class="w-8 h-8 sm:w-10 sm:h-10 ml-1.5" fill="currentColor" viewBox="0 0 24 24">
+            <!-- Center Square Cyber Play Button Overlay (Exact style from 'The videos we ship' section) -->
+            <div id="heroPlayOverlay" class="absolute inset-0 bg-black/25 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center z-10">
+              <div class="w-12 h-12 sm:w-20 sm:h-20 rounded-none bg-white text-black flex items-center justify-center shadow-[0_0_25px_rgba(255,255,255,0.7)] sm:shadow-[0_0_45px_rgba(255,255,255,0.85)] group-hover:scale-110 group-hover:shadow-[0_0_65px_rgba(255,255,255,1)] transition-all duration-300">
+                <svg class="w-5 h-5 sm:w-9 sm:h-9 ml-1 fill-current" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z"/>
                 </svg>
               </div>
             </div>
 
-            <!-- Bottom Video Badge -->
-            <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between pointer-events-none">
-              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/70 border border-white/25 text-white text-xs font-semibold backdrop-blur-md">
-                <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
-                <span><?= htmlspecialchars($hero_badge_text); ?></span>
-              </div>
-              <div class="text-xs text-gray-300 font-medium hidden sm:block">
-                Click to play with sound
-              </div>
-            </div>
-
           </div>
 
-          <!-- Video Embed Slot -->
-          <div id="heroEmbedSlot" class="hidden aspect-video w-full bg-black"></div>
         </div>
 
-        <!-- Trusted Client Logos Marquee -->
-        <div class="mt-16 pt-8 border-t border-white/10 overflow-hidden fade-in-up">
-          <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">Trusted by High-Performing Creators & Brands</p>
+        <!-- CTA Action Buttons (Compact on Mobile, Fluid Row on Desktop) -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-5 mb-5 sm:mb-10 w-full mx-auto px-2">
+          
+          <!-- Primary CTA: Book A Discovery Call -->
+          <a href="<?= htmlspecialchars($booking_calendly_url); ?>" target="_blank" class="mz-btn bg-white text-black shadow-[0_0_20px_rgba(255,255,255,0.3)] sm:shadow-[0_0_35px_rgba(255,255,255,0.35)] hover:shadow-[0_0_55px_rgba(255,255,255,0.8)] hover:bg-white hover:border-white px-3.5 py-2 sm:px-7 sm:py-3.5 w-auto min-w-[210px] sm:min-w-0 justify-center rounded-none border-2 border-white text-xs sm:text-base font-extrabold tracking-wide">
+            <span>Book a Discovery Call</span>
+            <div class="mz-btn-icon bg-black text-white rounded-none">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 transform -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Secondary CTA: Get your video done -->
+          <a href="<?= htmlspecialchars(get_setting('order_cta_url', 'order.php')); ?>" class="mz-btn bg-[#13131e]/90 text-gray-100 border-2 border-white/40 hover:border-white hover:text-white hover:bg-[#1e1e30] px-3.5 py-2 sm:px-7 sm:py-3.5 w-auto min-w-[210px] sm:min-w-0 justify-center backdrop-blur-xl rounded-none shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] text-xs sm:text-base font-extrabold tracking-wide">
+            <span>Get your video done</span>
+            <div class="mz-btn-icon bg-white/15 text-white rounded-none">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 transform -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Trusted Client Logos Marquee (Positioned after CTA buttons) -->
+        <div class="mb-3 sm:mb-8 pt-2 pb-2 sm:pt-4 sm:pb-4 border-y border-white/15 overflow-hidden bg-white/[0.02] w-full max-w-full">
+          <p class="text-[9px] sm:text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-2 sm:mb-3">Trusted by High-Performing Creators & Brands</p>
           
           <div class="relative w-full overflow-hidden">
-            <div class="flex gap-12 items-center animate-marquee-fast w-max opacity-70 hover:opacity-100 transition-opacity">
-              <div class="flex items-center gap-2 font-bold text-gray-200 text-lg tracking-wider">
-                <span class="w-3 h-3 rounded-full bg-blue-500 shadow-[0_0_10px_#3b82f6]"></span> CLICKUP
-              </div>
-              <div class="flex items-center gap-2 font-bold text-gray-200 text-lg tracking-wider">
-                <span class="w-3 h-3 rounded-full bg-violet-500 shadow-[0_0_10px_#8b5cf6]"></span> LUMANA
-              </div>
-              <div class="flex items-center gap-2 font-bold text-gray-200 text-lg tracking-wider">
-                <span class="w-3 h-3 rounded-full bg-purple-500 shadow-[0_0_10px_#a855f7]"></span> ATRIA MEDIA
-              </div>
-              <div class="flex items-center gap-2 font-bold text-gray-200 text-lg tracking-wider">
-                <span class="w-3 h-3 rounded-full bg-pink-500 shadow-[0_0_10px_#ec4899]"></span> PHONELY AI
-              </div>
-              <div class="flex items-center gap-2 font-bold text-gray-200 text-lg tracking-wider">
-                <span class="w-3 h-3 rounded-full bg-indigo-500 shadow-[0_0_10px_#6366f1]"></span> HELONIC
-              </div>
-              <div class="flex items-center gap-2 font-bold text-gray-200 text-lg tracking-wider">
-                <span class="w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_10px_#10b981]"></span> REACHLY
-              </div>
-              
-              <!-- Repeat for infinite marquee loop -->
-              <div class="flex items-center gap-2 font-bold text-gray-200 text-lg tracking-wider">
-                <span class="w-3 h-3 rounded-full bg-blue-500 shadow-[0_0_10px_#3b82f6]"></span> CLICKUP
-              </div>
-              <div class="flex items-center gap-2 font-bold text-gray-200 text-lg tracking-wider">
-                <span class="w-3 h-3 rounded-full bg-violet-500 shadow-[0_0_10px_#8b5cf6]"></span> LUMANA
-              </div>
-              <div class="flex items-center gap-2 font-bold text-gray-200 text-lg tracking-wider">
-                <span class="w-3 h-3 rounded-full bg-purple-500 shadow-[0_0_10px_#a855f7]"></span> ATRIA MEDIA
-              </div>
-              <div class="flex items-center gap-2 font-bold text-gray-200 text-lg tracking-wider">
-                <span class="w-3 h-3 rounded-full bg-pink-500 shadow-[0_0_10px_#ec4899]"></span> PHONELY AI
-              </div>
-              <div class="flex items-center gap-2 font-bold text-gray-200 text-lg tracking-wider">
-                <span class="w-3 h-3 rounded-full bg-indigo-500 shadow-[0_0_10px_#6366f1]"></span> HELONIC
-              </div>
-              <div class="flex items-center gap-2 font-bold text-gray-200 text-lg tracking-wider">
-                <span class="w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_10px_#10b981]"></span> REACHLY
-              </div>
+            <!-- Fade Edges -->
+            <div class="absolute left-0 top-0 bottom-0 w-6 sm:w-12 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-6 sm:w-12 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
+
+            <div class="flex gap-6 sm:gap-14 lg:gap-16 items-center animate-marquee-fast w-max opacity-80 hover:opacity-100 transition-opacity py-1 sm:py-2">
+              <!-- Set 1 -->
+              <img src="brands/logo_1.png" alt="SSRG" class="h-4 sm:h-7 w-auto max-w-[75px] sm:max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src="brands/logo_2.png" alt="Walmart" class="h-4 sm:h-7 w-auto max-w-[75px] sm:max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src="brands/logo_3.png" alt="Shopify" class="h-4 sm:h-7 w-auto max-w-[75px] sm:max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src="brands/logo_4.png" alt="Acquisition" class="h-4 sm:h-7 w-auto max-w-[75px] sm:max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src="brands/logo_5.png" alt="7-Eleven" class="h-4 sm:h-7 w-auto max-w-[75px] sm:max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src="brands/logo_6.png" alt="T-Nation" class="h-3.5 sm:h-6 w-auto max-w-[75px] sm:max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src="brands/logo_7.png" alt="Adobe" class="h-4 sm:h-7 w-auto max-w-[75px] sm:max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src="brands/logo_8.png" alt="Insta Appoint AI" class="h-4 sm:h-7 w-auto max-w-[75px] sm:max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src="brands/logo_9.png" alt="Revive Systems" class="h-6 sm:h-10 w-auto max-w-[75px] sm:max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src="brands/logo_10.png" alt="Nerdspin" class="h-3.5 sm:h-6 w-auto max-w-[75px] sm:max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+
+              <!-- Set 2 (for seamless loop) -->
+              <img src="brands/logo_1.png" alt="SSRG" class="h-4 sm:h-7 w-auto max-w-[75px] sm:max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src="brands/logo_2.png" alt="Walmart" class="h-4 sm:h-7 w-auto max-w-[75px] sm:max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src="brands/logo_3.png" alt="Shopify" class="h-4 sm:h-7 w-auto max-w-[75px] sm:max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src="brands/logo_4.png" alt="Acquisition" class="h-4 sm:h-7 w-auto max-w-[75px] sm:max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src="brands/logo_5.png" alt="7-Eleven" class="h-4 sm:h-7 w-auto max-w-[75px] sm:max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src="brands/logo_6.png" alt="T-Nation" class="h-3.5 sm:h-6 w-auto max-w-[75px] sm:max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src="brands/logo_7.png" alt="Adobe" class="h-4 sm:h-7 w-auto max-w-[75px] sm:max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src="brands/logo_8.png" alt="Insta Appoint AI" class="h-4 sm:h-7 w-auto max-w-[75px] sm:max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src="brands/logo_9.png" alt="Revive Systems" class="h-6 sm:h-10 w-auto max-w-[75px] sm:max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src="brands/logo_10.png" alt="Nerdspin" class="h-3.5 sm:h-6 w-auto max-w-[75px] sm:max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
             </div>
           </div>
         </div>
 
       </div>
+
+      <!-- Fullscreen Wide Horizontal Divider Line with border-img in the Middle -->
+      <div class="relative w-full left-0 right-0 mt-6 sm:mt-8 mb-0 flex items-center justify-center pointer-events-none fade-in-up overflow-hidden">
+        <div class="absolute inset-0 flex items-center w-full">
+          <div class="w-full border-t border-white/20"></div>
+        </div>
+        <div class="relative z-10 flex justify-center max-w-full">
+          <img src="border-img" alt="Glow Border Accent" class="w-[500px] sm:w-[750px] max-w-full max-h-14 sm:max-h-16 object-contain select-none pointer-events-none" />
+        </div>
+      </div>
+
     </section>
   </main>
 
-  <!-- Modular Sections -->
+  <!-- Modular Sections (Reviews positioned directly after 'Why Us') -->
   <div class="relative z-10 space-y-4">
-    <?php include('components/second-intro.php'); ?>
-    <?php include('components/clients-testimonials.php'); ?>
+    <?php include('components/video-testimonials.php'); ?>
     <?php include('components/projects.php'); ?>
+    <?php include('components/second-intro.php'); ?>
     <?php include('components/why-us.php'); ?>
+    <?php include('components/clients-testimonials.php'); ?>
     <?php include('components/strategy.php'); ?>
-    <?php include('components/core-services.php'); ?>
     <?php include('components/feedback.php'); ?>
     <?php include('components/accordion.php'); ?>
     <?php include('components/footer.php'); ?>
@@ -457,443 +520,19 @@ $hero_badge_text = get_setting('hero_badge_text', 'Agency Showreel (01:24)');
   <!-- Scripts -->
   <script>
     // --------------------------------------------------------------------------
-    // High-Performance Scroll-Driven WebGL 3D Section-Morphing Engine
-    // (Bruno Simon / Award-Winning WebGL Interactive Experience on Pure Black)
+    // Vertical Swiping Trust Ticker (Percentage-based Smooth Auto-Swipe)
     // --------------------------------------------------------------------------
-    (function initScrollDrivenThreeEngine() {
-      const canvas = document.getElementById('global-three-canvas');
-      if (!canvas || typeof THREE === 'undefined') return;
-
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
-      camera.position.z = 28;
-
-      const renderer = new THREE.WebGLRenderer({
-        canvas: canvas,
-        alpha: true,
-        antialias: true,
-        powerPreference: "high-performance"
-      });
-      renderer.setClearColor(0x000000, 0); // 100% pure transparent on pure obsidian black
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-      // Global Root Group
-      const worldGroup = new THREE.Group();
-      scene.add(worldGroup);
-
-      // ========================================================================
-      // AMBIENT COSMIC STARDUST (Soft 3D Depth Across Pure Black Canvas)
-      // ========================================================================
-      const dustCount = 140;
-      const dustGeo = new THREE.BufferGeometry();
-      const dustPos = new Float32Array(dustCount * 3);
-      const dustVels = [];
-      for (let i = 0; i < dustCount; i++) {
-        dustPos[i * 3] = (Math.random() - 0.5) * 60;
-        dustPos[i * 3 + 1] = (Math.random() - 0.5) * 60;
-        dustPos[i * 3 + 2] = (Math.random() - 0.5) * 30;
-        dustVels.push({
-          x: (Math.random() - 0.5) * 0.015,
-          y: (Math.random() - 0.5) * 0.015,
-          z: (Math.random() - 0.5) * 0.01
-        });
-      }
-      dustGeo.setAttribute('position', new THREE.BufferAttribute(dustPos, 3));
-      const dustMat = new THREE.PointsMaterial({
-        color: 0xc4b5fd,
-        size: 0.35,
-        transparent: true,
-        opacity: 0.4,
-        blending: THREE.AdditiveBlending
-      });
-      const dustSystem = new THREE.Points(dustGeo, dustMat);
-      worldGroup.add(dustSystem);
-
-      // ========================================================================
-      // SCENE 1: HERO (Camera Viewfinders, Lens Reticles & Glowing Play Crystals)
-      // ========================================================================
-      const heroGroup = new THREE.Group();
-      worldGroup.add(heroGroup);
-
-      function createViewfinder(size = 4.5, color = 0x8b5cf6) {
-        const grp = new THREE.Group();
-        const pts = [];
-        const h = size / 2, b = size * 0.25;
-        pts.push(new THREE.Vector3(-h, h - b, 0), new THREE.Vector3(-h, h, 0), new THREE.Vector3(-h, h, 0), new THREE.Vector3(-h + b, h, 0));
-        pts.push(new THREE.Vector3(h - b, h, 0), new THREE.Vector3(h, h, 0), new THREE.Vector3(h, h, 0), new THREE.Vector3(h, h - b, 0));
-        pts.push(new THREE.Vector3(-h, -h + b, 0), new THREE.Vector3(-h, -h, 0), new THREE.Vector3(-h, -h, 0), new THREE.Vector3(-h + b, -h, 0));
-        pts.push(new THREE.Vector3(h - b, -h, 0), new THREE.Vector3(h, -h, 0), new THREE.Vector3(h, -h, 0), new THREE.Vector3(h, -h + b, 0));
-        const c = size * 0.1;
-        pts.push(new THREE.Vector3(-c, 0, 0), new THREE.Vector3(c, 0, 0), new THREE.Vector3(0, -c, 0), new THREE.Vector3(0, c, 0));
-        
-        const geo = new THREE.BufferGeometry().setFromPoints(pts);
-        const mat = new THREE.LineBasicMaterial({ color: color, transparent: true, opacity: 0.65 });
-        grp.add(new THREE.LineSegments(geo, mat));
-
-        const rGeo = new THREE.RingGeometry(size * 0.35, size * 0.37, 32);
-        const rMat = new THREE.MeshBasicMaterial({ color: color, side: THREE.DoubleSide, transparent: true, opacity: 0.45 });
-        grp.add(new THREE.Mesh(rGeo, rMat));
-        return { group: grp, mat: mat, rMat: rMat };
-      }
-
-      const vf1 = createViewfinder(5.0, 0x8b5cf6);
-      vf1.group.position.set(13, 4, -2);
-      heroGroup.add(vf1.group);
-
-      const vf2 = createViewfinder(4.0, 0xa78bfa);
-      vf2.group.position.set(-13, 3, -4);
-      heroGroup.add(vf2.group);
-
-      const triShape = new THREE.Shape();
-      triShape.moveTo(-1.2, -1.5);
-      triShape.lineTo(1.8, 0);
-      triShape.lineTo(-1.2, 1.5);
-      triShape.closePath();
-      const playGeo = new THREE.ExtrudeGeometry(triShape, { depth: 0.5, bevelEnabled: true, bevelSegments: 2, steps: 1, bevelSize: 0.1 });
-      const playMat = new THREE.MeshBasicMaterial({ color: 0xc4b5fd, wireframe: true, transparent: true, opacity: 0.6 });
-      const heroPlayMesh = new THREE.Mesh(playGeo, playMat);
-      heroPlayMesh.position.set(11, -6, -3);
-      heroGroup.add(heroPlayMesh);
-
-      // ========================================================================
-      // SCENE 2: ABOUT / INTRO (3D Curving Film Strips with Timecodes)
-      // ========================================================================
-      const introGroup = new THREE.Group();
-      worldGroup.add(introGroup);
-
-      function createFilmTex() {
-        const c = document.createElement('canvas');
-        c.width = 512;
-        c.height = 128;
-        const ctx = c.getContext('2d');
-        ctx.fillStyle = '#0a0a0f';
-        ctx.fillRect(0, 0, 512, 128);
-        ctx.strokeStyle = 'rgba(139, 92, 246, 0.9)';
-        ctx.lineWidth = 2;
-        ctx.strokeRect(0, 0, 512, 128);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
-        for (let x = 8; x < 512; x += 24) {
-          ctx.fillRect(x, 6, 12, 12);
-          ctx.fillRect(x, 110, 12, 12);
-        }
-        for (let f = 0; f < 4; f++) {
-          const fx = f * 128 + 8;
-          ctx.strokeStyle = 'rgba(167, 139, 250, 0.8)';
-          ctx.strokeRect(fx, 24, 112, 80);
-          ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
-          ctx.font = 'bold 10px monospace';
-          ctx.fillText(`00:0${f}:24:00`, fx + 10, 40);
-        }
-        const tex = new THREE.CanvasTexture(c);
-        tex.wrapS = THREE.RepeatWrapping;
-        tex.wrapT = THREE.RepeatWrapping;
-        tex.repeat.set(4, 1);
-        return tex;
-      }
-
-      const filmTex = createFilmTex();
-      const filmMat = new THREE.MeshBasicMaterial({ map: filmTex, side: THREE.DoubleSide, transparent: true, opacity: 0.65, blending: THREE.AdditiveBlending });
-      
-      class FilmCurve extends THREE.Curve {
-        getPoint(t) {
-          const a = t * Math.PI * 2.8;
-          return new THREE.Vector3(Math.sin(a) * 16, (t - 0.5) * 32, Math.cos(a) * 10);
-        }
-      }
-      const filmGeo = new THREE.TubeGeometry(new FilmCurve(), 80, 2.2, 4, false);
-      const filmMesh = new THREE.Mesh(filmGeo, filmMat);
-      filmMesh.position.set(0, 0, -4);
-      introGroup.add(filmMesh);
-
-      // ========================================================================
-      // SCENE 3: REVIEWS / TESTIMONIALS (3D Holographic Stars & Orbital Rings)
-      // ========================================================================
-      const reviewsGroup = new THREE.Group();
-      worldGroup.add(reviewsGroup);
-
-      function createStarMesh(size = 1.3) {
-        const starShape = new THREE.Shape();
-        const points = 5;
-        const outerRadius = size;
-        const innerRadius = size * 0.45;
-        for (let i = 0; i < points * 2; i++) {
-          const r = i % 2 === 0 ? outerRadius : innerRadius;
-          const angle = (i * Math.PI) / points - Math.PI / 2;
-          const x = Math.cos(angle) * r;
-          const y = Math.sin(angle) * r;
-          if (i === 0) starShape.moveTo(x, y);
-          else starShape.lineTo(x, y);
-        }
-        starShape.closePath();
-        const geo = new THREE.ExtrudeGeometry(starShape, { depth: 0.35, bevelEnabled: true, bevelSegments: 2, steps: 1, bevelSize: 0.08 });
-        const mat = new THREE.MeshBasicMaterial({ color: 0xf59e0b, wireframe: true, transparent: true, opacity: 0.7 });
-        return new THREE.Mesh(geo, mat);
-      }
-
-      const reviewStars = [];
-      for (let s = 0; s < 5; s++) {
-        const sm = createStarMesh(1.4);
-        sm.position.set((s - 2) * 4.2, Math.sin(s * 0.8) * 1.5, -3);
-        reviewsGroup.add(sm);
-        reviewStars.push(sm);
-      }
-
-      const starRingGeo = new THREE.TorusGeometry(12, 0.06, 16, 80);
-      const starRingMat = new THREE.MeshBasicMaterial({ color: 0xf59e0b, transparent: true, opacity: 0.4, wireframe: true });
-      const starRing = new THREE.Mesh(starRingGeo, starRingMat);
-      starRing.rotation.x = Math.PI / 3;
-      reviewsGroup.add(starRing);
-
-      // ========================================================================
-      // SCENE 4: PROJECTS / PORTFOLIO (3D Floating Aspect-Ratio Display Frames)
-      // ========================================================================
-      const projectsGroup = new THREE.Group();
-      worldGroup.add(projectsGroup);
-
-      const frameGeo = new THREE.PlaneGeometry(7, 4);
-      const frameMat = new THREE.MeshBasicMaterial({ color: 0x8b5cf6, wireframe: true, transparent: true, opacity: 0.5 });
-      const pFrames = [];
-      const framePositions = [
-        { x: -12, y: 3, z: -6, rotY: 0.25 },
-        { x: 12, y: -2, z: -5, rotY: -0.25 },
-        { x: -10, y: -5, z: -7, rotY: 0.3 },
-        { x: 11, y: 5, z: -6, rotY: -0.2 }
-      ];
-
-      framePositions.forEach(pos => {
-        const fMesh = new THREE.Mesh(frameGeo, frameMat);
-        fMesh.position.set(pos.x, pos.y, pos.z);
-        fMesh.rotation.y = pos.rotY;
-        projectsGroup.add(fMesh);
-        pFrames.push(fMesh);
-      });
-
-      // ========================================================================
-      // SCENE 5: WHY US (3D Kinetic Cyber Hexagonal Shield & Polyhedra)
-      // ========================================================================
-      const whyUsGroup = new THREE.Group();
-      worldGroup.add(whyUsGroup);
-
-      const shieldGrp = new THREE.Group();
-      for (let r = 2; r <= 7; r += 1.8) {
-        const ringGeo = new THREE.RingGeometry(r - 0.05, r, 6);
-        const ringMat = new THREE.MeshBasicMaterial({ color: 0xa78bfa, side: THREE.DoubleSide, transparent: true, opacity: 0.5 });
-        shieldGrp.add(new THREE.Mesh(ringGeo, ringMat));
-      }
-      shieldGrp.position.set(-11, 1, -4);
-      whyUsGroup.add(shieldGrp);
-
-      const cubeGeo = new THREE.BoxGeometry(2.2, 2.2, 2.2);
-      const cubeMat = new THREE.MeshBasicMaterial({ color: 0x8b5cf6, wireframe: true, transparent: true, opacity: 0.55 });
-      const whyCube = new THREE.Mesh(cubeGeo, cubeMat);
-      whyCube.position.set(12, 2, -3);
-      whyUsGroup.add(whyCube);
-
-      // ========================================================================
-      // SCENE 6: STRATEGY (3D Ascending Stairway Track & Waveform Equalizer)
-      // ========================================================================
-      const strategyGroup = new THREE.Group();
-      worldGroup.add(strategyGroup);
-
-      const waveBarCount = 28;
-      const waveBars = [];
-      const barGeo = new THREE.BoxGeometry(0.35, 1, 0.35);
-
-      for (let i = 0; i < waveBarCount; i++) {
-        const bMat = new THREE.MeshBasicMaterial({ color: i % 2 === 0 ? 0x8b5cf6 : 0xa78bfa, transparent: true, opacity: 0.55 });
-        const bMesh = new THREE.Mesh(barGeo, bMat);
-        bMesh.position.x = (i - waveBarCount / 2) * 0.9;
-        bMesh.position.y = -4;
-        bMesh.position.z = -3;
-        strategyGroup.add(bMesh);
-        waveBars.push({ mesh: bMesh, speed: 2 + (i % 4) * 0.8, offset: i * 0.25 });
-      }
-
-      const nodePts = [
-        new THREE.Vector3(-11, -5, -3),
-        new THREE.Vector3(-4, -1, -2),
-        new THREE.Vector3(4, 3, -2),
-        new THREE.Vector3(11, 7, -3)
-      ];
-      const curve = new THREE.CatmullRomCurve3(nodePts);
-      const tubeGeo = new THREE.TubeGeometry(curve, 48, 0.1, 8, false);
-      const tubeMat = new THREE.MeshBasicMaterial({ color: 0x8b5cf6, transparent: true, opacity: 0.65 });
-      strategyGroup.add(new THREE.Mesh(tubeGeo, tubeMat));
-
-      nodePts.forEach((pt, idx) => {
-        const sGeo = new THREE.SphereGeometry(0.6, 16, 16);
-        const sMat = new THREE.MeshBasicMaterial({ color: idx === 3 ? 0x10b981 : 0xa78bfa, wireframe: true });
-        const sMesh = new THREE.Mesh(sGeo, sMat);
-        sMesh.position.copy(pt);
-        strategyGroup.add(sMesh);
-      });
-
-      // ========================================================================
-      // SCENE 7: SERVICES (3D Floating Multi-Layer Prisms & Orbiting Dodecahedrons)
-      // ========================================================================
-      const servicesGroup = new THREE.Group();
-      worldGroup.add(servicesGroup);
-
-      const dodecGeo = new THREE.DodecahedronGeometry(3.2, 0);
-      const dodecMat = new THREE.MeshBasicMaterial({ color: 0x8b5cf6, wireframe: true, transparent: true, opacity: 0.55 });
-      const dodecMesh = new THREE.Mesh(dodecGeo, dodecMat);
-      dodecMesh.position.set(12, 0, -3);
-      servicesGroup.add(dodecMesh);
-
-      const octaGeo = new THREE.OctahedronGeometry(2.6, 0);
-      const octaMat = new THREE.MeshBasicMaterial({ color: 0xa78bfa, wireframe: true, transparent: true, opacity: 0.5 });
-      const octaMesh = new THREE.Mesh(octaGeo, octaMat);
-      octaMesh.position.set(-12, -2, -4);
-      servicesGroup.add(octaMesh);
-
-      // ========================================================================
-      // SCENE 8: FAQ & CLOSING (3D Holographic Question Pulse Rings)
-      // ========================================================================
-      const faqGroup = new THREE.Group();
-      worldGroup.add(faqGroup);
-
-      const faqTorusGeo = new THREE.TorusGeometry(4.0, 0.07, 16, 80);
-      const faqTorusMat = new THREE.MeshBasicMaterial({ color: 0x8b5cf6, transparent: true, opacity: 0.5 });
-      const faqTorus1 = new THREE.Mesh(faqTorusGeo, faqTorusMat);
-      faqTorus1.position.set(-12, 0, -3);
-      faqGroup.add(faqTorus1);
-
-      const faqTorus2 = new THREE.Mesh(faqTorusGeo, faqTorusMat);
-      faqTorus2.position.set(12, 0, -3);
-      faqGroup.add(faqTorus2);
-
-      // ========================================================================
-      // SECTION REGISTRATION & DYNAMIC SMOOTH MORPH CONTROLLER
-      // ========================================================================
-      const sections = [
-        { id: 'heroSection', group: heroGroup },
-        { id: 'about', group: introGroup },
-        { id: 'clients-testimonials', group: reviewsGroup },
-        { id: 'projects', group: projectsGroup },
-        { id: 'why-us', group: whyUsGroup },
-        { id: 'strategy', group: strategyGroup },
-        { id: 'core-services', group: servicesGroup },
-        { id: 'faq', group: faqGroup }
-      ];
-
-      // Smooth Mouse Parallax Tracking
-      let mouseX = 0, mouseY = 0;
-      let targetMouseX = 0, targetMouseY = 0;
-      window.addEventListener('mousemove', (e) => {
-        targetMouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-        targetMouseY = -(e.clientY / window.innerHeight - 0.5) * 2;
-      }, { passive: true });
-
-      // Window Resize Listener
-      window.addEventListener('resize', () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-      }, { passive: true });
-
-      // Dynamic Section Proximity Calculator (Bruno Mars Style Scroll Bell-Curve)
-      function computeProximity(elem) {
-        if (!elem) return 0;
-        const rect = elem.getBoundingClientRect();
-        const vh = window.innerHeight;
-        const centerOffset = (rect.top + rect.height / 2) - (vh / 2);
-        const maxRange = (rect.height + vh) / 2;
-        const normalized = 1 - Math.min(Math.abs(centerOffset) / maxRange, 1);
-        // Smooth sine power curve for seamless morphing
-        return Math.pow(Math.sin(normalized * Math.PI / 2), 2);
-      }
-
-      // 60FPS Continuous Animation & Morphing Render Loop
-      const clock = new THREE.Clock();
-      function animateThreeScenes() {
-        requestAnimationFrame(animateThreeScenes);
-        const elapsed = clock.getElapsedTime();
-
-        // Smooth mouse damping
-        mouseX += (targetMouseX - mouseX) * 0.05;
-        mouseY += (targetMouseY - mouseY) * 0.05;
-
-        // Ambient Stardust Motion
-        const dPos = dustGeo.attributes.position;
-        for (let i = 0; i < dustCount; i++) {
-          const i3 = i * 3;
-          dPos.array[i3] += dustVels[i].x;
-          dPos.array[i3 + 1] += dustVels[i].y;
-          dPos.array[i3 + 2] += dustVels[i].z;
-          if (Math.abs(dPos.array[i3]) > 30) dustVels[i].x *= -1;
-          if (Math.abs(dPos.array[i3 + 1]) > 30) dustVels[i].y *= -1;
-        }
-        dPos.needsUpdate = true;
-
-        // Animate Individual Scene Meshes in Real-Time
-        heroPlayMesh.rotation.y = elapsed * 0.8;
-        heroPlayMesh.rotation.z = Math.sin(elapsed * 0.5) * 0.2;
-        vf1.group.rotation.z = elapsed * 0.15;
-        vf2.group.rotation.z = -elapsed * 0.2;
-
-        filmMesh.rotation.y = elapsed * 0.25;
-        filmMesh.position.y = Math.sin(elapsed * 0.6) * 1.2;
-        filmTex.offset.x = (elapsed * 0.04) % 1;
-
-        reviewStars.forEach((star, i) => {
-          star.rotation.y = elapsed * 0.6 + i * 0.3;
-          star.position.y = Math.sin(elapsed * 0.8 + i) * 0.8;
-        });
-        starRing.rotation.z = elapsed * 0.12;
-
-        pFrames.forEach((frame, i) => {
-          frame.rotation.z = Math.sin(elapsed * 0.4 + i) * 0.08;
-          frame.position.y = framePositions[i].y + Math.sin(elapsed * 0.6 + i) * 0.5;
-        });
-
-        shieldGrp.rotation.z = elapsed * 0.2;
-        whyCube.rotation.x = elapsed * 0.4;
-        whyCube.rotation.y = elapsed * 0.5;
-
-        waveBars.forEach(item => {
-          const h = Math.abs(Math.sin(elapsed * item.speed + item.offset)) * 3.2 + 0.4;
-          item.mesh.scale.y = h;
-          item.mesh.position.y = h / 2 - 4;
-        });
-        strategyGroup.rotation.y = Math.sin(elapsed * 0.3) * 0.15;
-
-        dodecMesh.rotation.x = elapsed * 0.3;
-        dodecMesh.rotation.y = elapsed * 0.4;
-        octaMesh.rotation.x = -elapsed * 0.35;
-        octaMesh.rotation.y = elapsedTime = elapsed * 0.45;
-
-        faqTorus1.rotation.x = elapsed * 0.3;
-        faqTorus1.rotation.y = elapsed * 0.4;
-        faqTorus2.rotation.x = -elapsed * 0.3;
-        faqTorus2.rotation.y = -elapsed * 0.4;
-
-        // Dynamic Section-by-Section Morphing
-        sections.forEach(({ id, group }) => {
-          const elem = document.getElementById(id);
-          const progress = computeProximity(elem);
-
-          if (progress > 0.02) {
-            group.visible = true;
-            // Smoothly scale in and slide into view
-            const targetScale = 0.35 + progress * 0.65;
-            group.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), 0.1);
-            
-            // Vertical floating drift transition
-            const targetY = (1 - progress) * 8;
-            group.position.y = THREE.MathUtils.lerp(group.position.y, targetY, 0.1);
-          } else {
-            group.visible = false;
-          }
-        });
-
-        // Interactive World Parallax Tilt
-        worldGroup.rotation.y = mouseX * 0.04;
-        worldGroup.rotation.x = -mouseY * 0.03;
-
-        renderer.render(scene, camera);
-      }
-      animateThreeScenes();
+    (function initVerticalTrustSwipe() {
+      const ticker = document.getElementById('verticalSwipeTicker');
+      if (!ticker) return;
+      let currentIdx = 0;
+      const totalSlides = ticker.children.length;
+      if (totalSlides <= 1) return;
+      setInterval(() => {
+        currentIdx = (currentIdx + 1) % totalSlides;
+        const percentage = (currentIdx * 100) / totalSlides;
+        ticker.style.transform = `translateY(-${percentage}%)`;
+      }, 3000);
     })();
 
     // --------------------------------------------------------------------------
@@ -902,13 +541,14 @@ $hero_badge_text = get_setting('hero_badge_text', 'Agency Showreel (01:24)');
     let lenis;
     if (typeof Lenis !== 'undefined') {
       lenis = new Lenis({
-        duration: 1.2,
+        duration: 1.1,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        direction: 'vertical',
-        gestureDirection: 'vertical',
-        smooth: true,
-        smoothTouch: false,
-        touchMultiplier: 1.8,
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1.0,
+        touchMultiplier: 1.0,
+        infinite: false
       });
 
       function raf(time) {
@@ -916,38 +556,50 @@ $hero_badge_text = get_setting('hero_badge_text', 'Agency Showreel (01:24)');
         requestAnimationFrame(raf);
       }
       requestAnimationFrame(raf);
+
+      // Smooth scroll for internal hash anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId && targetId !== '#' && targetId.length > 1) {
+            const targetEl = document.querySelector(targetId);
+            if (targetEl) {
+              e.preventDefault();
+              lenis.scrollTo(targetEl, { offset: -70 });
+            }
+          }
+        });
+      });
     }
 
     // --------------------------------------------------------------------------
-    // Hero Video Card Scroll-Driven 3D Zoom / Enlarge Animation
-    // As the user scrolls down, the Showreel video card smoothly expands & illuminates!
+    // Hero Video Card Scroll-Driven Responsive Enlarge
     // --------------------------------------------------------------------------
     (function initHeroVideoScrollZoom() {
       const container = document.getElementById('heroVideoContainer');
       if (!container) return;
 
       function updateHeroZoom() {
+        if (window.innerWidth < 768) {
+          container.style.transform = 'none';
+          return;
+        }
         const scrollY = window.scrollY || window.pageYOffset;
-        // Progress from 0 (at top) to 1 (scrolled 450px)
-        const progress = Math.min(Math.max(scrollY / 450, 0), 1);
-        
-        // Scale from 0.88 -> 1.05 and float up
-        const scale = 0.88 + progress * 0.17;
-        const translateY = (1 - progress) * 20;
-
-        container.style.transform = `perspective(1200px) scale(${scale}) translateY(${translateY}px)`;
+        const progress = Math.min(Math.max(scrollY / 400, 0), 1);
+        const scale = 0.98 + progress * 0.04;
+        container.style.transform = `scale(${scale})`;
 
         if (progress > 0.3) {
-          const glowAlpha = (0.25 + progress * 0.35).toFixed(2);
-          container.style.borderColor = 'rgba(139, 92, 246, 0.75)';
-          container.style.boxShadow = `0 30px 100px rgba(139, 92, 246, ${glowAlpha}), 0 0 45px rgba(99, 102, 241, 0.35)`;
+          container.style.borderColor = 'rgba(255, 255, 255, 0.7)';
+          container.style.boxShadow = '0 25px 80px rgba(0, 0, 0, 0.9), 0 0 45px rgba(255, 255, 255, 0.2)';
         } else {
-          container.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-          container.style.boxShadow = '0 25px 80px rgba(0, 0, 0, 0.85)';
+          container.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+          container.style.boxShadow = '0 15px 50px rgba(0, 0, 0, 0.85)';
         }
       }
 
       window.addEventListener('scroll', updateHeroZoom, { passive: true });
+      window.addEventListener('resize', updateHeroZoom, { passive: true });
       if (lenis) lenis.on('scroll', updateHeroZoom);
       updateHeroZoom();
     })();
@@ -982,31 +634,20 @@ $hero_badge_text = get_setting('hero_badge_text', 'Agency Showreel (01:24)');
     })();
 
     // --------------------------------------------------------------------------
-    // Hero Video Embed Replacement
+    // Hero Video Embed (Play Showreel on Center Button Click)
     // --------------------------------------------------------------------------
-    (function setupHeroVideo() {
-      const trigger = document.getElementById('heroVideoTrigger');
-      const slot = document.getElementById('heroEmbedSlot');
-      const heroUrl = <?= json_encode($hero_video_url); ?>;
-      if (trigger && slot) {
-        trigger.addEventListener('click', () => {
-          let embedSrc = heroUrl;
-          if (embedSrc.indexOf('autoplay=1') === -1) {
-            embedSrc += (embedSrc.indexOf('?') === -1 ? '?' : '&') + 'autoplay=1&rel=0&modestbranding=1';
-          }
-          slot.innerHTML = `
-            <iframe class="w-full h-full"
-              src="${embedSrc}"
-              title="Next Level Media Showreel"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-          `;
-          trigger.classList.add('hidden');
-          slot.classList.remove('hidden');
-        });
+    window.playHeroShowreel = function() {
+      const iframe = document.getElementById('heroShowreelIframe');
+      const overlay = document.getElementById('heroPlayOverlay');
+      if (iframe) {
+        iframe.src = "https://player.vimeo.com/video/1219066986?autoplay=1&title=0&byline=0&portrait=0&badge=0&autopause=0&color=535eee&playsinline=1";
+        iframe.classList.remove('pointer-events-none');
       }
-    })();
+      if (overlay) {
+        overlay.classList.add('opacity-0', 'pointer-events-none');
+        setTimeout(() => overlay.remove(), 400);
+      }
+    };
 
     // --------------------------------------------------------------------------
     // Scroll Reveal & Metric Counter Animations

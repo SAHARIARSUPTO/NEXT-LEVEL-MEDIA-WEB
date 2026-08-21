@@ -1,1 +1,12 @@
-[]
+[
+    {
+        "id": 1,
+        "name": "Alex Rivera",
+        "email": "alex@growthagency.io",
+        "phone": "+14155552671",
+        "subject": "Quick Direct Touch",
+        "message": "Hey team, we are scaling to 30 shorts per month and need a high-retention editing partner.",
+        "status": "Unread",
+        "created_at": "2026-08-20 06:47:16"
+    }
+]

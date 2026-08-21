@@ -306,6 +306,71 @@ $top_countries = array_slice($country_counts, 0, 5, true);
       <?php endif; ?>
     </div>
 
+    <!-- Recent Client Inquiries & Direct Messages Card -->
+    <div class="adm-card p-6 sm:p-7">
+      <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/[0.08]">
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-white font-display">Recent Client Inquiries</h2>
+          <p class="text-xs sm:text-sm text-slate-300 mt-0.5">Direct touch submissions from footer CTA & contact forms</p>
+        </div>
+        <a href="inquiries.php" class="text-sm font-bold text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-1">
+          <span>View All (<?= count($all_inquiries); ?>)</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <?php $recent_inq = array_slice($all_inquiries, 0, 5); ?>
+      <?php if (empty($recent_inq)): ?>
+        <div class="text-center py-8 px-4">
+          <p class="text-sm font-bold text-slate-300">No client messages received yet</p>
+        </div>
+      <?php else: ?>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm text-slate-200">
+            <thead>
+              <tr class="text-slate-400 border-b border-white/[0.08] text-xs font-bold uppercase tracking-wider">
+                <th class="pb-3 pr-4">Client</th>
+                <th class="pb-3 pr-4">Message Preview</th>
+                <th class="pb-3 pr-4">Status</th>
+                <th class="pb-3 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/[0.06]">
+              <?php foreach ($recent_inq as $inq): ?>
+                <tr class="hover:bg-white/[0.03] transition-colors">
+                  <td class="py-3.5 pr-4">
+                    <div class="font-bold text-white text-sm"><?= htmlspecialchars($inq['name'] ?? 'Client'); ?></div>
+                    <div class="text-xs text-slate-400 font-mono"><?= htmlspecialchars($inq['email'] ?? ''); ?></div>
+                  </td>
+                  <td class="py-3.5 pr-4 max-w-[280px] truncate text-xs sm:text-sm text-slate-300">
+                    <?= htmlspecialchars($inq['message'] ?? ''); ?>
+                  </td>
+                  <td class="py-3.5 pr-4 whitespace-nowrap">
+                    <?php if (($inq['status'] ?? '') === 'Unread'): ?>
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-amber-500/15 border border-amber-500/30 text-amber-300">
+                        Unread
+                      </span>
+                    <?php else: ?>
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-slate-500/15 border border-slate-500/30 text-slate-400">
+                        Read
+                      </span>
+                    <?php endif; ?>
+                  </td>
+                  <td class="py-3.5 text-right whitespace-nowrap space-x-2">
+                    <a href="inquiries.php" class="px-2.5 py-1 rounded-lg bg-indigo-600/20 hover:bg-indigo-600 border border-indigo-500/30 text-indigo-300 hover:text-white font-bold text-xs transition-all inline-block">
+                      View All &rarr;
+                    </a>
+                  </td>
+                </tr>
+              <?php endforeach; ?>
+            </tbody>
+          </table>
+        </div>
+      <?php endif; ?>
+    </div>
+
   </div>
 
   <!-- Right Column (4 cols): Geographic Breakdown & Quick Tools -->
